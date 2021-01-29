@@ -4,6 +4,7 @@ using UnityEngine;
 using Twity.DataModels.Core;
 using Twity.DataModels.Responses;
 using UnityEngine.Networking;
+using System.Text;
 
 public class TwitterManager : MonoBehaviour
 {
@@ -19,12 +20,15 @@ public class TwitterManager : MonoBehaviour
     public delegate void SendTweetCallback(bool success, string idTweet);
     public event SendTweetCallback _callbackSendTweet;
     private string _msgSendImage;
+    private List<string> _imagesToUpload;
+    private List<string> _responsesIDsImages;
 
     public struct Tweet
     {
-        public string id;
-        public List<Texture2D> imgs;
-        public string msg;
+        public string _id;
+        public List<Texture2D> _imgs;
+        public string _msg;
+        public List<string> _seedsImgs;
     }
     public delegate void GetTweetsCallback(bool success, List<Tweet> t);
     public event GetTweetsCallback _callbackGetTweets;
@@ -50,6 +54,9 @@ public class TwitterManager : MonoBehaviour
         Twity.Oauth.bearerToken = beared_token;
         Twity.Oauth.consumerKey = consumer_key;
         Twity.Oauth.consumerSecret = consumer_key_secret;
+
+        _imagesToUpload = new List<string>();
+        _responsesIDsImages = new List<string>();
     }
     #endregion
     #region Send Tweet
@@ -89,7 +96,6 @@ public class TwitterManager : MonoBehaviour
         StartCoroutine(Twity.Client.Post("statuses/update", parameters, CallbackTweet));
     }
 
-
     private void CallbackTweet(bool success, string response)
     {
         if (_callbackSendTweet != null)
@@ -99,7 +105,8 @@ public class TwitterManager : MonoBehaviour
             _callbackSendTweet(success, Response.id);
         }
     }
-
+    #endregion
+    #region Send Tweet With Image
     /// <summary>
     /// Publica un tweet con una imagen
     /// </summary>
@@ -115,23 +122,64 @@ public class TwitterManager : MonoBehaviour
         Dictionary<string, string> parameters = new Dictionary<string, string>();
         parameters["media"] = imgbase64;
         StartCoroutine(Twity.Client.Post("media/upload", parameters, MediaUploadCallback));
+
+        List<Texture2D> _textures = new List<Texture2D>();
+        _textures.Add(_texture);
+
+        SendTweetWithImage(msg, _textures, _callback);
     }
+
+    public void SendTweetWithImage(string msg, List<Texture2D> _textures, SendTweetCallback _callback)
+    {
+        _callbackSendTweet = _callback;
+        _msgSendImage = msg;
+
+        _responsesIDsImages.Clear();
+        _imagesToUpload.Clear();
+
+        for (int i = 0; i < _textures.Count; ++i)
+        {
+            _imagesToUpload.Add(System.Convert.ToBase64String(_textures[i].EncodeToPNG()));
+        }
+
+        for(int i = 0; i < _imagesToUpload.Count; ++i)
+        {
+            SendTweetWithImage(_imagesToUpload[i]);
+        }
+    }
+
+    private void SendTweetWithImage(string txt)
+    {
+        Dictionary<string, string> parameters = new Dictionary<string, string>();
+        parameters["media"] = txt;
+        StartCoroutine(Twity.Client.Post("media/upload", parameters, MediaUploadCallback));
+    }
+
     private void MediaUploadCallback(bool success, string response)
     {
         if (success)
         {
             UploadMedia media = JsonUtility.FromJson<UploadMedia>(response);
-            Dictionary<string, string> parameters = new Dictionary<string, string>();
-            parameters["media_ids"] = media.media_id.ToString();
-            parameters["status"] = _msgSendImage;
-            StartCoroutine(Twity.Client.Post("statuses/update", parameters, CallbackTweet));
-        }
-        else
-        {
-            Debug.Log(response);
+            _responsesIDsImages.Add(media.media_id.ToString());
+
+            if(_imagesToUpload.Count == _responsesIDsImages.Count)
+            {
+                StringBuilder sb = new StringBuilder();
+                for(int i = 0; i < _responsesIDsImages.Count; ++i)
+                {
+                    sb.Append(_responsesIDsImages[i] + ",");
+                }
+                sb.Length--;
+                //tenemos ya los ids de todas las imagenes
+                Dictionary<string, string> parameters = new Dictionary<string, string>();
+                parameters["media_ids"] =sb.ToString();
+                parameters["status"] = _msgSendImage;
+                StartCoroutine(Twity.Client.Post("statuses/update", parameters, CallbackTweet));
+            }
         }
     }
     #endregion
+
     #region Get Tweets
     /// <summary>
     /// Devuelve todos los tweets que ha publicado PalaVerde
@@ -165,12 +213,12 @@ public class TwitterManager : MonoBehaviour
                 for (int tid = 0; tid < Response.data.Length; ++tid)
                 {
                     Tweet t;
-                    t.id = Response.data[tid].id;
-                    t.msg = Response.data[tid].text;
-                    t.imgs = new List<Texture2D>();
+                    t._id = Response.data[tid].id;
+                    t._msg = Response.data[tid].text;
+                    t._imgs = new List<Texture2D>();
+                    t._seedsImgs = new List<string>();
                     List<string> urls = getAllUrls(Response, tid);
-                    yield return StartCoroutine(DownloadAllImages(urls, t.imgs));
-                    //t.imgs = getAllUrls(Response, tid);
+                    yield return StartCoroutine(DownloadAllImages(urls, t._imgs, t._seedsImgs));
                     objectResponse.Add(t);
                 }
             }
@@ -180,8 +228,7 @@ public class TwitterManager : MonoBehaviour
             _callbackGetTweets(success, objectResponse);
         }
     }
-
-    IEnumerator DownloadAllImages(List<string> urls,  List<Texture2D> list)
+    IEnumerator DownloadAllImages(List<string> urls,  List<Texture2D> list, List<string> seedTxt)
     {
         for (int i = 0; i < urls.Count; ++i)
         {
@@ -191,11 +238,12 @@ public class TwitterManager : MonoBehaviour
                 Debug.Log(request.error);
             else
             {
-                list.Add(((DownloadHandlerTexture)request.downloadHandler).texture);
+                Texture2D t = ((DownloadHandlerTexture)request.downloadHandler).texture;
+                list.Add(t);
+                seedTxt.Add(QrReader.readQR(t));
             }
         }
     }
-
     private List<string> getAllUrls(StatusesHomeTimelineResponse _response, int id)
     {
         List<string> result = new List<string>();
