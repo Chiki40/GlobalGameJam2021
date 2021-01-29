@@ -22,7 +22,8 @@ public class TestTwitter : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.I))
         {
-            TwitterManager.GetInstance().SendTweetWithImage("hola con imagen " + Random.Range(0, 1000), _texture,callbackSendTweet);
+            Texture2D t = QrReader.generateQR("bloste para ti y todas tus amigas y amigos");
+            TwitterManager.GetInstance().SendTweetWithImage("hola con imagen " + Random.Range(0, 1000), t, callbackSendTweet);
         }
     }
 
@@ -42,9 +43,9 @@ public class TestTwitter : MonoBehaviour
     {
         if(success)
         {
-            Debug.Log("he recibido bien todos los tweets");
-
             _plane.GetComponent<Renderer>().material.mainTexture = t[0].imgs[0];
+            string texto = QrReader.readQR(t[0].imgs[0]);
+            Debug.Log("he leido el texto =>" +  texto);
         }
         else
         {
