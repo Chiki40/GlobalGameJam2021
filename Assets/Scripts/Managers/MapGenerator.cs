@@ -13,6 +13,8 @@ public class MapGenerator : MonoBehaviour
         public int dispersion = 1;
         public GameObject gObject;
         public Vector2Int gridUnitsSize = new Vector2Int(1,1);
+        [Range(0, 1)]
+        public float randomScaleRange = 0;
     }
     public int seed = 999;
     public int sizeX = 50;
@@ -21,6 +23,8 @@ public class MapGenerator : MonoBehaviour
     public RandomObject[] randomObjects;
     [Range(0,100)]
     public int population;
+    [Range(1, 100)]
+    public int dispersionPopulation;
 
     private bool[,] usedMatrix;
     // Start is called before the first frame update
@@ -75,24 +79,33 @@ public class MapGenerator : MonoBehaviour
                 // Se puede salir de la cuadrícula
                 if (coordinates.x < usedMatrix.GetLength(0) && coordinates.y < usedMatrix.GetLength(1))
                 {
-                    if (x % obj.gridUnitsSize.x == 0 && y % obj.gridUnitsSize.y == 0)
+                    int randomDispersion = Random.Range(0, 100);
+                    if (randomDispersion < dispersionPopulation)
                     {
-                        // Se parte de la posición del MapGenerator
-                        Vector3 pos = transform.position;
-                        // Se posiciona en el centro de la cuadrícula desplazando según la posición del
-                        // grid que tengamos
-                        pos.x += coordinates.x * gridSize;
-                        pos.z += coordinates.y * gridSize;
-                        // se marca como usada esta cuadrícula
-                        Instantiate(obj.gObject, pos, Quaternion.identity, transform);
-                        // Se marca la casilla como usada
-                        usedMatrix[coordinates.x, coordinates.y] = true;
-                    }
-                    else
-                    {
-                        // Como el objeto tiene diferente tamaño, se marcan como usadas el resto de
-                        // casillas que ocupa el objeto
-                        usedMatrix[coordinates.x, coordinates.y] = true;
+                        if (x % obj.gridUnitsSize.x == 0 && y % obj.gridUnitsSize.y == 0)
+                        {
+                            // Se parte de la posición del MapGenerator
+                            Vector3 pos = transform.position;
+                            // Se posiciona en el centro de la cuadrícula desplazando según la posición del
+                            // grid que tengamos. El pivote está en el centro así que se posiciona en el centro
+                            // de lo que ocupe
+                            pos.x += coordinates.x * gridSize + obj.gridUnitsSize.x * 0.5f;
+                            pos.z += coordinates.y * gridSize + obj.gridUnitsSize.y * 0.5f;
+
+                            GameObject objCreated = Instantiate(obj.gObject, pos, Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0, 1, 0)), transform);
+                            if (obj.randomScaleRange > 0)
+                            {
+                                objCreated.transform.localScale = new Vector3(1, Random.Range(1- obj.randomScaleRange, 1 + obj.randomScaleRange), 1);
+                            }
+                            // Se marca la casilla como usada
+                            usedMatrix[coordinates.x, coordinates.y] = true;
+                        }
+                        else
+                        {
+                            // Como el objeto tiene diferente tamaño, se marcan como usadas el resto de
+                            // casillas que ocupa el objeto
+                            usedMatrix[coordinates.x, coordinates.y] = true;
+                        }
                     }
                 }
             }
