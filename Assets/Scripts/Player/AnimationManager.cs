@@ -3,15 +3,18 @@
 [RequireComponent(typeof(Animator), typeof(SpriteRenderer))]
 public class AnimationManager : MonoBehaviour {
 
-    public enum AnimationsAllowed  {WALK_LEFT, WALK_RIGHT, STOP, NONE};
+    public enum AnimationsAllowed  {WALK_HORIZONTAL, WALK_VERTICAL, WALK_DIAGONAL_FRONT, WALK_DIAGONAL_BACK, STOP, NONE};
 
     private SpriteRenderer _renderer;
     private Animator _animationController;
 
-    private static string _walkKey = "Walk";
+    private static string kWalkHorizontalKey = "WalkHorizontal";
+    private static string kWalkVerticalKey = "WalkVertical";
+    private static string kWalkDiagonalFrontKey = "WalkDiagonalFront";
+    private static string kWalkDiagonalBackKey = "WalkDiagonalBack";
     private static string _resetKey = "Reset";
 
-    private bool? actuallyWalkingLeft = null;
+    private CharacterController.EDirections? actuallyWalkingDirection = null;
 
     public delegate void  AnimationCallback();
 
@@ -22,53 +25,114 @@ public class AnimationManager : MonoBehaviour {
         _animationController = GetComponent<Animator>();
     }
 
-    #region specific Animations
-    private void WALK(bool left) {
-        _animationController.SetBool(_walkKey, true);
-        _renderer.flipX = left;
+	private void OnEnable()
+	{
+        actuallyWalkingDirection = null;
+    }
+
+	#region specific Animations
+	private void WALK(CharacterController.EDirections direction) {
+        switch (direction)
+		{
+            case CharacterController.EDirections.LEFT:
+                _animationController.SetBool(kWalkHorizontalKey, true);
+                _animationController.SetBool(kWalkVerticalKey, false);
+                _animationController.SetBool(kWalkDiagonalFrontKey, false);
+                _animationController.SetBool(kWalkDiagonalBackKey, false);
+                _renderer.flipX = true;
+                break;
+            case CharacterController.EDirections.RIGHT:
+                _animationController.SetBool(kWalkHorizontalKey, true);
+                _animationController.SetBool(kWalkVerticalKey, false);
+                _animationController.SetBool(kWalkDiagonalFrontKey, false);
+                _animationController.SetBool(kWalkDiagonalBackKey, false);
+                _renderer.flipX = false;
+                break;
+            case CharacterController.EDirections.UP:
+                _animationController.SetBool(kWalkHorizontalKey, false);
+                _animationController.SetBool(kWalkVerticalKey, true);
+                _animationController.SetBool(kWalkDiagonalFrontKey, false);
+                _animationController.SetBool(kWalkDiagonalBackKey, false);
+                _renderer.flipX = false;
+                break;
+            case CharacterController.EDirections.DOWN:
+                _animationController.SetBool(kWalkHorizontalKey, false);
+                _animationController.SetBool(kWalkVerticalKey, true);
+                _animationController.SetBool(kWalkDiagonalFrontKey, false);
+                _animationController.SetBool(kWalkDiagonalBackKey, false);
+                _renderer.flipX = false;
+                break;
+            case CharacterController.EDirections.LEFT_UP:
+                _animationController.SetBool(kWalkHorizontalKey, false);
+                _animationController.SetBool(kWalkVerticalKey, false);
+                _animationController.SetBool(kWalkDiagonalFrontKey, false);
+                _animationController.SetBool(kWalkDiagonalBackKey, true);
+                _renderer.flipX = true;
+                break;
+            case CharacterController.EDirections.LEFT_DOWN:
+                _animationController.SetBool(kWalkHorizontalKey, false);
+                _animationController.SetBool(kWalkVerticalKey, false);
+                _animationController.SetBool(kWalkDiagonalFrontKey, true);
+                _animationController.SetBool(kWalkDiagonalBackKey, false);
+                _renderer.flipX = true;
+                break;
+            case CharacterController.EDirections.RIGHT_UP:
+                _animationController.SetBool(kWalkHorizontalKey, false);
+                _animationController.SetBool(kWalkVerticalKey, false);
+                _animationController.SetBool(kWalkDiagonalFrontKey, false);
+                _animationController.SetBool(kWalkDiagonalBackKey, true);
+                _renderer.flipX = false;
+                break;
+            case CharacterController.EDirections.RIGHT_DOWN:
+                _animationController.SetBool(kWalkHorizontalKey, false);
+                _animationController.SetBool(kWalkVerticalKey, false);
+                _animationController.SetBool(kWalkDiagonalFrontKey, true);
+                _animationController.SetBool(kWalkDiagonalBackKey, false);
+                _renderer.flipX = false;
+                break;
+        }
     }
     private void STOP()
     {
-        _animationController.SetBool(_walkKey, false);
+        _animationController.SetBool(kWalkHorizontalKey, false);
+        _animationController.SetBool(kWalkVerticalKey, false);
+        _animationController.SetBool(kWalkDiagonalFrontKey, false);
+        _animationController.SetBool(kWalkDiagonalBackKey, false);
     }
     #endregion
 
     #region public actions
-    public void playAnimation(AnimationsAllowed animation)
+    public void playMovementAnimation(CharacterController.EDirections direction)
     {
-        if(actuallyWalkingLeft.HasValue &&
-            ((actuallyWalkingLeft.Value && animation == AnimationsAllowed.WALK_LEFT) || (!actuallyWalkingLeft.Value && animation == AnimationsAllowed.WALK_RIGHT)))
+        if (actuallyWalkingDirection.HasValue && actuallyWalkingDirection.Value == direction)
         {
             return;
         }
 
-        switch (animation) 
-        {
-            case AnimationsAllowed.WALK_LEFT:
-            {
-                actuallyWalkingLeft = true;
-                WALK(true);
-                break;
-            }
-            case AnimationsAllowed.WALK_RIGHT:
-            {
-                actuallyWalkingLeft = false;
-                WALK(false);
-                break;
-            }
-            case AnimationsAllowed.STOP:
-            {
-                actuallyWalkingLeft = null;
-                STOP();
-                break;
-            }
-        }
+        actuallyWalkingDirection = direction;
+        WALK(direction);
     }
+
+    public void stopMovement()
+	{
+        if (!actuallyWalkingDirection.HasValue)
+        {
+            return;
+        }
+
+        actuallyWalkingDirection = null;
+        STOP();
+    }
+
     public void RESET()
     {
-        _animationController.SetBool(_walkKey, false);
+        actuallyWalkingDirection = null;
+
+        _animationController.SetBool(kWalkHorizontalKey, false);
+        _animationController.SetBool(kWalkVerticalKey, false);
+        _animationController.SetBool(kWalkDiagonalFrontKey, false);
+        _animationController.SetBool(kWalkDiagonalBackKey, false);
         _animationController.SetTrigger(_resetKey);
-        actuallyWalkingLeft = null;
     }
     #endregion
 }

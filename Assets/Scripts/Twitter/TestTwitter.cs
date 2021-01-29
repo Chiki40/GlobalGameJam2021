@@ -5,13 +5,14 @@ using UnityEngine;
 public class TestTwitter : MonoBehaviour
 {
     public Texture2D _texture;
+    public GameObject _plane;
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.T))
         {
-            TwitterManager.GetInstance().SendTweet("hola desde twitter" + Random.Range(0, 1000), callbackSendTweet);
+            TwitterManager.GetInstance().SendTweet("hola desde twitter " + Random.Range(0, 1000), callbackSendTweet);
         }
 
         if(Input.GetKeyDown(KeyCode.H))
@@ -21,8 +22,8 @@ public class TestTwitter : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.I))
         {
-            byte[] b = _texture.EncodeToPNG();
-            TwitterManager.GetInstance().SendTweetWithImage("hola con imagen " + Random.Range(0, 1000), b,callbackSendTweet);
+            Texture2D t = QrReader.generateQR("bloste para ti y todas tus amigas y amigos");
+            TwitterManager.GetInstance().SendTweetWithImage("hola con imagen " + Random.Range(0, 1000), t, callbackSendTweet);
         }
     }
 
@@ -42,12 +43,9 @@ public class TestTwitter : MonoBehaviour
     {
         if(success)
         {
-            Debug.Log("he recibido bien todos los tweets");
-
-            for(int i = 0; i < t.Count; ++i)
-            {
-                Debug.Log("ID =>" + t[i].id);
-            }
+            _plane.GetComponent<Renderer>().material.mainTexture = t[0].imgs[0];
+            string texto = QrReader.readQR(t[0].imgs[0]);
+            Debug.Log("he leido el texto =>" +  texto);
         }
         else
         {
