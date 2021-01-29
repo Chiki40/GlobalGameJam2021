@@ -489,5 +489,21 @@ PrefabInstance:
       propertyPath: _player
       value: 
       objectReference: {fileID: 487435261}
+    - target: {fileID: 7561925299203666555, guid: d292c35cd24e93e479c6ae70edb5b3bf, type: 3}
+      propertyPath: _minThresholdsPerc.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561925299203666555, guid: d292c35cd24e93e479c6ae70edb5b3bf, type: 3}
+      propertyPath: _maxThresholdsPerc.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561925299203666555, guid: d292c35cd24e93e479c6ae70edb5b3bf, type: 3}
+      propertyPath: _minThresholdsPerc.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7561925299203666555, guid: d292c35cd24e93e479c6ae70edb5b3bf, type: 3}
+      propertyPath: _maxThresholdsPerc.y
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d292c35cd24e93e479c6ae70edb5b3bf, type: 3}

@@ -5,18 +5,9 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private GameObject _player = null;
     [SerializeField]
-    private Vector2 _minThresholdsPerc = new Vector2(0.0f, 0.0f);
+    private Vector2 _minBounds = new Vector2(0.0f, 0.0f);
     [SerializeField]
-    private Vector2 _maxThresholdsPerc = new Vector2(0.0f, 0.0f);
-
-    private Vector2 screenLimits = Vector2.zero;
-
-    void Start()
-    {
-        screenLimits = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
-        screenLimits.x = Mathf.Abs(screenLimits.x);
-        screenLimits.y = Mathf.Abs(screenLimits.y);
-    }
+    private Vector2 _maxBounds = new Vector2(0.0f, 0.0f);
 
     void Update()
     {
@@ -24,15 +15,16 @@ public class CameraController : MonoBehaviour
         Vector3 newPos = transform.position;
         if (playerPos.x > transform.position.x) // Player is to the right of the camera
         {
-            float threshold = (transform.position.x - screenLimits.x / 2.0f) + screenLimits.x * _maxThresholdsPerc.x;
+            float threshold = transform.position.x + _maxBounds.x;
             if (playerPos.x > threshold)
             {
+                Debug.LogError(playerPos.x - threshold);
                 newPos.x += playerPos.x - threshold;
             }
         }
         else if (playerPos.x < transform.position.x) // Player is to the left of the camera
         {
-            float threshold = (transform.position.x - screenLimits.x / 2.0f) + screenLimits.x * _minThresholdsPerc.x;
+            float threshold = transform.position.x - _minBounds.x;
             if (playerPos.x < threshold)
             {
                 newPos.x -= threshold - playerPos.x;
@@ -41,7 +33,7 @@ public class CameraController : MonoBehaviour
 
         if (playerPos.y > transform.position.y) // Player is above the camera
         {
-            float threshold = (transform.position.y - screenLimits.y / 2.0f) + screenLimits.y * _maxThresholdsPerc.y;
+            float threshold = transform.position.y + _maxBounds.y;
             if (playerPos.y > threshold)
             {
                 newPos.y += playerPos.y - threshold;
@@ -49,7 +41,7 @@ public class CameraController : MonoBehaviour
         }
         else if (playerPos.y < transform.position.y) // Player is below the camera
         {
-            float threshold = (transform.position.y - screenLimits.y / 2.0f) + screenLimits.y * _minThresholdsPerc.y;
+            float threshold = transform.position.y - _minBounds.y;
             if (playerPos.y < threshold)
             {
                 newPos.y -= threshold - playerPos.y;

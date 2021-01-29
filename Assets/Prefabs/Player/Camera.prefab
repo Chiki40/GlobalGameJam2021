@@ -97,5 +97,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
-  _minThresholdsPerc: {x: 0.1, y: 0.25}
-  _maxThresholdsPerc: {x: 0.9, y: 0.75}
+  _minBounds: {x: 20, y: 8}
+  _maxBounds: {x: 20, y: 8}
