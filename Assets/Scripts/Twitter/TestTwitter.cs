@@ -12,7 +12,7 @@ public class TestTwitter : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.T))
         {
-            TwitterManager.GetInstance().SendTweet("hola desde twitter" + Random.Range(0, 1000), callbackSendTweet);
+            TwitterManager.GetInstance().SendTweet("hola desde twitter " + Random.Range(0, 1000), callbackSendTweet);
         }
 
         if(Input.GetKeyDown(KeyCode.H))

@@ -65,8 +65,31 @@ public class TwitterManager : MonoBehaviour
 
         Dictionary<string, string> parameters = new Dictionary<string, string>();
         parameters["status"] = msg;
+        parameters["lat"] = "20.060471";
+        parameters["long"] = "-72.764193";
+        parameters["in_reply_to_status_id"] = "1355280482079006721";
         StartCoroutine(Twity.Client.Post("statuses/update", parameters, CallbackTweet));
     }
+    /// <summary>
+    /// Envia un tweet de respuesta a otro tweet
+    /// </summary>
+    /// <param name="msg"></param>
+    /// <param name="idTweet"></param>
+    /// <param name="_callback"></param>
+    public void ResponseToTweet(string msg, string idTweet, SendTweetCallback _callback)
+    {
+        _callbackSendTweet = _callback;
+        _msgSendImage = msg + "@PirataPalaverde";
+
+        Dictionary<string, string> parameters = new Dictionary<string, string>();
+        parameters["status"] = msg;
+        parameters["lat"] = "20.060471";
+        parameters["long"] = "-72.764193";
+        parameters["in_reply_to_status_id"] = idTweet;
+        StartCoroutine(Twity.Client.Post("statuses/update", parameters, CallbackTweet));
+    }
+
+
     private void CallbackTweet(bool success, string response)
     {
         if (_callbackSendTweet != null)
