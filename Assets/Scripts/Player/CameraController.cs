@@ -18,7 +18,6 @@ public class CameraController : MonoBehaviour
             float threshold = transform.position.x + _maxBounds.x;
             if (playerPos.x > threshold)
             {
-                Debug.LogError(playerPos.x - threshold);
                 newPos.x += playerPos.x - threshold;
             }
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Twity.DataModels.Core;
 using Twity.DataModels.Responses;
+using UnityEngine.Networking;
 
 public class TwitterManager : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class TwitterManager : MonoBehaviour
     public struct Tweet
     {
         public string id;
-        public List<string> url;
+        public List<Texture2D> imgs;
         public string msg;
     }
     public delegate void GetTweetsCallback(bool success, List<Tweet> t);
@@ -47,7 +48,6 @@ public class TwitterManager : MonoBehaviour
         Twity.Oauth.accessToken = access_token;
         Twity.Oauth.accessTokenSecret = access_token_secret;
         Twity.Oauth.bearerToken = beared_token;
-        //no se usan
         Twity.Oauth.consumerKey = consumer_key;
         Twity.Oauth.consumerSecret = consumer_key_secret;
     }
@@ -65,8 +65,31 @@ public class TwitterManager : MonoBehaviour
 
         Dictionary<string, string> parameters = new Dictionary<string, string>();
         parameters["status"] = msg;
+        parameters["lat"] = "20.060471";
+        parameters["long"] = "-72.764193";
+        parameters["in_reply_to_status_id"] = "1355280482079006721";
         StartCoroutine(Twity.Client.Post("statuses/update", parameters, CallbackTweet));
     }
+    /// <summary>
+    /// Envia un tweet de respuesta a otro tweet
+    /// </summary>
+    /// <param name="msg"></param>
+    /// <param name="idTweet"></param>
+    /// <param name="_callback"></param>
+    public void ResponseToTweet(string msg, string idTweet, SendTweetCallback _callback)
+    {
+        _callbackSendTweet = _callback;
+        _msgSendImage = msg + "@PirataPalaverde";
+
+        Dictionary<string, string> parameters = new Dictionary<string, string>();
+        parameters["status"] = msg;
+        parameters["lat"] = "20.060471";
+        parameters["long"] = "-72.764193";
+        parameters["in_reply_to_status_id"] = idTweet;
+        StartCoroutine(Twity.Client.Post("statuses/update", parameters, CallbackTweet));
+    }
+
+
     private void CallbackTweet(bool success, string response)
     {
         if (_callbackSendTweet != null)
@@ -77,12 +100,18 @@ public class TwitterManager : MonoBehaviour
         }
     }
 
-    public void SendTweetWithImage(string msg, byte[] img, SendTweetCallback _callback)
+    /// <summary>
+    /// Publica un tweet con una imagen
+    /// </summary>
+    /// <param name="msg"></param>
+    /// <param name="_texture"></param>
+    /// <param name="_callback"></param>
+    public void SendTweetWithImage(string msg, Texture2D _texture, SendTweetCallback _callback)
     {
         _callbackSendTweet = _callback;
         _msgSendImage = msg;
 
-        string imgbase64 = System.Convert.ToBase64String(img);
+        string imgbase64 = System.Convert.ToBase64String(_texture.EncodeToPNG());
         Dictionary<string, string> parameters = new Dictionary<string, string>();
         parameters["media"] = imgbase64;
         StartCoroutine(Twity.Client.Post("media/upload", parameters, MediaUploadCallback));
@@ -102,8 +131,6 @@ public class TwitterManager : MonoBehaviour
             Debug.Log(response);
         }
     }
-
-
     #endregion
     #region Get Tweets
     /// <summary>
@@ -124,6 +151,10 @@ public class TwitterManager : MonoBehaviour
     }
     void CallbackGetTweets(bool success, string response)
     {
+        StartCoroutine(CallbackGetTweets_Coroutine(success, response));
+    }
+    IEnumerator CallbackGetTweets_Coroutine(bool success, string response)
+    { 
         List<Tweet> objectResponse = new List<Tweet>();
         if (success)
         {
@@ -136,7 +167,10 @@ public class TwitterManager : MonoBehaviour
                     Tweet t;
                     t.id = Response.data[tid].id;
                     t.msg = Response.data[tid].text;
-                    t.url = getAllUrls(Response, tid);
+                    t.imgs = new List<Texture2D>();
+                    List<string> urls = getAllUrls(Response, tid);
+                    yield return StartCoroutine(DownloadAllImages(urls, t.imgs));
+                    //t.imgs = getAllUrls(Response, tid);
                     objectResponse.Add(t);
                 }
             }
@@ -144,6 +178,21 @@ public class TwitterManager : MonoBehaviour
         if (_callbackGetTweets != null)
         {
             _callbackGetTweets(success, objectResponse);
+        }
+    }
+
+    IEnumerator DownloadAllImages(List<string> urls,  List<Texture2D> list)
+    {
+        for (int i = 0; i < urls.Count; ++i)
+        {
+            UnityWebRequest request = UnityWebRequestTexture.GetTexture(urls[i]);
+            yield return request.SendWebRequest();
+            if (request.isNetworkError || request.isHttpError)
+                Debug.Log(request.error);
+            else
+            {
+                list.Add(((DownloadHandlerTexture)request.downloadHandler).texture);
+            }
         }
     }
 
@@ -172,6 +221,5 @@ public class TwitterManager : MonoBehaviour
 
         return result;
     }
-
     #endregion
 }
