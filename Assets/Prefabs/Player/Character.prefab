@@ -132,5 +132,4 @@ MonoBehaviour:
   _speed: 30
   _basicDirdectionThreshold: 0.1
   _diagonalDirectionThreshold: 0.3
-  _useAnimationDistanceThreshold: 1
   _moveDistanceThreshold: 0.2

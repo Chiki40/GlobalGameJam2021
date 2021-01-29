@@ -11,8 +11,6 @@ public class CharacterController : MonoBehaviour
     [SerializeField]
     float _diagonalDirectionThreshold = 0.3f;
     [SerializeField]
-    float _useAnimationDistanceThreshold = 1.0f;
-    [SerializeField]
     float _moveDistanceThreshold = 1.0f;
 
     private AnimationManager _animationManager = null;
@@ -20,25 +18,15 @@ public class CharacterController : MonoBehaviour
     private void Awake()
     {
         _animationManager = this.GetComponent<AnimationManager>();
-        if (_moveDistanceThreshold > _useAnimationDistanceThreshold)
-		{
-            Debug.LogError("[CharacterController.Awake] ERROR. _moveDistanceThreshold > _useAnimationDistanceThreshold makes no sense");
-		}
     }
 
 	private void Update()
     {
         EDirections direction = EDirections.LEFT;
         bool movingAnimation = false;
-        if (Input.GetMouseButton(0))
+        if (GetPlayerInput(out Vector3 targetPos))
         {
-            float previousZ = transform.position.z;
-            var pos = Input.mousePosition;
-            pos.z = previousZ;
-            pos = Camera.main.ScreenToWorldPoint(pos);
-            pos.z = previousZ;
-
-            Vector3 toTargetVector = pos - transform.position;
+            Vector3 toTargetVector = targetPos - transform.position;
             float distance = toTargetVector.magnitude;
             // Skip if distance less than _moveDistanceThreshold
             if (distance > _moveDistanceThreshold)
@@ -47,13 +35,8 @@ public class CharacterController : MonoBehaviour
                 float distanceToMove = Mathf.Min(_speed * Time.deltaTime, distance);
                 Vector2 disp = toTargetVector.normalized * distanceToMove;
                 transform.Translate(disp);
-                // Skip animation is distance less than _useAnimationDistanceThreshold
-                if (distance > _useAnimationDistanceThreshold)
-                {
-
-                    direction = GetDirectionFromDisp(disp.normalized);
-                    movingAnimation = true;
-                }
+                direction = GetDirectionFromDisp(disp.normalized);
+                movingAnimation = true;
             }
         }
 
@@ -69,6 +52,46 @@ public class CharacterController : MonoBehaviour
             }
         }
     }
+
+    private bool GetPlayerInput(out Vector3 destPos)
+	{
+        bool input = false;
+        destPos = transform.position;
+        if (Input.GetMouseButton(0))
+        {
+            float previousZ = destPos.z;
+            destPos = Input.mousePosition;
+            destPos.z = previousZ;
+            destPos = Camera.main.ScreenToWorldPoint(destPos);
+            destPos.z = previousZ;
+            input = true;
+        }
+        else
+		{
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+			{
+                destPos.y += 10.0f;
+                input = true;
+            }
+            else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            {
+                destPos.y -= 10.0f;
+                input = true;
+            }
+
+            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+            {
+                destPos.x += 10.0f;
+                input = true;
+            }
+            else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            {
+                destPos.x -= 10.0f;
+                input = true;
+            }
+        }
+        return input;
+	}
 
     private EDirections GetDirectionFromDisp(Vector2 disp)
 	{
