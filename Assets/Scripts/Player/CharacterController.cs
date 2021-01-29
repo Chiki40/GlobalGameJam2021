@@ -2,7 +2,7 @@
 
 public class CharacterController : MonoBehaviour
 {
-    public enum EDirections { LEFT, RIGHT, UP, DOWN, LEFT_UP, RIGHT_UP, LEFT_DOWN, RIGHT_DOWN };
+    public enum EDirections { LEFT, RIGHT, BACK, FRONT, LEFT_BACK, RIGHT_BACK, LEFT_FRONT, RIGHT_FRONT };
 
     [SerializeField]
     float _speed = 1.0f;
@@ -11,8 +11,6 @@ public class CharacterController : MonoBehaviour
     [SerializeField]
     float _diagonalDirectionThreshold = 0.3f;
     [SerializeField]
-    float _useAnimationDistanceThreshold = 1.0f;
-    [SerializeField]
     float _moveDistanceThreshold = 1.0f;
 
     private AnimationManager _animationManager = null;
@@ -20,10 +18,6 @@ public class CharacterController : MonoBehaviour
     private void Awake()
     {
         _animationManager = this.GetComponent<AnimationManager>();
-        if (_moveDistanceThreshold > _useAnimationDistanceThreshold)
-		{
-            Debug.LogError("[CharacterController.Awake] ERROR. _moveDistanceThreshold > _useAnimationDistanceThreshold makes no sense");
-		}
     }
 
 	private void Update()
@@ -41,13 +35,8 @@ public class CharacterController : MonoBehaviour
                 float distanceToMove = Mathf.Min(_speed * Time.deltaTime, distance);
                 Vector2 disp = toTargetVector.normalized * distanceToMove;
                 transform.Translate(disp);
-                // Skip animation is distance less than _useAnimationDistanceThreshold
-                if (distance > _useAnimationDistanceThreshold)
-                {
-
-                    direction = GetDirectionFromDisp(disp.normalized);
-                    movingAnimation = true;
-                }
+                direction = GetDirectionFromDisp(disp.normalized);
+                movingAnimation = true;
             }
         }
 
@@ -110,19 +99,19 @@ public class CharacterController : MonoBehaviour
         float verticalContribution = disp.y;
         if (horizontalContribution > _diagonalDirectionThreshold && verticalContribution > _diagonalDirectionThreshold)
 		{
-            return EDirections.RIGHT_UP;
+            return EDirections.RIGHT_BACK;
 		}
         else if (horizontalContribution > _diagonalDirectionThreshold && verticalContribution < -_diagonalDirectionThreshold)
 		{
-            return EDirections.RIGHT_DOWN;
+            return EDirections.RIGHT_FRONT;
 		}
         else if (horizontalContribution < -_diagonalDirectionThreshold && verticalContribution > _diagonalDirectionThreshold)
         {
-            return EDirections.LEFT_UP;
+            return EDirections.LEFT_BACK;
         }
         else if (horizontalContribution < -_diagonalDirectionThreshold && verticalContribution < -_diagonalDirectionThreshold)
         {
-            return EDirections.LEFT_DOWN;
+            return EDirections.LEFT_FRONT;
         }
         else if (horizontalContribution > _basicDirdectionThreshold)
 		{
@@ -134,11 +123,11 @@ public class CharacterController : MonoBehaviour
         }
         else if (verticalContribution > _basicDirdectionThreshold)
         {
-            return EDirections.UP;
+            return EDirections.BACK;
         }
         else if (verticalContribution < -_basicDirdectionThreshold)
         {
-            return EDirections.DOWN;
+            return EDirections.FRONT;
         }
         return EDirections.LEFT;
 	}
