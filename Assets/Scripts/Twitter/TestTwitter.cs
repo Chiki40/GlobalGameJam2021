@@ -5,6 +5,7 @@ using UnityEngine;
 public class TestTwitter : MonoBehaviour
 {
     public Texture2D _texture;
+    public GameObject _plane;
 
     // Update is called once per frame
     void Update()
@@ -21,8 +22,7 @@ public class TestTwitter : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.I))
         {
-            byte[] b = _texture.EncodeToPNG();
-            TwitterManager.GetInstance().SendTweetWithImage("hola con imagen " + Random.Range(0, 1000), b,callbackSendTweet);
+            TwitterManager.GetInstance().SendTweetWithImage("hola con imagen " + Random.Range(0, 1000), _texture,callbackSendTweet);
         }
     }
 
@@ -44,10 +44,7 @@ public class TestTwitter : MonoBehaviour
         {
             Debug.Log("he recibido bien todos los tweets");
 
-            for(int i = 0; i < t.Count; ++i)
-            {
-                Debug.Log("ID =>" + t[i].id);
-            }
+            _plane.GetComponent<Renderer>().material.mainTexture = t[0].imgs[0];
         }
         else
         {
