@@ -2,8 +2,14 @@
 
 public class CharacterController : MonoBehaviour
 {
+    public enum EDirections { LEFT, RIGHT, UP, DOWN, LEFT_UP, RIGHT_UP, LEFT_DOWN, RIGHT_DOWN };
+
     [SerializeField]
     float _speed = 1.0f;
+    [SerializeField]
+    float _basicDirdectionThreshold = 0.1f;
+    [SerializeField]
+    float _diagonalDirectionThreshold = 0.3f;
     [SerializeField]
     float _useAnimationDistanceThreshold = 1.0f;
     [SerializeField]
@@ -22,7 +28,7 @@ public class CharacterController : MonoBehaviour
 
 	private void Update()
     {
-        bool left = false;
+        EDirections direction = EDirections.LEFT;
         bool movingAnimation = false;
         if (Input.GetMouseButton(0))
         {
@@ -39,12 +45,13 @@ public class CharacterController : MonoBehaviour
             {
                 // Distance to move is clamped by distance to target
                 float distanceToMove = Mathf.Min(_speed * Time.deltaTime, distance);
-                Vector3 disp = toTargetVector.normalized * distanceToMove;
+                Vector2 disp = toTargetVector.normalized * distanceToMove;
                 transform.Translate(disp);
                 // Skip animation is distance less than _useAnimationDistanceThreshold
                 if (distance > _useAnimationDistanceThreshold)
                 {
-                    left = disp.x < 0.0f;
+
+                    direction = GetDirectionFromDisp(disp.normalized);
                     movingAnimation = true;
                 }
             }
@@ -54,12 +61,51 @@ public class CharacterController : MonoBehaviour
         {
             if (movingAnimation)
             {
-                _animationManager.playAnimation(left ? AnimationManager.AnimationsAllowed.WALK_LEFT : AnimationManager.AnimationsAllowed.WALK_RIGHT);
+                _animationManager.playMovementAnimation(direction);
             }
             else
 			{
-                _animationManager.playAnimation(AnimationManager.AnimationsAllowed.STOP);
+                _animationManager.stopMovement();
             }
         }
     }
+
+    private EDirections GetDirectionFromDisp(Vector2 disp)
+	{
+        float horizontalContribution = disp.x;
+        float verticalContribution = disp.y;
+        if (horizontalContribution > _diagonalDirectionThreshold && verticalContribution > _diagonalDirectionThreshold)
+		{
+            return EDirections.RIGHT_UP;
+		}
+        else if (horizontalContribution > _diagonalDirectionThreshold && verticalContribution < -_diagonalDirectionThreshold)
+		{
+            return EDirections.RIGHT_DOWN;
+		}
+        else if (horizontalContribution < -_diagonalDirectionThreshold && verticalContribution > _diagonalDirectionThreshold)
+        {
+            return EDirections.LEFT_UP;
+        }
+        else if (horizontalContribution < -_diagonalDirectionThreshold && verticalContribution < -_diagonalDirectionThreshold)
+        {
+            return EDirections.LEFT_DOWN;
+        }
+        else if (horizontalContribution > _basicDirdectionThreshold)
+		{
+            return EDirections.RIGHT;
+		}
+        else if (horizontalContribution < -_basicDirdectionThreshold)
+        {
+            return EDirections.LEFT;
+        }
+        else if (verticalContribution > _basicDirdectionThreshold)
+        {
+            return EDirections.UP;
+        }
+        else if (verticalContribution < -_basicDirdectionThreshold)
+        {
+            return EDirections.DOWN;
+        }
+        return EDirections.LEFT;
+	}
 }
