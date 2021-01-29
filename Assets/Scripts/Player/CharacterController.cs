@@ -2,7 +2,7 @@
 
 public class CharacterController : MonoBehaviour
 {
-    public enum EDirections { LEFT, RIGHT, UP, DOWN, LEFT_UP, RIGHT_UP, LEFT_DOWN, RIGHT_DOWN };
+    public enum EDirections { LEFT, RIGHT, BACK, FRONT, LEFT_BACK, RIGHT_BACK, LEFT_FRONT, RIGHT_FRONT };
 
     [SerializeField]
     float _speed = 1.0f;
@@ -99,19 +99,19 @@ public class CharacterController : MonoBehaviour
         float verticalContribution = disp.y;
         if (horizontalContribution > _diagonalDirectionThreshold && verticalContribution > _diagonalDirectionThreshold)
 		{
-            return EDirections.RIGHT_UP;
+            return EDirections.RIGHT_BACK;
 		}
         else if (horizontalContribution > _diagonalDirectionThreshold && verticalContribution < -_diagonalDirectionThreshold)
 		{
-            return EDirections.RIGHT_DOWN;
+            return EDirections.RIGHT_FRONT;
 		}
         else if (horizontalContribution < -_diagonalDirectionThreshold && verticalContribution > _diagonalDirectionThreshold)
         {
-            return EDirections.LEFT_UP;
+            return EDirections.LEFT_BACK;
         }
         else if (horizontalContribution < -_diagonalDirectionThreshold && verticalContribution < -_diagonalDirectionThreshold)
         {
-            return EDirections.LEFT_DOWN;
+            return EDirections.LEFT_FRONT;
         }
         else if (horizontalContribution > _basicDirdectionThreshold)
 		{
@@ -123,11 +123,11 @@ public class CharacterController : MonoBehaviour
         }
         else if (verticalContribution > _basicDirdectionThreshold)
         {
-            return EDirections.UP;
+            return EDirections.BACK;
         }
         else if (verticalContribution < -_basicDirdectionThreshold)
         {
-            return EDirections.DOWN;
+            return EDirections.FRONT;
         }
         return EDirections.LEFT;
 	}

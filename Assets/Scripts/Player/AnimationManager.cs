@@ -9,7 +9,8 @@ public class AnimationManager : MonoBehaviour {
     private Animator _animationController;
 
     private static string kWalkHorizontalKey = "WalkHorizontal";
-    private static string kWalkVerticalKey = "WalkVertical";
+    private static string kWalkFrontKey = "WalkFront";
+    private static string kWalkBackKey = "WalkBack";
     private static string kWalkDiagonalFrontKey = "WalkDiagonalFront";
     private static string kWalkDiagonalBackKey = "WalkDiagonalBack";
     private static string _resetKey = "Reset";
@@ -36,56 +37,64 @@ public class AnimationManager : MonoBehaviour {
 		{
             case CharacterController.EDirections.LEFT:
                 _animationController.SetBool(kWalkHorizontalKey, true);
-                _animationController.SetBool(kWalkVerticalKey, false);
+                _animationController.SetBool(kWalkBackKey, false);
+                _animationController.SetBool(kWalkFrontKey, false);
                 _animationController.SetBool(kWalkDiagonalFrontKey, false);
                 _animationController.SetBool(kWalkDiagonalBackKey, false);
                 _renderer.flipX = true;
                 break;
             case CharacterController.EDirections.RIGHT:
                 _animationController.SetBool(kWalkHorizontalKey, true);
-                _animationController.SetBool(kWalkVerticalKey, false);
+                _animationController.SetBool(kWalkBackKey, false);
+                _animationController.SetBool(kWalkFrontKey, false);
                 _animationController.SetBool(kWalkDiagonalFrontKey, false);
                 _animationController.SetBool(kWalkDiagonalBackKey, false);
                 _renderer.flipX = false;
                 break;
-            case CharacterController.EDirections.UP:
+            case CharacterController.EDirections.BACK:
                 _animationController.SetBool(kWalkHorizontalKey, false);
-                _animationController.SetBool(kWalkVerticalKey, true);
+                _animationController.SetBool(kWalkBackKey, true);
+                _animationController.SetBool(kWalkFrontKey, false);
                 _animationController.SetBool(kWalkDiagonalFrontKey, false);
                 _animationController.SetBool(kWalkDiagonalBackKey, false);
                 _renderer.flipX = false;
                 break;
-            case CharacterController.EDirections.DOWN:
+            case CharacterController.EDirections.FRONT:
                 _animationController.SetBool(kWalkHorizontalKey, false);
-                _animationController.SetBool(kWalkVerticalKey, true);
+                _animationController.SetBool(kWalkBackKey, false);
+                _animationController.SetBool(kWalkFrontKey, true);
                 _animationController.SetBool(kWalkDiagonalFrontKey, false);
                 _animationController.SetBool(kWalkDiagonalBackKey, false);
                 _renderer.flipX = false;
                 break;
-            case CharacterController.EDirections.LEFT_UP:
+            case CharacterController.EDirections.LEFT_BACK:
                 _animationController.SetBool(kWalkHorizontalKey, false);
-                _animationController.SetBool(kWalkVerticalKey, false);
+                _animationController.SetBool(kWalkBackKey, false);
+                _animationController.SetBool(kWalkFrontKey, false);
                 _animationController.SetBool(kWalkDiagonalFrontKey, false);
                 _animationController.SetBool(kWalkDiagonalBackKey, true);
                 _renderer.flipX = true;
                 break;
-            case CharacterController.EDirections.LEFT_DOWN:
+            case CharacterController.EDirections.LEFT_FRONT:
                 _animationController.SetBool(kWalkHorizontalKey, false);
-                _animationController.SetBool(kWalkVerticalKey, false);
+                _animationController.SetBool(kWalkBackKey, false);
+                _animationController.SetBool(kWalkFrontKey, false);
                 _animationController.SetBool(kWalkDiagonalFrontKey, true);
                 _animationController.SetBool(kWalkDiagonalBackKey, false);
                 _renderer.flipX = true;
                 break;
-            case CharacterController.EDirections.RIGHT_UP:
+            case CharacterController.EDirections.RIGHT_BACK:
                 _animationController.SetBool(kWalkHorizontalKey, false);
-                _animationController.SetBool(kWalkVerticalKey, false);
+                _animationController.SetBool(kWalkBackKey, false);
+                _animationController.SetBool(kWalkFrontKey, false);
                 _animationController.SetBool(kWalkDiagonalFrontKey, false);
                 _animationController.SetBool(kWalkDiagonalBackKey, true);
                 _renderer.flipX = false;
                 break;
-            case CharacterController.EDirections.RIGHT_DOWN:
+            case CharacterController.EDirections.RIGHT_FRONT:
                 _animationController.SetBool(kWalkHorizontalKey, false);
-                _animationController.SetBool(kWalkVerticalKey, false);
+                _animationController.SetBool(kWalkBackKey, false);
+                _animationController.SetBool(kWalkFrontKey, false);
                 _animationController.SetBool(kWalkDiagonalFrontKey, true);
                 _animationController.SetBool(kWalkDiagonalBackKey, false);
                 _renderer.flipX = false;
@@ -95,7 +104,8 @@ public class AnimationManager : MonoBehaviour {
     private void STOP()
     {
         _animationController.SetBool(kWalkHorizontalKey, false);
-        _animationController.SetBool(kWalkVerticalKey, false);
+        _animationController.SetBool(kWalkBackKey, false);
+        _animationController.SetBool(kWalkFrontKey, false);
         _animationController.SetBool(kWalkDiagonalFrontKey, false);
         _animationController.SetBool(kWalkDiagonalBackKey, false);
     }
@@ -129,7 +139,8 @@ public class AnimationManager : MonoBehaviour {
         actuallyWalkingDirection = null;
 
         _animationController.SetBool(kWalkHorizontalKey, false);
-        _animationController.SetBool(kWalkVerticalKey, false);
+        _animationController.SetBool(kWalkBackKey, false);
+        _animationController.SetBool(kWalkFrontKey, false);
         _animationController.SetBool(kWalkDiagonalFrontKey, false);
         _animationController.SetBool(kWalkDiagonalBackKey, false);
         _animationController.SetTrigger(_resetKey);
