@@ -167,7 +167,7 @@ MonoBehaviour:
     maxObjectsInTheScene: 2
   - dispersion: 1
     gObject:
-    - {fileID: 919132149155446097, guid: 9a837697570209d4c984ebdddf3a0238, type: 3}
+    - {fileID: 5827448600682470326, guid: d0fb6b628b77bb54ab02a31e73238d27, type: 3}
     gridUnitsSize: {x: 2, y: 2}
     randomScaleRange: 0
     limitNumber: 1
