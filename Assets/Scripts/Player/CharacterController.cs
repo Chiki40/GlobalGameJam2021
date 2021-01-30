@@ -15,6 +15,14 @@ public class CharacterController : MonoBehaviour
     [SerializeField]
     float _moveDistanceThreshold = 1.0f;
 
+    private Vector3 hackdir;
+    public bool useHakDir { get; set; }
+    public void setHackDir()
+    {
+        hackdir = Vector3.right;
+        useHakDir = true;
+    }
+
     private bool _inputEnabled = true;
 
     private PointerEventData _cachedPointerData = null;
@@ -80,61 +88,68 @@ public class CharacterController : MonoBehaviour
         interact = false;
         destDirection = Vector3.zero;
         bool input = false;
-
-        // Input must be enabled and character is not digging
-        if (_inputEnabled && !_animator.GetCurrentAnimatorStateInfo(0).IsTag(kDigAnimationTag))
+        if (useHakDir)
         {
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.E))
+            destDirection = hackdir;
+            input = true;
+        }
+        else
+        {
+            // Input must be enabled and character is not digging
+            if (_inputEnabled && !_animator.GetCurrentAnimatorStateInfo(0).IsTag(kDigAnimationTag))
             {
-                // Aren't we in editor mode
-                if (_gamePlayMode != null)
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.E))
                 {
-                    _gamePlayMode.OnInteract(transform.position, _animationManager);
-                    interact = true;
-                }
-            }
-            else if (Input.GetMouseButton(0))
-            {
-                // Ignore if mouse is over UI
-                _cachedPointerData.position = Input.mousePosition;
-                List<RaycastResult> results = new List<RaycastResult>();
-                EventSystem.current.RaycastAll(_cachedPointerData, results);
-                if (results.Count == 0)
-                {
-                    Vector2 mouseNormalizedScreenPos = Input.mousePosition / new Vector2(Screen.width, Screen.height);
-                    Vector2 playerNormalizedScreenPos = Camera.main.WorldToScreenPoint(transform.position) / new Vector2(Screen.width, Screen.height);
-                    Vector2 dir = mouseNormalizedScreenPos - playerNormalizedScreenPos;
-                    Vector3 dir3D = new Vector3(dir.x, 0.0f, dir.y);
-                    // Skip if distance less than _moveDistanceThreshold
-                    if (dir3D.magnitude >= _moveDistanceThreshold)
+                    // Aren't we in editor mode
+                    if (_gamePlayMode != null)
                     {
-                        destDirection = dir3D.normalized;
-                        input = true;
+                        _gamePlayMode.OnInteract(transform.position, _animationManager);
+                        interact = true;
                     }
                 }
-            }
-            else
-            {
-                if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+                else if (Input.GetMouseButton(0))
                 {
-                    destDirection.z = 1.0f;
-                    input = true;
+                    // Ignore if mouse is over UI
+                    _cachedPointerData.position = Input.mousePosition;
+                    List<RaycastResult> results = new List<RaycastResult>();
+                    EventSystem.current.RaycastAll(_cachedPointerData, results);
+                    if (results.Count == 0)
+                    {
+                        Vector2 mouseNormalizedScreenPos = Input.mousePosition / new Vector2(Screen.width, Screen.height);
+                        Vector2 playerNormalizedScreenPos = Camera.main.WorldToScreenPoint(transform.position) / new Vector2(Screen.width, Screen.height);
+                        Vector2 dir = mouseNormalizedScreenPos - playerNormalizedScreenPos;
+                        Vector3 dir3D = new Vector3(dir.x, 0.0f, dir.y);
+                        // Skip if distance less than _moveDistanceThreshold
+                        if (dir3D.magnitude >= _moveDistanceThreshold)
+                        {
+                            destDirection = dir3D.normalized;
+                            input = true;
+                        }
+                    }
                 }
-                else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+                else
                 {
-                    destDirection.z = -1.0f;
-                    input = true;
-                }
+                    if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+                    {
+                        destDirection.z = 1.0f;
+                        input = true;
+                    }
+                    else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+                    {
+                        destDirection.z = -1.0f;
+                        input = true;
+                    }
 
-                if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-                {
-                    destDirection.x = 1.0f;
-                    input = true;
-                }
-                else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-                {
-                    destDirection.x = -1.0f;
-                    input = true;
+                    if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+                    {
+                        destDirection.x = 1.0f;
+                        input = true;
+                    }
+                    else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+                    {
+                        destDirection.x = -1.0f;
+                        input = true;
+                    }
                 }
             }
         }
