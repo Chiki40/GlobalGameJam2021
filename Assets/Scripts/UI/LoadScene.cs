@@ -23,6 +23,10 @@ public class LoadScene : MonoBehaviour
     {
         SceneManager.LoadScene("Credits");
     }
+    public void Load_mainMenu(string level)
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
     public void ExitGame()
     {
         Application.Quit();
