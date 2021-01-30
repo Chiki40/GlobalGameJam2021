@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _distance: 20
-  _height: 20
-  _sphereCollisionTestDistanceChecked: 18
-  _sphereCollisionTestRadius: 5
+  _height: 10
+  _sphereCollisionTestDistanceChecked: 1
+  _sphereCollisionTestRadius: 10
   _renderTexture: {fileID: 8400000, guid: 4623a9d42f90a2f4da1dc0065c0840fa, type: 2}
