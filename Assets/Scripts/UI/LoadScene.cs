@@ -23,6 +23,10 @@ public class LoadScene : MonoBehaviour
     {
         SceneManager.LoadScene("Credits");
     }
+    public void Load_editor(string level)
+    {
+        SceneManager.LoadScene("GamePlayMode");
+    }
     public void Load_mainMenu(string level)
     {
         SceneManager.LoadScene("MainMenu");
