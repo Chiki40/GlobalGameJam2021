@@ -9,7 +9,6 @@ using ZXing.QrCode;
 /// </summary>
 public class QrReader
 {
-
     public static Texture2D generateQR(string text)
     {
         var encoded = new Texture2D(256, 256);
