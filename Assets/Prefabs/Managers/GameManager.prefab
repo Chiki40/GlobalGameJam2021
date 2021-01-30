@@ -29,6 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1140151016328843994}
+  - {fileID: 6688518445831041095}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -88,3 +89,65 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips: []
+--- !u!1001 &4467863401914613818
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1588145729143834831}
+    m_Modifications:
+    - target: {fileID: 7121156388348162173, guid: 81bf872c86f467f40984b1436532ca34, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.290192
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121156388348162173, guid: 81bf872c86f467f40984b1436532ca34, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 153.9716
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121156388348162173, guid: 81bf872c86f467f40984b1436532ca34, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 29.277071
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121156388348162173, guid: 81bf872c86f467f40984b1436532ca34, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121156388348162173, guid: 81bf872c86f467f40984b1436532ca34, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121156388348162173, guid: 81bf872c86f467f40984b1436532ca34, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121156388348162173, guid: 81bf872c86f467f40984b1436532ca34, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121156388348162173, guid: 81bf872c86f467f40984b1436532ca34, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121156388348162173, guid: 81bf872c86f467f40984b1436532ca34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121156388348162173, guid: 81bf872c86f467f40984b1436532ca34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7121156388348162173, guid: 81bf872c86f467f40984b1436532ca34, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146647576780005301, guid: 81bf872c86f467f40984b1436532ca34, type: 3}
+      propertyPath: m_Name
+      value: TwitterManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 81bf872c86f467f40984b1436532ca34, type: 3}
+--- !u!4 &6688518445831041095 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7121156388348162173, guid: 81bf872c86f467f40984b1436532ca34, type: 3}
+  m_PrefabInstance: {fileID: 4467863401914613818}
+  m_PrefabAsset: {fileID: 0}

@@ -4,10 +4,18 @@ using UnityEngine.UI;
 
 public class EditorModeController : MonoBehaviour
 {
+    public struct ClueZone
+	{
+        public List<int> clueInfo;
+        public int[] pos;
+	}
+
     private const int kMaxCluesZones = 3;
 
     [SerializeField]
     private ClueSelectorManager _cluesSelector = null;
+    [SerializeField]
+    private CompartirMapaManager _compartirMapa = null;
     [SerializeField]
     private Button _buttonShovel = null;
     [SerializeField]
@@ -16,17 +24,27 @@ public class EditorModeController : MonoBehaviour
     private Button _buttonFinish = null;
 
     private GameObject _player = null;
+    private MapGenerator _mapGenerator = null;
+    private PhotoCamera _photoCam = null;
 
-    private List<List<int>> _clueZones = new List<List<int>>();
+    private List<ClueZone> _clueZones = new List<ClueZone>();
+    private int[] _shovelPos = new int[2] { -1, -1 };
+    private int[] _treasurePos = new int[2] { -1, -1 };
     private bool _shovelPlaced = false;
     private bool _treasurePlaced = false;
 
     private void OnEnable()
 	{
         _clueZones.Clear();
+        _shovelPos[0] = -1;
+        _shovelPos[1] = -1;
+        _treasurePos[0] = -1;
+        _treasurePos[1] = -1;
         _shovelPlaced = false;
         _treasurePlaced = false;
         _player = GameObject.FindGameObjectWithTag("Player");
+        _mapGenerator = FindObjectOfType<MapGenerator>();
+        _photoCam = FindObjectOfType<PhotoCamera>();
     }
 
 	private void Update()
@@ -42,11 +60,14 @@ public class EditorModeController : MonoBehaviour
         _buttonFinish.interactable = _clueZones.Count > 0 && _shovelPlaced && _treasurePlaced;
     }
 
-    public void NewClueZoneAdded(List<int> hintZone)
+    public void NewClueZoneAdded(List<int> clueInfo)
     {
         if (_clueZones.Count < kMaxCluesZones)
         {
-            _clueZones.Add(hintZone);
+            ClueZone clueZone = new ClueZone();
+            clueZone.clueInfo = clueInfo;
+            clueZone.pos = new int[2] { 1, 1 };
+            _clueZones.Add(clueZone);
         }
         else
 		{
@@ -58,6 +79,8 @@ public class EditorModeController : MonoBehaviour
     {
         if (!_shovelPlaced)
         {
+            _shovelPos[0] = 1;
+            _shovelPos[1] = 1;
             _shovelPlaced = true;
         }
         else
@@ -70,6 +93,8 @@ public class EditorModeController : MonoBehaviour
     {
         if (!_treasurePlaced)
         {
+            _treasurePos[0] = 1;
+            _treasurePos[1] = 1;
             _treasurePlaced = true;
         }
         else
@@ -80,6 +105,26 @@ public class EditorModeController : MonoBehaviour
 
     public void OnFinishClicked()
     {
+        _mapGenerator.mapData.hintsGridPos = new MapData.HintData[_clueZones.Count];
+        for (int i = 0; i < _clueZones.Count; ++i)
+		{
+            _mapGenerator.mapData.hintsGridPos[i].gridPos = new Vector2Int(_clueZones[i].pos[0], _clueZones[i].pos[1]);
+            _mapGenerator.mapData.hintsGridPos[i].symbols = _clueZones[i].clueInfo.ToArray();
+            _mapGenerator.mapData.shovelGridPos.x = _shovelPos[0];
+            _mapGenerator.mapData.shovelGridPos.y = _shovelPos[1];
+            _mapGenerator.mapData.tresureGridPos.x = _treasurePos[0];
+            _mapGenerator.mapData.tresureGridPos.y = _treasurePos[1];
+        }
+        RenderTexture rT = _photoCam.TakePictureOfArea(_player.transform.position);
+        _compartirMapa.ShowCompartirMapa(toTexture2D(rT), Serializator.XmlSerialize<MapData>(_mapGenerator.mapData));
+    }
 
+    private Texture2D toTexture2D(RenderTexture rTex)
+    {
+        Texture2D tex = new Texture2D(rTex.width, rTex.height, TextureFormat.RGB24, false);
+        RenderTexture.active = rTex;
+        tex.ReadPixels(new Rect(0, 0, rTex.width, rTex.height), 0, 0);
+        tex.Apply();
+        return tex;
     }
 }
