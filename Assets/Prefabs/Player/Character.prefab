@@ -82,7 +82,7 @@ SpriteRenderer:
   m_Size: {x: 10.24, y: 20.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &9513956
@@ -131,4 +131,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 30
   _diagonalDirectionThreshold: 0.3
-  _moveDistanceThreshold: 0.2
+  _moveDistanceThreshold: 0.05
