@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1066181125224378879}
   - component: {fileID: 4135445205085503066}
   - component: {fileID: 2198032359606340240}
+  - component: {fileID: 5007827208973541238}
   m_Layer: 0
   m_Name: Catalejo
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5007827208973541238
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396324159812660037}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1696167, y: 0.17562295, z: 0.4605881}
+  m_Center: {x: 0, y: 0.07967343, z: 0.0046182275}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 303753894540273036}
   - component: {fileID: 3717999786968345129}
   - component: {fileID: 1476066126972133091}
+  - component: {fileID: 5955340509423549627}
   m_Layer: 0
   m_Name: Calavera
   m_TagString: Untagged
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5955340509423549627
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116037435139473206}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4638158, y: 0.38085115, z: 0.46846616}
+  m_Center: {x: 0, y: 0.19084233, z: -0.015495181}
