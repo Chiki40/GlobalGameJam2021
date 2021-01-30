@@ -4,16 +4,14 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
+public struct ClueZone
+{
+    public List<int> clueInfo;
+    public int[] pos;
+}
+
 public class EditorModeController : MonoBehaviour
 {
-    public struct ClueZone
-	{
-        public List<int> clueInfo;
-        public int[] pos;
-	}
-
-    private const int kMaxCluesZones = 3;
-
     [SerializeField]
     private ClueSelectorManager _cluesSelector = null;
     [SerializeField]
@@ -64,7 +62,7 @@ public class EditorModeController : MonoBehaviour
 
     private void DetermineUIState()
 	{
-        _cluesSelector.ChangeOpenEditorInteraction(_clueZones.Count < kMaxCluesZones);
+        _cluesSelector.ChangeOpenEditorInteraction(_clueZones.Count < GameManager.kMaxCluesZones);
         _buttonShovel.interactable = !_shovelPlaced;
         _buttonTreasure.interactable = !_treasurePlaced;
         _buttonFinish.interactable = _clueZones.Count > 0 && _shovelPlaced && _treasurePlaced;
@@ -92,7 +90,7 @@ public class EditorModeController : MonoBehaviour
 
     public void NewClueZoneAdded(List<int> clueInfo)
     {
-        if (_clueZones.Count < kMaxCluesZones)
+        if (_clueZones.Count < GameManager.kMaxCluesZones)
         {
             Vector2Int gridPos = new Vector2Int();
             if (_mapGenerator.GetGridPos(_player.transform.position, ref gridPos))
@@ -115,7 +113,7 @@ public class EditorModeController : MonoBehaviour
         }
         else
 		{
-            Debug.LogError("[EditorModeController.NewClueZoneAdded] ERROR. Tried to add a clue but " + kMaxCluesZones + " clues have already been placed");
+            Debug.LogError("[EditorModeController.NewClueZoneAdded] ERROR. Tried to add a clue but " + GameManager.kMaxCluesZones + " clues have already been placed");
 		}
     }
 
