@@ -34,6 +34,8 @@ public class MapGenerator : MonoBehaviour
         DestroyAllChildren(gameObject);
         usedMatrix = new bool[mapData.mapSize.x, mapData.mapSize.y];
         totalPopulation = 0;
+        Vector2Int pos = new Vector2Int();
+        GetGridPos(new Vector3(42, 0, 0),ref pos);
     }
 
     private void DestroyAllChildren(GameObject gameObject)
@@ -142,5 +144,18 @@ public class MapGenerator : MonoBehaviour
                 }
             }
         }
+    }
+
+    public bool GetGridPos(Vector3 pos, ref Vector2Int gridPosOut)
+    {
+        // Si se sale de la cuadrícula
+        if (pos.x < transform.position.x || (pos.x > transform.position.x + mapData.mapSize.x)
+            || pos.z < transform.position.z || (pos.z > transform.position.z + mapData.mapSize.y))
+            return true;
+
+        Vector3 localPos = transform.InverseTransformPoint(pos);
+        gridPosOut.x = (int)localPos.x;
+        gridPosOut.y = (int)localPos.z;
+        return true;
     }
 }
