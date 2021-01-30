@@ -920,6 +920,9 @@ MonoBehaviour:
   _buttonShovel: {fileID: 576927914052748437}
   _buttonTreasure: {fileID: 1108078157804928349}
   _buttonFinish: {fileID: 3706083629332681185}
+  _shovelPlacedPrefab: {fileID: 6903597951617780529, guid: af9953d83da335d4f9c58c1a4662a891, type: 3}
+  _treasurePlacedPrefab: {fileID: 6903597951617780529, guid: a2685885818f0714093cc3bdc1b84f8c, type: 3}
+  _cluesPlacedPrefab: {fileID: 6903597951617780529, guid: aedb2eb191d06a245bdfa65c55b6cfd8, type: 3}
 --- !u!1001 &2908112589180387600
 PrefabInstance:
   m_ObjectHideFlags: 0

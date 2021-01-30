@@ -22,6 +22,12 @@ public class EditorModeController : MonoBehaviour
     private Button _buttonTreasure = null;
     [SerializeField]
     private Button _buttonFinish = null;
+    [SerializeField]
+    private GameObject _shovelPlacedPrefab = null;
+    [SerializeField]
+    private GameObject _treasurePlacedPrefab = null;
+    [SerializeField]
+    private GameObject _cluesPlacedPrefab = null;
 
     private GameObject _player = null;
     private MapGenerator _mapGenerator = null;
@@ -72,6 +78,10 @@ public class EditorModeController : MonoBehaviour
                 ClueZone clueZone = new ClueZone();
                 clueZone.clueInfo = clueInfo;
                 clueZone.pos = new int[2] { gridPos.x, gridPos.y };
+                if (Physics.Raycast(_player.transform.position, Vector3.down, out RaycastHit hitInfo))
+                {
+                    Instantiate(_cluesPlacedPrefab, hitInfo.point + new Vector3(0.0f, 0.02f, 0.0f), Quaternion.Euler(270.0f, 0.0f, 0.0f));
+                }
                 _clueZones.Add(clueZone);
             }
         }
@@ -91,6 +101,10 @@ public class EditorModeController : MonoBehaviour
                 _shovelPos[0] = gridPos.x;
                 _shovelPos[1] = gridPos.y;
                 _shovelPosV3 = _player.transform.position;
+                if (Physics.Raycast(_shovelPosV3, Vector3.down, out RaycastHit hitInfo))
+                {
+                    Instantiate(_shovelPlacedPrefab, hitInfo.point + new Vector3(0.0f, 0.02f, 0.0f), Quaternion.Euler(270.0f, 0.0f, 0.0f));
+                }
                 _shovelPlaced = true;
             }
         }
@@ -109,6 +123,10 @@ public class EditorModeController : MonoBehaviour
             {
                 _treasurePos[0] = gridPos.x;
                 _treasurePos[1] = gridPos.y;
+                if (Physics.Raycast(_player.transform.position, Vector3.down, out RaycastHit hitInfo))
+                {
+                    Instantiate(_treasurePlacedPrefab, hitInfo.point + new Vector3(0.0f, 0.02f, 0.0f), Quaternion.Euler(270.0f, 0.0f, 0.0f));
+                }
                 _treasurePlaced = true;
             }
         }
