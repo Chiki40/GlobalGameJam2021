@@ -41,7 +41,7 @@ public class MapCreator : MonoBehaviour
         // PlayMode
         if (_gamePlayMode != null && PlayerPrefs.HasKey(kMapToLoadPlayerPrefId))
 		{
-            CreateMap(PlayerPrefs.GetString(kMapToLoadPlayerPrefId));
+            CreatePlayableMapFromData(PlayerPrefs.GetString(kMapToLoadPlayerPrefId));
         }
     }
     public void CreateRandomMap()
@@ -54,11 +54,11 @@ public class MapCreator : MonoBehaviour
         m_mapGenerator.Generate(newMap);
     }
 
-    public void CreateMap(string data)
+    private void CreatePlayableMapFromData(string data)
     {
         MapData mapData = Serializator.XmlDeserialize<MapData>(data);
         m_mapGenerator.Clear();
-        m_mapGenerator.Generate(mapData);
+        m_mapGenerator.Generate(mapData, instantiatePalaYTesoro:true);
     }
 
 }
