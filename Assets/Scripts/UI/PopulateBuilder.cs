@@ -25,13 +25,14 @@ public class PopulateBuilder : MonoBehaviour
     public void Populate()
     {
         Remove();
+        int currentCount = 0;
         for (int symbolsIdx = 0; symbolsIdx < _symbols.Count; ++ symbolsIdx)
         {
-            Populate(_symbols[symbolsIdx]);
+            currentCount = Populate(_symbols[symbolsIdx],currentCount);
         }
     }
 
-    private void Populate(SymbolsInfo info)
+    private int Populate(SymbolsInfo info, int currentCount)
     {
         string spriteSheet = AssetDatabase.GetAssetPath(info._image);
         Sprite[] sprites = AssetDatabase.LoadAllAssetsAtPath(spriteSheet).OfType<Sprite>().ToArray();
@@ -39,7 +40,8 @@ public class PopulateBuilder : MonoBehaviour
         for(int spriteIdx = 0; spriteIdx < sprites.Length; ++spriteIdx)
         {
             Sprite sp = sprites[spriteIdx];
-            string name = info._BaseName + "_" + spriteIdx.ToString();
+            string name = currentCount.ToString();
+            ++currentCount;
             GameObject go = new GameObject(name);
             Image mg = go.AddComponent<Image>();
             mg.sprite = sp;
@@ -50,6 +52,7 @@ public class PopulateBuilder : MonoBehaviour
 
             go.transform.SetParent(_parent.transform);
         }
+        return currentCount;
     }
 
     public void Remove()
