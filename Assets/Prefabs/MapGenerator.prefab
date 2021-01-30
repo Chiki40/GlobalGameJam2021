@@ -45,12 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapData:
+    shovelGridPos: {x: 0, y: 0}
     tresureGridPos: {x: 0, y: 0}
     hintsGridPos: []
-    rSeed: 1038112120
+    rSeed: 214492271
     mapSize: {x: 100, y: 100}
-    population: 7
-    dispersionPopulation: 70
+    population: 20
+    dispersionPopulation: 522
   randomObjects:
   - dispersion: 20
     gObject:
@@ -60,65 +61,89 @@ MonoBehaviour:
     - {fileID: 7260709502940503750, guid: 8a68775a24ce482409a899e452b8e9d3, type: 3}
     gridUnitsSize: {x: 2, y: 2}
     randomScaleRange: 0.5
-  - dispersion: 4
+    limitNumber: 0
+    maxObjectsInTheScene: 100
+  - dispersion: 1
     gObject:
     - {fileID: 6489133671424397662, guid: 8245b65362c698042a9d73fc8cce9715, type: 3}
     - {fileID: 7901753890589022858, guid: 8109978adfa8cca468d66c29d18b7ba5, type: 3}
     gridUnitsSize: {x: 3, y: 3}
     randomScaleRange: 0.5
-  - dispersion: 3
+    limitNumber: 0
+    maxObjectsInTheScene: 100
+  - dispersion: 1
     gObject:
     - {fileID: 3361467086610165938, guid: d6abb15764530e94c9ecd74125581424, type: 3}
     gridUnitsSize: {x: 1, y: 1}
     randomScaleRange: 0
-  - dispersion: 3
+    limitNumber: 0
+    maxObjectsInTheScene: 100
+  - dispersion: 1
     gObject:
     - {fileID: 1132795982359814374, guid: 709ccf9f60311b541879ae33d4d0bcd7, type: 3}
     gridUnitsSize: {x: 1, y: 1}
     randomScaleRange: 0
+    limitNumber: 0
+    maxObjectsInTheScene: 100
   - dispersion: 1
     gObject:
     - {fileID: 3363778902615397586, guid: 840229148dee35940b48ffb06ad3e8b5, type: 3}
     gridUnitsSize: {x: 1, y: 1}
     randomScaleRange: 0
+    limitNumber: 1
+    maxObjectsInTheScene: 2
   - dispersion: 1
     gObject:
     - {fileID: 5552794596538008052, guid: 4b71275353834c6428a6c13e468f65c6, type: 3}
     gridUnitsSize: {x: 3, y: 3}
     randomScaleRange: 0.5
+    limitNumber: 0
+    maxObjectsInTheScene: 100
   - dispersion: 1
     gObject:
     - {fileID: 738044197908194930, guid: d859cf336de44264ca01d35434eabf4a, type: 3}
     - {fileID: 968786988158907575, guid: 18758880c9dd96f40bed347ce2f7a912, type: 3}
     gridUnitsSize: {x: 2, y: 2}
     randomScaleRange: 0
+    limitNumber: 1
+    maxObjectsInTheScene: 3
   - dispersion: 1
     gObject:
     - {fileID: 8851643154989916616, guid: 584066f6f5e678440b2b100c22a95ffc, type: 3}
     gridUnitsSize: {x: 2, y: 2}
     randomScaleRange: 0.5
+    limitNumber: 1
+    maxObjectsInTheScene: 2
   - dispersion: 1
     gObject:
     - {fileID: 2374357005604737337, guid: 9afa1d919ab7fe04693d9db9c40e5e73, type: 3}
     gridUnitsSize: {x: 2, y: 2}
     randomScaleRange: 0.5
+    limitNumber: 0
+    maxObjectsInTheScene: 100
   - dispersion: 1
     gObject:
     - {fileID: 6681294900915316851, guid: fc325a2c245146e40aa227ae0a78e96d, type: 3}
     gridUnitsSize: {x: 1, y: 1}
     randomScaleRange: 0
+    limitNumber: 1
+    maxObjectsInTheScene: 1
   - dispersion: 1
     gObject:
     - {fileID: 4086755807953253878, guid: 7708ec456ec4537498eb1931054d29f6, type: 3}
     gridUnitsSize: {x: 1, y: 1}
     randomScaleRange: 0
-  - dispersion: 3
+    limitNumber: 1
+    maxObjectsInTheScene: 3
+  - dispersion: 1
     gObject:
     - {fileID: 3156968362827865779, guid: a349dae245267fa468f35c7cc64e9456, type: 3}
     - {fileID: 5610409041517507572, guid: 1eb86a430af6ea94ab5d773c898058d3, type: 3}
     - {fileID: 1952063114576743404, guid: 84d7e644391a8344fb24b05f62754a45, type: 3}
     gridUnitsSize: {x: 2, y: 2}
     randomScaleRange: 0.5
+    limitNumber: 0
+    maxObjectsInTheScene: 100
 --- !u!114 &8398924376212051979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,11 +157,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapDataBase:
+    shovelGridPos: {x: 0, y: 0}
     tresureGridPos: {x: 0, y: 0}
     hintsGridPos: []
     rSeed: 1038112120
     mapSize: {x: 100, y: 100}
-    population: 7
-    dispersionPopulation: 70
-  randomRangeDispersion: 3
+    population: 20
+    dispersionPopulation: 522
+  randomRangeDispersion: 1
   m_mapGenerator: {fileID: 5626304028038277929}

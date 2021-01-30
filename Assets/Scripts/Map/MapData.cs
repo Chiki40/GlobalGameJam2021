@@ -20,8 +20,8 @@ public struct MapData
     public HintData[] hintsGridPos;
     public int rSeed;
     public Vector2Int mapSize;
-    [Range(0, 100)]
+    [Range(0, 1000)]
     public int population;
-    [Range(1, 100)]
+    [Range(1, 1000)]
     public int dispersionPopulation;
 }

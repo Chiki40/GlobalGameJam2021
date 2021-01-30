@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class CompartirMapaManager : MonoBehaviour
 {
-    public TMP_InputField _textArea;
+    public TMP_InputField _creador;
+    public TMP_InputField _mensaje;
     private Texture2D _imageTweet;
     private string _mapaStr;
     Action _onFinishCallback = null;
@@ -25,7 +26,7 @@ public class CompartirMapaManager : MonoBehaviour
 
     public void OnCompartir()
     {
-        string userTwitter = _textArea.text;
+        string userTwitter = _creador.text;
         string msgTwitter = "Creado anonimamente";
         //si no tiene @, se la añado
         if(userTwitter.Length > 0)
