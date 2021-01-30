@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: ddfa18db2a037bf44b87575c7c664d91
+  - enabled: 1
+    path: Assets/Scenes/TwitterMapSelector.unity
+    guid: d3bc8a9087da9214c912538dbe7e06cc
   m_configObjects: {}

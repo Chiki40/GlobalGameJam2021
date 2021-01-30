@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameSelectorManager : MonoBehaviour
@@ -23,7 +24,7 @@ public class GameSelectorManager : MonoBehaviour
 
     public void ClickBack()
     {
-        Debug.Log("ir atras");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void Populate()
