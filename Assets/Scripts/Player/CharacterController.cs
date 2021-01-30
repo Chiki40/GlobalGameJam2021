@@ -21,6 +21,7 @@ public class CharacterController : MonoBehaviour
 
     private AnimationManager _animationManager = null;
     private Animator _animator = null;
+    private GamePlayModeController _gamePlayMode = null;
 
     private void Awake()
     {
@@ -32,17 +33,18 @@ public class CharacterController : MonoBehaviour
 	{
         _inputEnabled = true;
         _cachedPointerData = new PointerEventData(EventSystem.current);
+        _gamePlayMode = FindObjectOfType<GamePlayModeController>();
     }
 
 	private void Update()
     {
         EDirections direction = EDirections.LEFT;
         bool movingAnimation = false;
-        if (GetPlayerInput(out bool dig, out Vector3 targetDir))
+        if (GetPlayerInput(out bool interact, out Vector3 targetDir))
         {
-            if (dig)
+            if (interact)
             {
-                _animationManager.PerformDig();
+                // If we interact, we should let GameplayModeController decide
                 return;
             }
             else
@@ -73,9 +75,9 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-	private bool GetPlayerInput(out bool dig, out Vector3 destDirection)
+	private bool GetPlayerInput(out bool interact, out Vector3 destDirection)
 	{
-        dig = false;
+        interact = false;
         destDirection = Vector3.zero;
         bool input = false;
 
@@ -84,8 +86,12 @@ public class CharacterController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.E))
             {
-                dig = true;
-                input = true;
+                // Aren't we in editor mode
+                if (_gamePlayMode != null)
+                {
+                    _gamePlayMode.OnInteract(transform.position, _animationManager);
+                    interact = true;
+                }
             }
             else if (Input.GetMouseButton(0))
             {
