@@ -1,16 +1,16 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class MapCreator : MonoBehaviour
 {
+    public static string kMapToLoadPlayerPrefId = "MapToLoad";
     private static MapCreator m_instance;
     public MapData mapDataBase;
     [Range(0,10)]
     public int randomRangeDispersion;
     public MapGenerator m_mapGenerator;
+    private GamePlayModeController _gamePlayMode = null;
     public static MapCreator instance 
     { 
         get
@@ -37,6 +37,12 @@ public class MapCreator : MonoBehaviour
         m_mapGenerator = GetComponent<MapGenerator>();
         if (!m_mapGenerator)
             m_mapGenerator = gameObject.AddComponent<MapGenerator>();
+        _gamePlayMode = FindObjectOfType<GamePlayModeController>();
+        // PlayMode
+        if (_gamePlayMode != null && PlayerPrefs.HasKey(kMapToLoadPlayerPrefId))
+		{
+            CreateMap(PlayerPrefs.GetString(kMapToLoadPlayerPrefId));
+        }
     }
     public void CreateRandomMap()
     {
