@@ -97,5 +97,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
-  _minBounds: {x: 20, y: 8}
-  _maxBounds: {x: 20, y: 8}
+  _minBounds: {x: 3, y: -15}
+  _maxBounds: {x: 3, y: 20}

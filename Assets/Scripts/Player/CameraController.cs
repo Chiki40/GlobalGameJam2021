@@ -11,39 +11,36 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        Vector2 playerPos = _player.transform.position;
+        Vector3 playerPos = _player.transform.position;
         Vector3 newPos = transform.position;
         if (playerPos.x > transform.position.x) // Player is to the right of the camera
         {
-            float threshold = transform.position.x + _maxBounds.x;
-            if (playerPos.x > threshold)
+            float thresholdX = transform.position.x + _maxBounds.x;
+            if (playerPos.x > thresholdX)
             {
-                newPos.x += playerPos.x - threshold;
+                newPos.x += playerPos.x - thresholdX;
             }
         }
         else if (playerPos.x < transform.position.x) // Player is to the left of the camera
         {
-            float threshold = transform.position.x - _minBounds.x;
-            if (playerPos.x < threshold)
+            float thresholdX = transform.position.x - _minBounds.x;
+            if (playerPos.x < thresholdX)
             {
-                newPos.x -= threshold - playerPos.x;
+                newPos.x -= thresholdX - playerPos.x;
             }
         }
 
-        if (playerPos.y > transform.position.y) // Player is above the camera
+        float thresholdZ = transform.position.z - _minBounds.y;
+        if (playerPos.z < thresholdZ)
         {
-            float threshold = transform.position.y + _maxBounds.y;
-            if (playerPos.y > threshold)
-            {
-                newPos.y += playerPos.y - threshold;
-            }
+            newPos.z -= thresholdZ - playerPos.z;
         }
-        else if (playerPos.y < transform.position.y) // Player is below the camera
-        {
-            float threshold = transform.position.y - _minBounds.y;
-            if (playerPos.y < threshold)
+        else
+		{
+            thresholdZ = transform.position.z + _maxBounds.y;
+            if (playerPos.z > thresholdZ)
             {
-                newPos.y -= threshold - playerPos.y;
+                newPos.z += playerPos.z - thresholdZ;
             }
         }
         transform.position = newPos;
