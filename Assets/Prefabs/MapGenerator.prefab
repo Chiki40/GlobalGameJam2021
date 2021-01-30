@@ -48,6 +48,7 @@ MonoBehaviour:
     shovelGridPos: {x: 0, y: 0}
     tresureGridPos: {x: 0, y: 0}
     hintsGridPos: []
+    message: 
     rSeed: 1088415724
     mapSize: {x: 100, y: 100}
     population: 20
@@ -194,6 +195,7 @@ MonoBehaviour:
     limitNumber: 1
     maxObjectsInTheScene: 1
   pala: {fileID: 7745405163562799072, guid: 723eef81a09291f4a9d6452c1f4f5ff5, type: 3}
+  palaYOffset: 1.19
   tesoro: {fileID: 4679517152063617173, guid: 41886c399ae85eb4d80b38733c5cfc0c, type: 3}
 --- !u!114 &8398924376212051979
 MonoBehaviour:
@@ -211,6 +213,7 @@ MonoBehaviour:
     shovelGridPos: {x: 0, y: 0}
     tresureGridPos: {x: 0, y: 0}
     hintsGridPos: []
+    message: 
     rSeed: 1038112120
     mapSize: {x: 100, y: 100}
     population: 20

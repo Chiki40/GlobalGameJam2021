@@ -23,16 +23,29 @@ public class MapGenerator : MonoBehaviour
     private float gridSize = 1;
     public RandomObject[] randomObjects;
     public GameObject pala;
+    public float palaYOffset = 1.0f;
     public GameObject tesoro;
 
     private bool[,] usedMatrix;
     private int totalPopulation;
     private Dictionary<RandomObject, int> maxObjectsInTheSceneDic;
+    private GameObject palaObject = null;
+    private GameObject tesoroObject = null;
     // Start is called before the first frame update
     void Start()
     {
         //Clear();
         //Generate();
+    }
+
+    public GameObject GetPalaObject()
+	{
+        return palaObject;
+	}
+
+    public GameObject GetTreasureObject()
+    {
+        return tesoroObject;
     }
 
     public void Clear()
@@ -53,7 +66,7 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-    public void Generate(MapData data)
+    public void Generate(MapData data, bool instantiatePalaYTesoro=false)
     {
         foreach (RandomObject obj in randomObjects)
         {
@@ -70,6 +83,10 @@ public class MapGenerator : MonoBehaviour
 
         var pop = mapData.population;
         GenerateRandoMap(pop);
+        if (instantiatePalaYTesoro)
+		{
+            InstantitatePalaYTesoro();
+		}
     }
     public void Generate()
     {
@@ -171,13 +188,14 @@ public class MapGenerator : MonoBehaviour
         // de lo que ocupe
         pos.x += mapData.shovelGridPos.x * gridSize + gridSize * 0.5f;
         pos.z += mapData.shovelGridPos.y * gridSize + gridSize * 0.5f;
-        Instantiate(pala, pos, Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0, 1, 0)), transform);
+        pos.y += palaYOffset;
+        palaObject = Instantiate(pala, pos, Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0, 1, 0)), transform);
 
         pos = transform.position;
         pos.x += mapData.tresureGridPos.x * gridSize + gridSize * 0.5f;
         pos.z += mapData.tresureGridPos.y * gridSize + gridSize * 0.5f;
-        var obj = Instantiate(tesoro, pos, Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0, 1, 0)), transform);
-        obj.SetActive(false);
+        tesoroObject = Instantiate(tesoro, pos, Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0, 1, 0)), transform);
+        tesoroObject.SetActive(false);
 
     }
 }
