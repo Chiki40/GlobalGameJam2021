@@ -52,8 +52,22 @@ public class MapGenerator : MonoBehaviour
         {
             totalPopulation += randomObjects[i].dispersion * randomObjects[i].dispersion;
         }
-        var pop = totalPopulation * mapData.population / 100;
+        float reduction = (float)randomObjects.Length / totalPopulation * 100;
+        //var pop = totalPopulation * mapData.population / 100;
+        var pop = mapData.population * reduction;
         GenerateRandoMap(pop);
+
+        // Log estadísticas
+        int used = 0;
+        for (int i = 0; i< mapData.mapSize.x; ++i)
+        {
+            for (int j = 0; j < mapData.mapSize.y; ++j)
+            {
+                if (usedMatrix[i, j])
+                    ++used;
+            }
+        }
+        Debug.Log("Usados: " + used + "/" + mapData.mapSize.x * mapData.mapSize.y);
     }
     public void Generate()
     {
