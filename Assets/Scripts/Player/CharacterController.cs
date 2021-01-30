@@ -51,9 +51,12 @@ public class CharacterController : MonoBehaviour
                 Vector3 disp = targetDir.normalized * distanceToMove;
                 // Double check Y component is 0
                 disp.y = 0.0f;
-                transform.Translate(disp);
-                direction = GetDirectionFromDisp(disp.normalized);
-                movingAnimation = true;
+                if (!CollidedWithSomething(disp))
+                {
+                    transform.Translate(disp);
+                    direction = GetDirectionFromDisp(disp.normalized);
+                    movingAnimation = true;
+                }
             }
         }
 
@@ -166,6 +169,13 @@ public class CharacterController : MonoBehaviour
                 return verticalContribution > 0.0f ? EDirections.BACK : EDirections.FRONT;
             }
 		}
+	}
+
+    private bool CollidedWithSomething(Vector3 disp)
+	{
+        Vector3 origin = transform.position;
+        origin.y /= 2.0f;
+        return Physics.Raycast(origin, disp.normalized, disp.magnitude);
 	}
 
     public void EnableInput(bool active)
