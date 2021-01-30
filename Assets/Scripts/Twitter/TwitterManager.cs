@@ -29,6 +29,8 @@ public class TwitterManager : MonoBehaviour
         public List<Texture2D> _imgs;
         public string _msg;
         public List<string> _seedsImgs;
+        public List<string> _urls;
+        public List<bool> _isQR;
     }
     public delegate void GetTweetsCallback(bool success, List<Tweet> t);
     public event GetTweetsCallback _callbackGetTweets;
@@ -118,24 +120,26 @@ public class TwitterManager : MonoBehaviour
         _callbackSendTweet = _callback;
         _msgSendImage = msg;
 
-        string imgbase64 = System.Convert.ToBase64String(_texture.EncodeToPNG());
-        Dictionary<string, string> parameters = new Dictionary<string, string>();
-        parameters["media"] = imgbase64;
-        StartCoroutine(Twity.Client.Post("media/upload", parameters, MediaUploadCallback));
-
-        List<Texture2D> _textures = new List<Texture2D>();
-        _textures.Add(_texture);
-
-        SendTweetWithImage(msg, _textures, _callback);
+        SendTweetWithImage(msg, _texture, null, _callback);
     }
 
-    public void SendTweetWithImage(string msg, List<Texture2D> _textures, SendTweetCallback _callback)
+    public void SendTweetWithImage(string msg, Texture2D _qr, Texture2D _foto, SendTweetCallback _callback)
     {
         _callbackSendTweet = _callback;
         _msgSendImage = msg;
 
         _responsesIDsImages.Clear();
         _imagesToUpload.Clear();
+
+        List<Texture2D> _textures = new List<Texture2D>();
+        if(_qr != null)
+        {
+            _textures.Add(_qr);
+        }
+        if(_foto != null)
+        {
+            _textures.Add(_foto);
+        }
 
         for (int i = 0; i < _textures.Count; ++i)
         {
@@ -195,6 +199,7 @@ public class TwitterManager : MonoBehaviour
         parameters["tweet.fields"] = "attachments";
         parameters["expansions"] = "attachments.media_keys";
         parameters["media.fields"] = "url";
+        parameters["exclude"] = "replies";
         StartCoroutine(Twity.Client.GetV2(path, parameters, CallbackGetTweets));
     }
     void CallbackGetTweets(bool success, string response)
@@ -217,18 +222,26 @@ public class TwitterManager : MonoBehaviour
                     t._msg = Response.data[tid].text;
                     t._imgs = new List<Texture2D>();
                     t._seedsImgs = new List<string>();
-                    List<string> urls = getAllUrls(Response, tid);
-                    yield return StartCoroutine(DownloadAllImages(urls, t._imgs, t._seedsImgs));
-                    objectResponse.Add(t);
+                    t._urls = getAllUrls(Response, tid);
+                    t._isQR = new List<bool>();//es una lista para que lo rellene la coroutine
+                    yield return StartCoroutine(DownloadAllImages(t._urls, t._imgs, t._seedsImgs, t._isQR));
+                    if(t._seedsImgs.Count > 0)
+                    {
+                        objectResponse.Add(t);
+                    }
                 }
             }
+        }
+        else
+        {
+            Debug.LogError(response);
         }
         if (_callbackGetTweets != null)
         {
             _callbackGetTweets(success, objectResponse);
         }
     }
-    IEnumerator DownloadAllImages(List<string> urls,  List<Texture2D> list, List<string> seedTxt)
+    IEnumerator DownloadAllImages(List<string> urls,  List<Texture2D> list, List<string> seedTxt, List<bool> idQR)
     {
         for (int i = 0; i < urls.Count; ++i)
         {
@@ -240,7 +253,15 @@ public class TwitterManager : MonoBehaviour
             {
                 Texture2D t = ((DownloadHandlerTexture)request.downloadHandler).texture;
                 list.Add(t);
-                seedTxt.Add(QrReader.readQR(t));
+                try
+                {
+                    seedTxt.Add(QrReader.readQR(t));
+                    idQR.Add(true);
+                }
+                catch (System.Exception e)
+                {
+                    idQR.Add(false);
+                }
             }
         }
     }
@@ -253,7 +274,7 @@ public class TwitterManager : MonoBehaviour
             int totalMedia = _response.data[id].attachments.media_keys.Length;
             for (int mediaId = 0; mediaId < totalMedia; ++mediaId)
             {
-                string idTweetMedia = _response.data[0].attachments.media_keys[mediaId];
+                string idTweetMedia = _response.data[id].attachments.media_keys[mediaId];
                 if (_response.includes != null)
                 {
                     for (int i = 0; i < _response.includes.media.Length; ++i)
