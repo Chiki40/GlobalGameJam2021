@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1884478341869761526}
   - component: {fileID: 3281110390190079059}
   - component: {fileID: 751027799238609049}
+  - component: {fileID: -7901193288869378207}
   m_Layer: 0
   m_Name: Empalizada_calavera
   m_TagString: Untagged
@@ -84,3 +85,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-7901193288869378207
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255611208331962700}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3728158, y: 2.347569, z: 0.46846616}
+  m_Center: {x: 0.015339404, y: 1.1737845, z: -0.022128545}

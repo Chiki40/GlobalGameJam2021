@@ -48,7 +48,7 @@ MonoBehaviour:
     shovelGridPos: {x: 0, y: 0}
     tresureGridPos: {x: 0, y: 0}
     hintsGridPos: []
-    rSeed: 214492271
+    rSeed: 1088415724
     mapSize: {x: 100, y: 100}
     population: 20
     dispersionPopulation: 522
@@ -138,12 +138,63 @@ MonoBehaviour:
   - dispersion: 1
     gObject:
     - {fileID: 3156968362827865779, guid: a349dae245267fa468f35c7cc64e9456, type: 3}
-    - {fileID: 5610409041517507572, guid: 1eb86a430af6ea94ab5d773c898058d3, type: 3}
-    - {fileID: 1952063114576743404, guid: 84d7e644391a8344fb24b05f62754a45, type: 3}
+    - {fileID: 3831603422530552596, guid: 1eb86a430af6ea94ab5d773c898058d3, type: 3}
+    - {fileID: 3332053791654868493, guid: 7d181209098dd4249b07d424d89bedb2, type: 3}
     gridUnitsSize: {x: 2, y: 2}
     randomScaleRange: 0.5
     limitNumber: 0
     maxObjectsInTheScene: 100
+  - dispersion: 1
+    gObject:
+    - {fileID: 1731497619986931890, guid: 4ad10f41055176542bf5a8763cf7056f, type: 3}
+    gridUnitsSize: {x: 20, y: 20}
+    randomScaleRange: 0
+    limitNumber: 1
+    maxObjectsInTheScene: 1
+  - dispersion: 1
+    gObject:
+    - {fileID: 4092727880683354466, guid: 21fb31d6ecbc08544b7e183b011abc38, type: 3}
+    gridUnitsSize: {x: 1, y: 1}
+    randomScaleRange: 0
+    limitNumber: 1
+    maxObjectsInTheScene: 2
+  - dispersion: 4
+    gObject:
+    - {fileID: 7103385757573284360, guid: e8956342d1de73346bbb4cce5db58938, type: 3}
+    gridUnitsSize: {x: 1, y: 1}
+    randomScaleRange: 0
+    limitNumber: 1
+    maxObjectsInTheScene: 2
+  - dispersion: 1
+    gObject:
+    - {fileID: 919132149155446097, guid: 9a837697570209d4c984ebdddf3a0238, type: 3}
+    gridUnitsSize: {x: 2, y: 2}
+    randomScaleRange: 0
+    limitNumber: 1
+    maxObjectsInTheScene: 2
+  - dispersion: 1
+    gObject:
+    - {fileID: 1255611208331962700, guid: 87a278f54c1f88d48bef33988afb3315, type: 3}
+    gridUnitsSize: {x: 2, y: 2}
+    randomScaleRange: 0
+    limitNumber: 1
+    maxObjectsInTheScene: 2
+  - dispersion: 5
+    gObject:
+    - {fileID: 438154033503777584, guid: 155f2bd42f1675a49b2f8be49cb52af5, type: 3}
+    gridUnitsSize: {x: 1, y: 1}
+    randomScaleRange: 0
+    limitNumber: 0
+    maxObjectsInTheScene: 100
+  - dispersion: 1
+    gObject:
+    - {fileID: 396324159812660037, guid: 685ee6fe5d825c74395334e2f2de1e07, type: 3}
+    gridUnitsSize: {x: 1, y: 1}
+    randomScaleRange: 0
+    limitNumber: 1
+    maxObjectsInTheScene: 1
+  pala: {fileID: 7745405163562799072, guid: 723eef81a09291f4a9d6452c1f4f5ff5, type: 3}
+  tesoro: {fileID: 4679517152063617173, guid: 41886c399ae85eb4d80b38733c5cfc0c, type: 3}
 --- !u!114 &8398924376212051979
 MonoBehaviour:
   m_ObjectHideFlags: 0

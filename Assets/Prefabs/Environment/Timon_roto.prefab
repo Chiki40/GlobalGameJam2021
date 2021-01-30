@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3713106834992112600}
   - component: {fileID: 299561303553911933}
   - component: {fileID: 2579636947829414071}
+  - component: {fileID: 1874342004497584521}
   m_Layer: 0
   m_Name: Timon_roto
   m_TagString: Untagged
@@ -84,3 +85,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1874342004497584521
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4092727880683354466}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1909614, y: 1.560392, z: 0.7706341}
+  m_Center: {x: -0.000000029802322, y: 0.7238079, z: -0.000000029802322}
