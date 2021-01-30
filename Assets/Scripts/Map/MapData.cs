@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 using UnityEngine;
 
 [Serializable]
-public class MapData
+public struct MapData
 {
     [Serializable]
     public struct HintData

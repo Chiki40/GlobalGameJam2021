@@ -35,14 +35,17 @@ public class MapCreator : MonoBehaviour
     private void Start()
     {
         m_mapGenerator = GetComponent<MapGenerator>();
+        if (!m_mapGenerator)
+            m_mapGenerator = gameObject.AddComponent<MapGenerator>();
     }
     public void CreateRandomMap()
     {
-        mapDataBase.dispersionPopulation = Random.Range(mapDataBase.dispersionPopulation - randomRangeDispersion, mapDataBase.dispersionPopulation + randomRangeDispersion);
-        mapDataBase.population = Random.Range(mapDataBase.population - randomRangeDispersion, mapDataBase.population + randomRangeDispersion);
-        mapDataBase.rSeed = Random.Range(0, Int32.MaxValue);
+        MapData newMap = mapDataBase;
+        newMap.dispersionPopulation = Random.Range(mapDataBase.dispersionPopulation - randomRangeDispersion, mapDataBase.dispersionPopulation + randomRangeDispersion);
+        newMap.population = Random.Range(mapDataBase.population - randomRangeDispersion, mapDataBase.population + randomRangeDispersion);
+        newMap.rSeed = Random.Range(0, Int32.MaxValue);
         m_mapGenerator.Clear();
-        m_mapGenerator.Generate(mapDataBase);
+        m_mapGenerator.Generate(newMap);
     }
 
     public void CreateMap(string data)
