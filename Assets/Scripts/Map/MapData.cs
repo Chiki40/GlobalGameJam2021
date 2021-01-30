@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using System.Runtime.Serialization;
-using System.Xml.Serialization;
 using UnityEngine;
 
 [Serializable]
@@ -18,6 +13,7 @@ public struct MapData
     public Vector2Int shovelGridPos;
     public Vector2Int tresureGridPos;
     public HintData[] hintsGridPos;
+    public string message;
     public int rSeed;
     public Vector2Int mapSize;
     [Range(0, 1000)]

@@ -191,7 +191,7 @@ public class EditorModeController : MonoBehaviour
             _mapGenerator.mapData.tresureGridPos.y = _treasurePos[1];
         }
         RenderTexture rT = _photoCam.TakePictureOfArea(_shovelPosV3);
-        _compartirMapa.ShowCompartirMapa(toTexture2D(rT), Serializator.XmlSerialize<MapData>(_mapGenerator.mapData), OnTweetPosted);
+        _compartirMapa.ShowCompartirMapa(toTexture2D(rT), _mapGenerator.mapData, OnTweetPosted);
     }
 
     private IEnumerator ExitCoroutine()
