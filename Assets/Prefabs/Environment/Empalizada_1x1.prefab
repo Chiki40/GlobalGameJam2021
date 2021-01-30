@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 963614641539639690}
   - component: {fileID: 4247081350543894063}
   - component: {fileID: 2095403860620874469}
+  - component: {fileID: 115890033424387021}
   m_Layer: 0
   m_Name: Empalizada_1x1
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &115890033424387021
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438154033503777584}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9708041, y: 2.189599, z: 0.15024224}
+  m_Center: {x: 0, y: 1.0752423, z: 0}

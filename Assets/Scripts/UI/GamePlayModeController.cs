@@ -142,6 +142,7 @@ public class GamePlayModeController : MonoBehaviour
 	private IEnumerator ResetCoroutine()
 	{
 		yield return new WaitForSeconds(2.0f);
+		Reset();
 	}
 
 	private void Reset()

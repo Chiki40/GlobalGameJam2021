@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -9,12 +7,12 @@ public class CompartirMapaManager : MonoBehaviour
     public TMP_InputField _creador;
     public TMP_InputField _mensaje;
     private Texture2D _imageTweet;
-    private string _mapaStr;
+    private MapData _mapData;
     Action _onFinishCallback = null;
-    public void ShowCompartirMapa(Texture2D imageTweet, string mapDataStr, Action onFinishCallback=null)
+    public void ShowCompartirMapa(Texture2D imageTweet, MapData mapData, Action onFinishCallback=null)
     {
         this.gameObject.SetActive(true);
-        this._mapaStr = mapDataStr;
+        this._mapData = mapData;
         _imageTweet = imageTweet;
         _onFinishCallback = onFinishCallback;
     }
@@ -41,7 +39,9 @@ public class CompartirMapaManager : MonoBehaviour
         msgTwitter += "\n" + "#GlobalGameJam #GlobalJamUCM21";
 
         TwitterManager tm = TwitterManager.GetInstance();
-        Texture2D qr = QrReader.generateQR(_mapaStr);
+        _mapData.message = _mensaje.text;
+        string mapDataStr = Serializator.XmlSerialize<MapData>(_mapData);
+        Texture2D qr = QrReader.generateQR(mapDataStr);
         tm.SendTweetWithImage(msgTwitter, qr, _imageTweet, callbackSendTweet);
     }
 

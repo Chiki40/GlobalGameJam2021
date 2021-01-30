@@ -22,6 +22,8 @@ public class MapGenerator : MonoBehaviour
     public MapData mapData;
     private float gridSize = 1;
     public RandomObject[] randomObjects;
+    public GameObject pala;
+    public GameObject tesoro;
 
     private bool[,] usedMatrix;
     private int totalPopulation;
@@ -159,5 +161,23 @@ public class MapGenerator : MonoBehaviour
         gridPosOut.x = (int)localPos.x;
         gridPosOut.y = (int)localPos.z;
         return true;
+    }
+
+    void InstantitatePalaYTesoro()
+    {
+        Vector3 pos = transform.position;
+        // Se posiciona en el centro de la cuadrícula desplazando según la posición del
+        // grid que tengamos. El pivote está en el centro así que se posiciona en el centro
+        // de lo que ocupe
+        pos.x += mapData.shovelGridPos.x * gridSize + gridSize * 0.5f;
+        pos.z += mapData.shovelGridPos.y * gridSize + gridSize * 0.5f;
+        Instantiate(pala, pos, Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0, 1, 0)), transform);
+
+        pos = transform.position;
+        pos.x += mapData.tresureGridPos.x * gridSize + gridSize * 0.5f;
+        pos.z += mapData.tresureGridPos.y * gridSize + gridSize * 0.5f;
+        var obj = Instantiate(tesoro, pos, Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0, 1, 0)), transform);
+        obj.SetActive(false);
+
     }
 }
