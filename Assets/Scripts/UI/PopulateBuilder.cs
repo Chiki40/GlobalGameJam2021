@@ -15,8 +15,6 @@ public class PopulateBuilder : MonoBehaviour
     {
         public string _BaseName;
         public Texture2D _image;
-        int _ancho;
-        int _alto;
     }
     public GameObject _parent;
     public ClueSelectorManager _clueManager;
