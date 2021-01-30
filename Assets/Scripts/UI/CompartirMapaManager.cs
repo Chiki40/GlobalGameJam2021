@@ -35,9 +35,9 @@ public class CompartirMapaManager : MonoBehaviour
         }
         Debug.Log("mensaje twitter => " + msgTwitter);
 
-        //TwitterManager tm = TwitterManager.GetInstance();
-        //Texture2D qr = QrReader.generateQR(_mapaStr);
-        //tm.SendTweetWithImage(msgTwitter, qr, _imageTweet, callbackSendTweet);
+        TwitterManager tm = TwitterManager.GetInstance();
+        Texture2D qr = QrReader.generateQR(_mapaStr);
+        tm.SendTweetWithImage(msgTwitter, qr, _imageTweet, callbackSendTweet);
     }
 
     private void callbackSendTweet(bool success, string idTweet)

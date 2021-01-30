@@ -15,6 +15,7 @@ public struct MapData
         public Vector2Int gridPos { get; set; }
         public int[] symbols;
     }
+    public Vector2Int shovelGridPos;
     public Vector2Int tresureGridPos;
     public HintData[] hintsGridPos;
     public int rSeed;
