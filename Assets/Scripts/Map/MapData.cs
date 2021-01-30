@@ -21,4 +21,6 @@ public class MapData
     public Vector2Int mapSize;
     [Range(0, 100)]
     public int population;
+    [Range(1, 100)]
+    public int dispersionPopulation;
 }

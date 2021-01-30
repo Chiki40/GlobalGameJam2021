@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5626304028038277934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5626304028038277928}
+  - component: {fileID: 5626304028038277929}
+  - component: {fileID: 8398924376212051979}
+  m_Layer: 0
+  m_Name: MapGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5626304028038277928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5626304028038277934}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5626304028038277929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5626304028038277934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad82d3738a01bf439cb9751c55c76d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapData:
+    tresureGridPos: {x: 0, y: 0}
+    hintsGridPos: []
+    rSeed: 963676833
+    mapSize: {x: 100, y: 100}
+    population: 19
+    dispersionPopulation: 49
+  randomObjects:
+  - dispersion: 20
+    gObject: {fileID: 6529006423187329195, guid: 01616e3d4e2974c4a9ac1cf96f006b86, type: 3}
+    gridUnitsSize: {x: 2, y: 2}
+    randomScaleRange: 0.5
+  - dispersion: 10
+    gObject: {fileID: 8730403757190919789, guid: e5afcc300cd083847bd89008686176e4, type: 3}
+    gridUnitsSize: {x: 2, y: 2}
+    randomScaleRange: 0.5
+  - dispersion: 6
+    gObject: {fileID: 6489133671424397662, guid: 8245b65362c698042a9d73fc8cce9715, type: 3}
+    gridUnitsSize: {x: 2, y: 2}
+    randomScaleRange: 0.5
+  - dispersion: 10
+    gObject: {fileID: 7901753890589022858, guid: 8109978adfa8cca468d66c29d18b7ba5, type: 3}
+    gridUnitsSize: {x: 2, y: 2}
+    randomScaleRange: 0.5
+  - dispersion: 3
+    gObject: {fileID: 1132795982359814374, guid: 709ccf9f60311b541879ae33d4d0bcd7, type: 3}
+    gridUnitsSize: {x: 1, y: 1}
+    randomScaleRange: 0
+  - dispersion: 1
+    gObject: {fileID: 3363778902615397586, guid: 840229148dee35940b48ffb06ad3e8b5, type: 3}
+    gridUnitsSize: {x: 2, y: 2}
+    randomScaleRange: 0
+--- !u!114 &8398924376212051979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5626304028038277934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad5707f2957b9e4f8f0fa8bab97d33a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapDataBase:
+    tresureGridPos: {x: 0, y: 0}
+    hintsGridPos: []
+    rSeed: 963676833
+    mapSize: {x: 100, y: 100}
+    population: 19
+    dispersionPopulation: 49
+  randomRangeDispersion: 3
+  m_mapGenerator: {fileID: 5626304028038277929}
