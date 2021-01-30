@@ -49,7 +49,6 @@ public class TwitterManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         _instance = this;
-        DontDestroyOnLoad(this.gameObject);
 
         Twity.Oauth.accessToken = access_token;
         Twity.Oauth.accessTokenSecret = access_token_secret;

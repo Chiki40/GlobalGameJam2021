@@ -33,7 +33,7 @@ public class PhotoCamera : MonoBehaviour
     }
     */
 
-    public void TakePictureOfArea(Vector3 pos)
+    public RenderTexture TakePictureOfArea(Vector3 pos)
 	{
         // First, place camera above the point, depending on _height
         Vector3 originPos = pos;
@@ -47,10 +47,10 @@ public class PhotoCamera : MonoBehaviour
         transform.LookAt(pos);
 
         // Take the picture
-        TakePicture();
+        return TakePicture();
     }
 
-	private void TakePicture()
+	private RenderTexture TakePicture()
 	{
         // Disable annoying objects
         RaycastHit[] result = Physics.SphereCastAll(transform.position, _sphereCollisionTestRadius, transform.forward, _sphereCollisionTestDistanceChecked);
@@ -69,5 +69,6 @@ public class PhotoCamera : MonoBehaviour
         {
             result[i].collider.gameObject.SetActive(true);
         }
+        return _renderTexture;
     }
 }
