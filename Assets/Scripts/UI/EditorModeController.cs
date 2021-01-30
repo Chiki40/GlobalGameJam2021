@@ -70,6 +70,26 @@ public class EditorModeController : MonoBehaviour
         _buttonFinish.interactable = _clueZones.Count > 0 && _shovelPlaced && _treasurePlaced;
     }
 
+    private bool CanPlaceObject(Vector2Int pos)
+	{
+        if (_shovelPlaced && _shovelPos[0] == pos.x && _shovelPos[1] == pos.y)
+		{
+            return false;
+		}
+        if (_treasurePlaced && _treasurePos[0] == pos.x && _treasurePos[1] == pos.y)
+        {
+            return false;
+        }
+        for (int i = 0; i < _clueZones.Count; ++i)
+        {
+            if (_clueZones[i].pos[0] == pos.x && _clueZones[i].pos[1] == pos.y)
+            {
+                return false;
+            }
+        }
+        return true;
+	}
+
     public void NewClueZoneAdded(List<int> clueInfo)
     {
         if (_clueZones.Count < kMaxCluesZones)
@@ -77,6 +97,12 @@ public class EditorModeController : MonoBehaviour
             Vector2Int gridPos = new Vector2Int();
             if (_mapGenerator.GetGridPos(_player.transform.position, ref gridPos))
             {
+                if (!CanPlaceObject(gridPos))
+                {
+                    Debug.LogError("[EditorModeController.NewClueZoneAdded] ERROR. Trying to place clue in an already used cell");
+                    return;
+                }
+
                 ClueZone clueZone = new ClueZone();
                 clueZone.clueInfo = clueInfo;
                 clueZone.pos = new int[2] { gridPos.x, gridPos.y };
@@ -100,6 +126,12 @@ public class EditorModeController : MonoBehaviour
             Vector2Int gridPos = new Vector2Int();
             if (_mapGenerator.GetGridPos(_player.transform.position, ref gridPos))
             {
+                if (!CanPlaceObject(gridPos))
+                {
+                    Debug.LogError("[EditorModeController.OnAddShovelClicked] ERROR. Trying to place shovel in an already used cell");
+                    return;
+                }
+
                 _shovelPos[0] = gridPos.x;
                 _shovelPos[1] = gridPos.y;
                 _shovelPosV3 = _player.transform.position;
@@ -123,6 +155,11 @@ public class EditorModeController : MonoBehaviour
             Vector2Int gridPos = new Vector2Int();
             if (_mapGenerator.GetGridPos(_player.transform.position, ref gridPos))
             {
+                if (!CanPlaceObject(gridPos))
+                {
+                    Debug.LogError("[EditorModeController.OnAddTreasureClicked] ERROR. Trying to place treasure in an already used cell");
+                    return;
+                }
                 _treasurePos[0] = gridPos.x;
                 _treasurePos[1] = gridPos.y;
                 if (Physics.Raycast(_player.transform.position, Vector3.down, out RaycastHit hitInfo))

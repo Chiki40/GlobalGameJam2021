@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2978438759732786554}
   - component: {fileID: 3693065694109282187}
-  m_Layer: 0
-  m_Name: CluePlaced
+  m_Layer: 9
+  m_Name: ShovelPlaced
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
