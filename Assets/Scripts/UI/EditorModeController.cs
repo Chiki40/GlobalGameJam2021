@@ -29,6 +29,7 @@ public class EditorModeController : MonoBehaviour
 
     private List<ClueZone> _clueZones = new List<ClueZone>();
     private int[] _shovelPos = new int[2] { -1, -1 };
+    private Vector3 _shovelPosV3 = Vector3.zero;
     private int[] _treasurePos = new int[2] { -1, -1 };
     private bool _shovelPlaced = false;
     private bool _treasurePlaced = false;
@@ -38,6 +39,7 @@ public class EditorModeController : MonoBehaviour
         _clueZones.Clear();
         _shovelPos[0] = -1;
         _shovelPos[1] = -1;
+        _shovelPosV3 = Vector3.zero;
         _treasurePos[0] = -1;
         _treasurePos[1] = -1;
         _shovelPlaced = false;
@@ -64,10 +66,14 @@ public class EditorModeController : MonoBehaviour
     {
         if (_clueZones.Count < kMaxCluesZones)
         {
-            ClueZone clueZone = new ClueZone();
-            clueZone.clueInfo = clueInfo;
-            clueZone.pos = new int[2] { 1, 1 };
-            _clueZones.Add(clueZone);
+            Vector2Int gridPos = new Vector2Int();
+            if (_mapGenerator.GetGridPos(_player.transform.position, ref gridPos))
+            {
+                ClueZone clueZone = new ClueZone();
+                clueZone.clueInfo = clueInfo;
+                clueZone.pos = new int[2] { gridPos.x, gridPos.y };
+                _clueZones.Add(clueZone);
+            }
         }
         else
 		{
@@ -79,9 +85,14 @@ public class EditorModeController : MonoBehaviour
     {
         if (!_shovelPlaced)
         {
-            _shovelPos[0] = 1;
-            _shovelPos[1] = 1;
-            _shovelPlaced = true;
+            Vector2Int gridPos = new Vector2Int();
+            if (_mapGenerator.GetGridPos(_player.transform.position, ref gridPos))
+            {
+                _shovelPos[0] = gridPos.x;
+                _shovelPos[1] = gridPos.y;
+                _shovelPosV3 = _player.transform.position;
+                _shovelPlaced = true;
+            }
         }
         else
         {
@@ -93,9 +104,13 @@ public class EditorModeController : MonoBehaviour
     {
         if (!_treasurePlaced)
         {
-            _treasurePos[0] = 1;
-            _treasurePos[1] = 1;
-            _treasurePlaced = true;
+            Vector2Int gridPos = new Vector2Int();
+            if (_mapGenerator.GetGridPos(_player.transform.position, ref gridPos))
+            {
+                _treasurePos[0] = gridPos.x;
+                _treasurePos[1] = gridPos.y;
+                _treasurePlaced = true;
+            }
         }
         else
         {
@@ -115,7 +130,7 @@ public class EditorModeController : MonoBehaviour
             _mapGenerator.mapData.tresureGridPos.x = _treasurePos[0];
             _mapGenerator.mapData.tresureGridPos.y = _treasurePos[1];
         }
-        RenderTexture rT = _photoCam.TakePictureOfArea(_player.transform.position);
+        RenderTexture rT = _photoCam.TakePictureOfArea(_shovelPosV3);
         _compartirMapa.ShowCompartirMapa(toTexture2D(rT), Serializator.XmlSerialize<MapData>(_mapGenerator.mapData));
     }
 
