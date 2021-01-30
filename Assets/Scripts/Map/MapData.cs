@@ -20,4 +20,5 @@ public struct MapData
     public int population;
     [Range(1, 1000)]
     public int dispersionPopulation;
+    public string idTweet;
 }

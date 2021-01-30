@@ -15,5 +15,11 @@ public class MapCreatorEditor : Editor
             MapCreator mapCreator = (MapCreator)target;
             mapCreator.CreateRandomMap();
         }
+
+        if (GUILayout.Button("Generar Pala y tesoro"))
+        {
+            MapCreator mapCreator = (MapCreator)target;
+            mapCreator.m_mapGenerator.InstantitatePalaYTesoro();
+        }
     }
 }
