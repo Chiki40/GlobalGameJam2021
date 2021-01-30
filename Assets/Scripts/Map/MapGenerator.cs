@@ -16,46 +16,63 @@ public class MapGenerator : MonoBehaviour
         [Range(0, 1)]
         public float randomScaleRange = 0;
     }
-    public int seed = 999;
-    public int sizeX = 50;
-    public int sizeY = 50;
-    public float gridSize = 5;
+    public MapData mapData;
+    private float gridSize = 1;
     public RandomObject[] randomObjects;
-    [Range(0,100)]
-    public int population;
     [Range(1, 100)]
     public int dispersionPopulation;
 
     private bool[,] usedMatrix;
+    private int totalPopulation;
     // Start is called before the first frame update
     void Start()
     {
-        usedMatrix = new bool[sizeX,sizeY];
-        Random.InitState(seed);
-        float totalPopulation = 0;
+        Clear();
+        Generate();
+    }
+
+    public void Clear()
+    {
+        var childs = transform.GetComponentsInChildren<Transform>();
+        foreach (Transform child in childs)
+        {
+            if (child != this.transform)
+                GameObject.DestroyImmediate(child.gameObject);
+        }
+        usedMatrix = new bool[mapData.mapSize.x, mapData.mapSize.y];
+        totalPopulation = 0;
+    }
+
+    public void Generate(MapData data)
+    {
+        mapData = data;
+        Random.InitState(mapData.rSeed);
+        totalPopulation = 0;
         for (int i = 0; i < randomObjects.Length; ++i)
         {
             totalPopulation += randomObjects[i].dispersion * randomObjects[i].dispersion;
         }
-        float reduction = (float) randomObjects.Length / (float)totalPopulation;
-        var pop = reduction * (float)population;
+        var pop = totalPopulation * mapData.population / 100;
         GenerateRandoMap(pop);
     }
-
+    public void Generate()
+    {
+        Generate(mapData);
+    }
     private void GenerateRandoMap(float population)
     {
         // Iterate map y
-        for (int i = 0; i < sizeX; ++i)
+        for (int i = 0; i < mapData.mapSize.y; ++i)
         {
             // Iterate map x
-            for (int j = 0; j < sizeY; ++j)
+            for (int j = 0; j < mapData.mapSize.x; ++j)
             {
                 // Si ya se ha rellenado previamente pasamos
                 if (usedMatrix[j,i]) 
                     continue;
 
                 int objectToInstantiate = Random.Range(0, randomObjects.Length);
-                int floorOrObject = Random.Range(0, 100);
+                int floorOrObject = Random.Range(0, totalPopulation);
                 if (floorOrObject < population)
                 {
                     RandomObject obj = randomObjects[objectToInstantiate];
@@ -79,7 +96,7 @@ public class MapGenerator : MonoBehaviour
                 // Se puede salir de la cuadrícula
                 if (coordinates.x < usedMatrix.GetLength(0) && coordinates.y < usedMatrix.GetLength(1))
                 {
-                    int randomDispersion = Random.Range(0, 100);
+                    int randomDispersion = Random.Range(0, totalPopulation);
                     if (randomDispersion < dispersionPopulation)
                     {
                         if (x % obj.gridUnitsSize.x == 0 && y % obj.gridUnitsSize.y == 0)
