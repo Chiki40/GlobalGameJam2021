@@ -11,7 +11,7 @@ public class GameSelectorManager : MonoBehaviour
     public GameObject _scrollBaseGameObject;
     private List<TwitterManager.Tweet> tweets;
 
-    public void Start()
+    private void Start()
     {
         tweets = new List<TwitterManager.Tweet>();
         Populate();
@@ -22,8 +22,14 @@ public class GameSelectorManager : MonoBehaviour
     {
         Debug.Log("se ha pulsado el boton => " + go.name);
         string mapDataStr = tweets[int.Parse(go.name)]._seedsImgs[0];
+
+        //ñapaza
+        MapData mapData = Serializator.XmlDeserialize<MapData>(mapDataStr);
+        mapData.idTweet = tweets[int.Parse(go.name)]._id;
+        string mapDataStr2 = Serializator.XmlSerialize<MapData>(mapData);
+
         // Use PlayerPref to propagate map data to next scene
-        PlayerPrefs.SetString(MapCreator.kMapToLoadPlayerPrefId, mapDataStr);
+        PlayerPrefs.SetString(MapCreator.kMapToLoadPlayerPrefId, mapDataStr2);
         SceneManager.LoadScene("GamePlayMode");
     }
 
