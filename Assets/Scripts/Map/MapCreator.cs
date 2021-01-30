@@ -45,14 +45,14 @@ public class MapCreator : MonoBehaviour
         newMap.population = Random.Range(mapDataBase.population - randomRangeDispersion, mapDataBase.population + randomRangeDispersion);
         newMap.rSeed = Random.Range(0, Int32.MaxValue);
         m_mapGenerator.Clear();
-        m_mapGenerator.Generate(newMap);
+        m_mapGenerator.Generate(newMap,false);
     }
 
     public void CreateMap(string data)
     {
         MapData mapData = Serializator.XmlDeserialize<MapData>(data);
         m_mapGenerator.Clear();
-        m_mapGenerator.Generate(mapData);
+        m_mapGenerator.Generate(mapData,true);
     }
 
 }

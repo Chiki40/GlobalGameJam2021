@@ -22,12 +22,28 @@ public class MapGenerator : MonoBehaviour
     public MapData mapData;
     private float gridSize = 1;
     public RandomObject[] randomObjects;
-    public GameObject pala;
-    public GameObject tesoro;
+    public GameObject palaPrefab;
+    public GameObject tesoroPrefab;
 
     private bool[,] usedMatrix;
     private int totalPopulation;
     private Dictionary<RandomObject, int> maxObjectsInTheSceneDic;
+    private GameObject iPala;
+    private GameObject iTesoro;
+    public GameObject pala 
+    { 
+        get
+        {
+            return iPala;
+        }
+    }
+    public GameObject tesoro
+    {
+        get
+        {
+            return iTesoro;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +69,7 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-    public void Generate(MapData data)
+    public void Generate(MapData data, bool instancePalaAndTesoro)
     {
         foreach (RandomObject obj in randomObjects)
         {
@@ -70,10 +86,13 @@ public class MapGenerator : MonoBehaviour
 
         var pop = mapData.population;
         GenerateRandoMap(pop);
+        if (instancePalaAndTesoro)
+            InstantitatePalaYTesoro();
     }
+
     public void Generate()
     {
-        Generate(mapData);
+        Generate(mapData, false);
     }
     private void GenerateRandoMap(float population)
     {
@@ -163,7 +182,7 @@ public class MapGenerator : MonoBehaviour
         return true;
     }
 
-    void InstantitatePalaYTesoro()
+    public void InstantitatePalaYTesoro()
     {
         Vector3 pos = transform.position;
         // Se posiciona en el centro de la cuadrícula desplazando según la posición del
@@ -171,13 +190,13 @@ public class MapGenerator : MonoBehaviour
         // de lo que ocupe
         pos.x += mapData.shovelGridPos.x * gridSize + gridSize * 0.5f;
         pos.z += mapData.shovelGridPos.y * gridSize + gridSize * 0.5f;
-        Instantiate(pala, pos, Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0, 1, 0)), transform);
+        iPala = Instantiate(pala, pos, Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0, 1, 0)), transform);
 
         pos = transform.position;
         pos.x += mapData.tresureGridPos.x * gridSize + gridSize * 0.5f;
         pos.z += mapData.tresureGridPos.y * gridSize + gridSize * 0.5f;
-        var obj = Instantiate(tesoro, pos, Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0, 1, 0)), transform);
-        obj.SetActive(false);
+        iTesoro = Instantiate(tesoro, pos, Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0, 1, 0)), transform);
+        iTesoro.SetActive(false);
 
     }
 }
