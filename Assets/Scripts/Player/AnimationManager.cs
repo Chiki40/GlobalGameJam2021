@@ -73,7 +73,7 @@ public class AnimationManager : MonoBehaviour {
                 _animationController.SetBool(kWalkFrontKey, false);
                 _animationController.SetBool(kWalkDiagonalFrontKey, false);
                 _animationController.SetBool(kWalkDiagonalBackKey, true);
-                _renderer.flipX = true;
+                _renderer.flipX = false;
                 break;
             case CharacterController.EDirections.LEFT_FRONT:
                 _animationController.SetBool(kWalkHorizontalKey, false);
@@ -89,7 +89,7 @@ public class AnimationManager : MonoBehaviour {
                 _animationController.SetBool(kWalkFrontKey, false);
                 _animationController.SetBool(kWalkDiagonalFrontKey, false);
                 _animationController.SetBool(kWalkDiagonalBackKey, true);
-                _renderer.flipX = false;
+                _renderer.flipX = true;
                 break;
             case CharacterController.EDirections.RIGHT_FRONT:
                 _animationController.SetBool(kWalkHorizontalKey, false);

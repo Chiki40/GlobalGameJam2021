@@ -6,47 +6,67 @@ using UnityEngine.UI;
 
 public class ClueSelectorManager : MonoBehaviour
 {
-    public Image[] _images;
-    private int _totalImagesAdded = 0;
+    public Button[] _buttonsClues;
+    private int _totalCluesAdded = 0;
 
-    struct dataToSave
-    {
-        public string key;
-        public string id;
-    }
-
-    List<dataToSave> _dataToSave;
+    List<int> _clueIds;
     const int MaxClues = 3;
 
     public List<GameObject> objectsEditor;
-    public GameObject _buttonEditor;
+    public GameObject _buttonOpen;
 
     private bool _editorVisible = false;
 
     private void Start()
     {
-        _dataToSave = new List<dataToSave>();
+        _clueIds = new List<int>();
         CerrarEditor();
     }
 
     public void AddClue(GameObject go)
     {
-        if (_totalImagesAdded < MaxClues)
+        if (_totalCluesAdded < MaxClues)
         {
-            _images[_totalImagesAdded].sprite = go.GetComponent<Image>().sprite;
-            _images[_totalImagesAdded].gameObject.SetActive(true);
+            Sprite sp = go.GetComponent<Image>().sprite;
+            int id = int.Parse(go.name);
 
-            string name = go.name;
-            string[] subStr = name.Split('_');
+            //activamos el boton
+            _buttonsClues[_totalCluesAdded].gameObject.SetActive(true);
+            _buttonsClues[_totalCluesAdded].GetComponent<Image>().sprite = sp;
 
-            dataToSave d = new dataToSave();
-            d.key = subStr[0];
-            d.id = subStr[1];
+            //guardamos la clave
+            _clueIds.Add(id);
 
-            _dataToSave.Add(d);
-            ++_totalImagesAdded;
+            ++_totalCluesAdded;
         }
     }
+
+    public void RemoveClue(int id)
+    {
+        if(_totalCluesAdded <= 0)
+        {
+            return;
+        }
+        if(_totalCluesAdded == 1)
+        {
+            _clueIds.Clear();
+            _buttonsClues[0].gameObject.SetActive(false);
+            --_totalCluesAdded;
+        }
+        else
+        {
+            int maximo = Mathf.Min(_totalCluesAdded, MaxClues) -1;
+            for(int i = id; i < maximo; ++i)
+            {
+                _buttonsClues[i].gameObject.SetActive(true);
+                _buttonsClues[i].GetComponent<Image>().sprite = _buttonsClues[i +1].GetComponent<Image>().sprite;
+                _clueIds[i] = _clueIds[i + 1];
+            }
+            _buttonsClues[maximo].gameObject.SetActive(false);
+            _clueIds.RemoveAt(maximo);
+            --_totalCluesAdded;
+        }
+    }   
 
     public void ShowOrHideEditor()
     {
@@ -62,8 +82,8 @@ public class ClueSelectorManager : MonoBehaviour
 
     public void AbrirEditor()
     {
-        _totalImagesAdded = 0;
-        _dataToSave.Clear();
+        _totalCluesAdded = 0;
+        _clueIds.Clear();
         _editorVisible = true;
 
         for (int i = 0; i < objectsEditor.Count; ++i)
@@ -71,13 +91,13 @@ public class ClueSelectorManager : MonoBehaviour
             objectsEditor[i].SetActive(true);
         }
 
-        _buttonEditor.GetComponentInChildren<TextMeshProUGUI>().text = "Cerrar editor";
+        _buttonOpen.SetActive(false);
     }
 
     public void CerrarEditor()
     {
-        _totalImagesAdded = 0;
-        _dataToSave.Clear();
+        _totalCluesAdded = 0;
+        _clueIds.Clear();
         _editorVisible = false;
 
         for (int i = 0; i < objectsEditor.Count; ++i)
@@ -85,17 +105,18 @@ public class ClueSelectorManager : MonoBehaviour
             objectsEditor[i].SetActive(false);
         }
 
-        for (int i = 0; i < _images.Length; ++i)
+        for (int i = 0; i < _buttonsClues.Length; ++i)
         {
-            _images[i].gameObject.SetActive(false);
+            _buttonsClues[i].gameObject.SetActive(false);
         }
 
-        _buttonEditor.GetComponentInChildren<TextMeshProUGUI>().text = "Abrir editor";
+        _buttonOpen.SetActive(true);
     }
 
     public void OnAceptar()
     {
         Debug.Log("he pulsado en aceptar");
+        //en _clueIds tenemos los valores que queremos guardar
         CerrarEditor();
     }
 
