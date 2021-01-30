@@ -102,7 +102,7 @@ public class EditorModeController : MonoBehaviour
                 }
 
                 ClueZone clueZone = new ClueZone();
-                clueZone.clueInfo = clueInfo;
+                clueZone.clueInfo = new List<int>(clueInfo);
                 clueZone.pos = new int[2] { gridPos.x, gridPos.y };
                 if (Physics.Raycast(_player.transform.position, Vector3.down, out RaycastHit hitInfo))
                 {
