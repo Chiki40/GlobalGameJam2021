@@ -15,11 +15,16 @@ public class GameSelectorManager : MonoBehaviour
     {
         tweets = new List<TwitterManager.Tweet>();
         Populate();
+        PlayerPrefs.DeleteKey(MapCreator.kMapToLoadPlayerPrefId);
     }
 
     public void ClickButton(GameObject go)
     {
         Debug.Log("se ha pulsado el boton => " + go.name);
+        string mapDataStr = tweets[int.Parse(go.name)]._seedsImgs[0];
+        // Use PlayerPref to propagate map data to next scene
+        PlayerPrefs.SetString(MapCreator.kMapToLoadPlayerPrefId, mapDataStr);
+        SceneManager.LoadScene("GamePlayMode");
     }
 
     public void ClickBack()
