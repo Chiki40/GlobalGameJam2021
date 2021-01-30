@@ -7,8 +7,6 @@ public class CharacterController : MonoBehaviour
     [SerializeField]
     float _speed = 1.0f;
     [SerializeField]
-    float _basicDirdectionThreshold = 0.1f;
-    [SerializeField]
     float _diagonalDirectionThreshold = 0.3f;
     [SerializeField]
     float _moveDistanceThreshold = 1.0f;
@@ -97,6 +95,7 @@ public class CharacterController : MonoBehaviour
 	{
         float horizontalContribution = disp.x;
         float verticalContribution = disp.y;
+        // First, check diagonal cases
         if (horizontalContribution > _diagonalDirectionThreshold && verticalContribution > _diagonalDirectionThreshold)
 		{
             return EDirections.RIGHT_BACK;
@@ -113,22 +112,18 @@ public class CharacterController : MonoBehaviour
         {
             return EDirections.LEFT_FRONT;
         }
-        else if (horizontalContribution > _basicDirdectionThreshold)
+        else
 		{
-            return EDirections.RIGHT;
+            // Not diagonal, find greater axis
+            bool horizontalBigger = Mathf.Abs(horizontalContribution) > Mathf.Abs(verticalContribution);
+            if (horizontalBigger)
+			{
+                return horizontalContribution > 0.0f ? EDirections.RIGHT : EDirections.LEFT;
+			}
+            else
+			{
+                return verticalContribution > 0.0f ? EDirections.BACK : EDirections.FRONT;
+            }
 		}
-        else if (horizontalContribution < -_basicDirdectionThreshold)
-        {
-            return EDirections.LEFT;
-        }
-        else if (verticalContribution > _basicDirdectionThreshold)
-        {
-            return EDirections.BACK;
-        }
-        else if (verticalContribution < -_basicDirdectionThreshold)
-        {
-            return EDirections.FRONT;
-        }
-        return EDirections.LEFT;
 	}
 }
