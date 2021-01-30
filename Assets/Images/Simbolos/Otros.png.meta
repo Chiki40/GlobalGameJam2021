@@ -1,0 +1,550 @@
+fileFormatVersion: 2
+guid: 22b1a7601c699564b9ada7f314b544e0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2900062158369758809
+    second: sim_3_0
+  - first:
+      213: 7465111391460044103
+    second: sim_3_1
+  - first:
+      213: 219230080392562000
+    second: sim_3_2
+  - first:
+      213: 1139268735156097772
+    second: sim_3_3
+  - first:
+      213: -2403419693684998379
+    second: sim_3_4
+  - first:
+      213: 602225774458288120
+    second: sim_3_5
+  - first:
+      213: -1370849762189937774
+    second: sim_3_6
+  - first:
+      213: -1020605922924471114
+    second: sim_3_7
+  - first:
+      213: 7792977217668190571
+    second: sim_3_8
+  - first:
+      213: 1934778333335068887
+    second: sim_3_9
+  - first:
+      213: 9194294756016755607
+    second: sim_3_10
+  - first:
+      213: -4833013190534527378
+    second: sim_3_11
+  - first:
+      213: -1870587762372386231
+    second: sim_3_12
+  - first:
+      213: 6632527594970663662
+    second: sim_3_13
+  - first:
+      213: -2767254934085421102
+    second: sim_3_14
+  - first:
+      213: -5632469006027277171
+    second: sim_3_15
+  - first:
+      213: -4906048501715298715
+    second: Otros_0
+  - first:
+      213: -3295984621289102474
+    second: Otros_1
+  - first:
+      213: -1368450911126722935
+    second: Otros_2
+  - first:
+      213: 5851409616907803116
+    second: Otros_3
+  - first:
+      213: -6550865506701314334
+    second: Otros_4
+  - first:
+      213: 3853036626032279078
+    second: Otros_5
+  - first:
+      213: 3146522483052337835
+    second: Otros_6
+  - first:
+      213: 8450987205544902992
+    second: Otros_7
+  - first:
+      213: -1454334542832134746
+    second: Otros_8
+  - first:
+      213: -5181631971695046639
+    second: Otros_9
+  - first:
+      213: -2735965341981239838
+    second: Otros_10
+  - first:
+      213: -8234957815120311641
+    second: Otros_11
+  - first:
+      213: -4616092776931888472
+    second: Otros_12
+  - first:
+      213: -3984423100717242617
+    second: Otros_13
+  - first:
+      213: -8527982694381658757
+    second: Otros_14
+  - first:
+      213: 3602516006936335217
+    second: Otros_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Otros_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 930
+        width: 300
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5661c6c81e63aebb0800000000000000
+      internalID: -4906048501715298715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otros_1
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 930
+        width: 300
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 673a9e6237f4242d0800000000000000
+      internalID: -3295984621289102474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otros_2
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 930
+        width: 300
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9866bbd8529420de0800000000000000
+      internalID: -1368450911126722935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otros_3
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 930
+        width: 300
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce918136b02643150800000000000000
+      internalID: 5851409616907803116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otros_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 620
+        width: 300
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e675b59786a615a0800000000000000
+      internalID: -6550865506701314334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otros_5
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 620
+        width: 300
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62e3939a56cb87530800000000000000
+      internalID: 3853036626032279078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otros_6
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 620
+        width: 300
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baa5d100781baab20800000000000000
+      internalID: 3146522483052337835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otros_7
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 620
+        width: 300
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05100e39610f74570800000000000000
+      internalID: 8450987205544902992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otros_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 310
+        width: 300
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a519ed407a21dbe0800000000000000
+      internalID: -1454334542832134746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otros_9
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 310
+        width: 300
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1105f4adc252718b0800000000000000
+      internalID: -5181631971695046639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otros_10
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 310
+        width: 300
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e59d696406e70ad0800000000000000
+      internalID: -2735965341981239838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otros_11
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 310
+        width: 300
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa4d617f7d87bd80800000000000000
+      internalID: -8234957815120311641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otros_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 300
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a27ab4931850ffb0800000000000000
+      internalID: -4616092776931888472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otros_13
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 300
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70763eedc4c74b8c0800000000000000
+      internalID: -3984423100717242617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otros_14
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 300
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7dd3b23ce486a980800000000000000
+      internalID: -8527982694381658757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Otros_15
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 0
+        width: 300
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 173591ba835bef130800000000000000
+      internalID: 3602516006936335217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

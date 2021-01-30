@@ -1,0 +1,601 @@
+fileFormatVersion: 2
+guid: b71458bc4e3ae654c91f3e6191740310
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6848553448981272798
+    second: sim_2_0
+  - first:
+      213: 3230469713580167873
+    second: sim_2_1
+  - first:
+      213: -8467960421964079206
+    second: sim_2_2
+  - first:
+      213: 5192149603167062255
+    second: sim_2_3
+  - first:
+      213: 2509556305126744113
+    second: sim_2_4
+  - first:
+      213: 6285166935555094704
+    second: sim_2_5
+  - first:
+      213: 8059228624342946693
+    second: sim_2_6
+  - first:
+      213: 2512732065221975864
+    second: sim_2_7
+  - first:
+      213: 8907001250599504628
+    second: sim_2_8
+  - first:
+      213: -5982713166169343088
+    second: sim_2_9
+  - first:
+      213: 1524564208822323675
+    second: sim_2_10
+  - first:
+      213: -472896485737945327
+    second: sim_2_11
+  - first:
+      213: -3895666578184477130
+    second: sim_2_12
+  - first:
+      213: 5099022409081589555
+    second: sim_2_13
+  - first:
+      213: -9214328998442521327
+    second: sim_2_14
+  - first:
+      213: -2079819131132871333
+    second: sim_2_15
+  - first:
+      213: -3250612683691742486
+    second: sim_2_16
+  - first:
+      213: 1685019250744701037
+    second: sim_2_17
+  - first:
+      213: -4652363624903068109
+    second: sim_2_18
+  - first:
+      213: 5247150606863437524
+    second: sim_2_19
+  - first:
+      213: -5851454313472181157
+    second: sim_2_20
+  - first:
+      213: -4894394906234254689
+    second: sim_2_21
+  - first:
+      213: -3456077402661393970
+    second: sim_2_22
+  - first:
+      213: -7340106524129387059
+    second: sim_2_23
+  - first:
+      213: -5368080218594759433
+    second: sim_2_24
+  - first:
+      213: -1476549212245782826
+    second: sim_2_25
+  - first:
+      213: 4119523353700458405
+    second: sim_2_26
+  - first:
+      213: -409385768710361485
+    second: sim_2_27
+  - first:
+      213: -3457423301416727962
+    second: sim_2_28
+  - first:
+      213: 7345281379156695424
+    second: sim_2_29
+  - first:
+      213: 2426358964443496095
+    second: sim_2_30
+  - first:
+      213: 4809042065322690980
+    second: sim_2_31
+  - first:
+      213: -1891312596052690219
+    second: sim_2_32
+  - first:
+      213: 940041306985713767
+    second: Simbolos_0
+  - first:
+      213: 2742320510547582845
+    second: Simbolos_1
+  - first:
+      213: 7241371443908245970
+    second: Simbolos_2
+  - first:
+      213: -8149538261300140129
+    second: Simbolos_3
+  - first:
+      213: 7183436354466862771
+    second: Simbolos_4
+  - first:
+      213: -6807629252535054545
+    second: Simbolos_5
+  - first:
+      213: 2185190385209917471
+    second: Simbolos_6
+  - first:
+      213: 4427349451919350399
+    second: Simbolos_7
+  - first:
+      213: 3579290524594090209
+    second: Simbolos_8
+  - first:
+      213: -1959711266566941677
+    second: Simbolos_9
+  - first:
+      213: -688389294736070404
+    second: Simbolos_10
+  - first:
+      213: -8498954672256483435
+    second: Simbolos_11
+  - first:
+      213: 2668663127021550176
+    second: Simbolos_12
+  - first:
+      213: 5550978007878296977
+    second: Simbolos_13
+  - first:
+      213: -4055809715227630872
+    second: Simbolos_14
+  - first:
+      213: -7850641400254597592
+    second: Simbolos_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Simbolos_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 967.5
+        width: 322.5
+        height: 322.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 760d3119692bb0d00800000000000000
+      internalID: 940041306985713767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simbolos_1
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 967.5
+        width: 322.5
+        height: 322.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7fd47399fdae0620800000000000000
+      internalID: 2742320510547582845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simbolos_2
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 967.5
+        width: 322.5
+        height: 322.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d9fec836f48e7460800000000000000
+      internalID: 7241371443908245970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simbolos_3
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 967.5
+        width: 322.5
+        height: 322.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9720c3212607ee80800000000000000
+      internalID: -8149538261300140129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simbolos_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 645.5
+        width: 322.5
+        height: 322.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b6df9e0e41b0b360800000000000000
+      internalID: 7183436354466862771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simbolos_5
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 645.5
+        width: 322.5
+        height: 322.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2f071063417681a0800000000000000
+      internalID: -6807629252535054545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simbolos_6
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 645.5
+        width: 322.5
+        height: 322.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f104905e31b535e10800000000000000
+      internalID: 2185190385209917471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simbolos_7
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 645.5
+        width: 322.5
+        height: 322.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a5c229eda117d30800000000000000
+      internalID: 4427349451919350399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simbolos_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 323.5
+        width: 322.5
+        height: 322.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e03a5aa4c13ca130800000000000000
+      internalID: 3579290524594090209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simbolos_9
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 323.5
+        width: 322.5
+        height: 322.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31452fd6cf4bdc4e0800000000000000
+      internalID: -1959711266566941677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simbolos_10
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 323.5
+        width: 322.5
+        height: 322.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf8231c65995276f0800000000000000
+      internalID: -688389294736070404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simbolos_11
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 323.5
+        width: 322.5
+        height: 322.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f710641c5ad0a80800000000000000
+      internalID: -8498954672256483435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simbolos_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.5
+        width: 322.5
+        height: 322.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06a7d4f89fef80520800000000000000
+      internalID: 2668663127021550176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simbolos_13
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 1.5
+        width: 322.5
+        height: 322.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 195679b7619090d40800000000000000
+      internalID: 5550978007878296977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simbolos_14
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 1.5
+        width: 322.5
+        height: 322.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e267477d8ed6b7c0800000000000000
+      internalID: -4055809715227630872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Simbolos_15
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 1.5
+        width: 322.5
+        height: 322.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82679dead3bec0390800000000000000
+      internalID: -7850641400254597592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
