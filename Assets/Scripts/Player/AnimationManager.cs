@@ -3,7 +3,7 @@
 [RequireComponent(typeof(Animator), typeof(SpriteRenderer))]
 public class AnimationManager : MonoBehaviour {
 
-    public enum AnimationsAllowed  {WALK_HORIZONTAL, WALK_VERTICAL, WALK_DIAGONAL_FRONT, WALK_DIAGONAL_BACK, STOP, NONE};
+    public enum AnimationsAllowed  {WALK_HORIZONTAL, WALK_VERTICAL, WALK_DIAGONAL_FRONT, WALK_DIAGONAL_BACK, STOP, DIG};
 
     private SpriteRenderer _renderer;
     private Animator _animationController;
@@ -13,7 +13,7 @@ public class AnimationManager : MonoBehaviour {
     private static string kWalkBackKey = "WalkBack";
     private static string kWalkDiagonalFrontKey = "WalkDiagonalFront";
     private static string kWalkDiagonalBackKey = "WalkDiagonalBack";
-    private static string _resetKey = "Reset";
+    private static string kDigKey = "Dig";
 
     private CharacterController.EDirections? actuallyWalkingDirection = null;
 
@@ -109,6 +109,11 @@ public class AnimationManager : MonoBehaviour {
         _animationController.SetBool(kWalkDiagonalFrontKey, false);
         _animationController.SetBool(kWalkDiagonalBackKey, false);
     }
+
+    private void DIG()
+    {
+        _animationController.SetTrigger(kDigKey);
+    }
     #endregion
 
     #region public actions
@@ -134,16 +139,10 @@ public class AnimationManager : MonoBehaviour {
         STOP();
     }
 
-    public void RESET()
-    {
-        actuallyWalkingDirection = null;
+    public void PerformDig()
+	{
+        DIG();
+	}
 
-        _animationController.SetBool(kWalkHorizontalKey, false);
-        _animationController.SetBool(kWalkBackKey, false);
-        _animationController.SetBool(kWalkFrontKey, false);
-        _animationController.SetBool(kWalkDiagonalFrontKey, false);
-        _animationController.SetBool(kWalkDiagonalBackKey, false);
-        _animationController.SetTrigger(_resetKey);
-    }
     #endregion
 }
