@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class EditorModeController : MonoBehaviour
 {
@@ -138,6 +140,11 @@ public class EditorModeController : MonoBehaviour
 
     public void OnFinishClicked()
     {
+        void OnTweetPosted()
+        {
+            StartCoroutine(ExitCoroutine());
+        }
+
         _mapGenerator.mapData.hintsGridPos = new MapData.HintData[_clueZones.Count];
         for (int i = 0; i < _clueZones.Count; ++i)
 		{
@@ -149,7 +156,19 @@ public class EditorModeController : MonoBehaviour
             _mapGenerator.mapData.tresureGridPos.y = _treasurePos[1];
         }
         RenderTexture rT = _photoCam.TakePictureOfArea(_shovelPosV3);
-        _compartirMapa.ShowCompartirMapa(toTexture2D(rT), Serializator.XmlSerialize<MapData>(_mapGenerator.mapData));
+        _compartirMapa.ShowCompartirMapa(toTexture2D(rT), Serializator.XmlSerialize<MapData>(_mapGenerator.mapData), OnTweetPosted);
+    }
+
+    private IEnumerator ExitCoroutine()
+	{
+        yield return new WaitForSeconds(2.0f);
+        Exit();
+
+    }
+
+    public void Exit()
+	{
+        SceneManager.LoadScene("MainMenu");
     }
 
     private Texture2D toTexture2D(RenderTexture rTex)
