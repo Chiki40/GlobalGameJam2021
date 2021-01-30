@@ -31,7 +31,9 @@ public class CharacterController : MonoBehaviour
             {
                 // Distance to move is clamped by distance to target
                 float distanceToMove = Mathf.Min(_speed * Time.deltaTime, distance);
-                Vector2 disp = toTargetVector.normalized * distanceToMove;
+                Vector3 disp = toTargetVector.normalized * distanceToMove;
+                // Double check Y component is 0
+                disp.y = 0.0f;
                 transform.Translate(disp);
                 direction = GetDirectionFromDisp(disp.normalized);
                 movingAnimation = true;
@@ -68,12 +70,12 @@ public class CharacterController : MonoBehaviour
 		{
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
 			{
-                destPos.y += 10.0f;
+                destPos.z += 10.0f;
                 input = true;
             }
             else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             {
-                destPos.y -= 10.0f;
+                destPos.z -= 10.0f;
                 input = true;
             }
 
@@ -91,10 +93,10 @@ public class CharacterController : MonoBehaviour
         return input;
 	}
 
-    private EDirections GetDirectionFromDisp(Vector2 disp)
+    private EDirections GetDirectionFromDisp(Vector3 disp)
 	{
         float horizontalContribution = disp.x;
-        float verticalContribution = disp.y;
+        float verticalContribution = disp.z;
         // First, check diagonal cases
         if (horizontalContribution > _diagonalDirectionThreshold && verticalContribution > _diagonalDirectionThreshold)
 		{
