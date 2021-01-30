@@ -22,22 +22,15 @@ public class CharacterController : MonoBehaviour
     {
         EDirections direction = EDirections.LEFT;
         bool movingAnimation = false;
-        if (GetPlayerInput(out Vector3 targetPos))
+        if (GetPlayerInput(out Vector3 targetDir))
         {
-            Vector3 toTargetVector = targetPos - transform.position;
-            float distance = toTargetVector.magnitude;
-            // Skip if distance less than _moveDistanceThreshold
-            if (distance > _moveDistanceThreshold)
-            {
-                // Distance to move is clamped by distance to target
-                float distanceToMove = Mathf.Min(_speed * Time.deltaTime, distance);
-                Vector3 disp = toTargetVector.normalized * distanceToMove;
-                // Double check Y component is 0
-                disp.y = 0.0f;
-                transform.Translate(disp);
-                direction = GetDirectionFromDisp(disp.normalized);
-                movingAnimation = true;
-            }
+            float distanceToMove = _speed * Time.deltaTime;
+            Vector3 disp = targetDir.normalized * distanceToMove;
+            // Double check Y component is 0
+            disp.y = 0.0f;
+            transform.Translate(disp);
+            direction = GetDirectionFromDisp(disp.normalized);
+            movingAnimation = true;
         }
 
         if (_animationManager != null)
@@ -53,40 +46,44 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    private bool GetPlayerInput(out Vector3 destPos)
+	private bool GetPlayerInput(out Vector3 destDirection)
 	{
         bool input = false;
-        destPos = transform.position;
+        destDirection = Vector3.zero;
         if (Input.GetMouseButton(0))
         {
-            float previousZ = destPos.z;
-            destPos = Input.mousePosition;
-            destPos.z = previousZ;
-            destPos = Camera.main.ScreenToWorldPoint(destPos);
-            destPos.z = previousZ;
-            input = true;
+            Vector2 mouseNormalizedScreenPos = Input.mousePosition / new Vector2(Screen.width, Screen.height);
+            Vector2 playerNormalizedScreenPos = Camera.main.WorldToScreenPoint(transform.position) / new Vector2(Screen.width, Screen.height);
+            Vector2 dir = mouseNormalizedScreenPos - playerNormalizedScreenPos;
+            Vector3 dir3D = new Vector3(dir.x, 0.0f, dir.y);
+            // Skip if distance less than _moveDistanceThreshold
+            if (dir3D.magnitude >= _moveDistanceThreshold)
+            {
+                destDirection = dir3D.normalized;
+                input = true;
+            }
         }
         else
 		{
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
 			{
-                destPos.z += 10.0f;
+                destDirection.z = 1.0f;
                 input = true;
             }
             else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             {
-                destPos.z -= 10.0f;
+                destDirection.z = -1.0f;
                 input = true;
             }
 
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             {
-                destPos.x += 10.0f;
+                destDirection.x = 1.0f;
                 input = true;
             }
             else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             {
-                destPos.x -= 10.0f;
+                destDirection.x = -1.0f;
                 input = true;
             }
         }
