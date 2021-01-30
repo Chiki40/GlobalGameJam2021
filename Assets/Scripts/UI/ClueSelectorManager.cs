@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class ClueSelectorManager : MonoBehaviour
 {
+    [SerializeField]
+    private EditorModeController _editorModeController = null;
+
     public Button[] _buttonsClues;
     private int _totalCluesAdded = 0;
 
@@ -17,10 +20,22 @@ public class ClueSelectorManager : MonoBehaviour
 
     private bool _editorVisible = false;
 
+    private GameObject _player = null;
+
     private void Start()
     {
         _clueIds = new List<int>();
         CerrarEditor();
+    }
+
+	private void OnEnable()
+	{
+        _player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+	public void ChangeOpenEditorInteraction(bool interaction)
+	{
+        _buttonOpen.GetComponent<Button>().interactable = interaction;
     }
 
     public void AddClue(GameObject go)
@@ -91,6 +106,9 @@ public class ClueSelectorManager : MonoBehaviour
             objectsEditor[i].SetActive(true);
         }
 
+        // Disable player
+        _player.GetComponent<CharacterController>().EnableInput(false);
+
         _buttonOpen.SetActive(false);
     }
 
@@ -110,6 +128,9 @@ public class ClueSelectorManager : MonoBehaviour
             _buttonsClues[i].gameObject.SetActive(false);
         }
 
+        // Enable player
+        _player.GetComponent<CharacterController>().EnableInput(true);
+
         _buttonOpen.SetActive(true);
     }
 
@@ -117,6 +138,10 @@ public class ClueSelectorManager : MonoBehaviour
     {
         Debug.Log("he pulsado en aceptar");
         //en _clueIds tenemos los valores que queremos guardar
+        if (_editorModeController != null)
+		{
+            _editorModeController.NewClueZoneAdded(_clueIds);
+        }
         CerrarEditor();
     }
 
