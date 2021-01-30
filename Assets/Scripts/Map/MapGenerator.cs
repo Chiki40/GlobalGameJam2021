@@ -11,7 +11,7 @@ public class MapGenerator : MonoBehaviour
     {
         [Range(1,20)]
         public int dispersion = 1;
-        public GameObject gObject;
+        public GameObject[] gObject;
         public Vector2Int gridUnitsSize = new Vector2Int(1,1);
         [Range(0, 1)]
         public float randomScaleRange = 0;
@@ -123,8 +123,8 @@ public class MapGenerator : MonoBehaviour
                             // de lo que ocupe
                             pos.x += coordinates.x * gridSize + obj.gridUnitsSize.x * 0.5f;
                             pos.z += coordinates.y * gridSize + obj.gridUnitsSize.y * 0.5f;
-
-                            GameObject objCreated = Instantiate(obj.gObject, pos, Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0, 1, 0)), transform);
+                            int randomObjet = Random.Range(0, obj.gObject.Length);
+                            GameObject objCreated = Instantiate(obj.gObject[randomObjet], pos, Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0, 1, 0)), transform);
                             if (obj.randomScaleRange > 0)
                             {
                                 objCreated.transform.localScale = new Vector3(1, Random.Range(1 - obj.randomScaleRange, 1 + obj.randomScaleRange), 1);
