@@ -17,7 +17,7 @@ public class LoadScene : MonoBehaviour
     }
     public void Load_mapsLoader(string level)
     {
-        SceneManager.LoadScene("GamePlayMode");
+        SceneManager.LoadScene("TwitterMapSelector");
     }
     public void Load_credits(string level)
     {

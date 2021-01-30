@@ -2,6 +2,8 @@
 
 public class GameManager : MonoBehaviour
 {
+    public const int kMaxCluesZones = 3;
+
     public static GameManager instance = null;
 
     void Awake()
