@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 105236342000811208}
   - component: {fileID: 3952476504073728877}
   - component: {fileID: 1242697975796631463}
+  - component: {fileID: -1743218688264282128}
   m_Layer: 0
   m_Name: Saco
   m_TagString: Untagged
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-1743218688264282128
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738044197908194930}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.79712015, y: 1.2784925, z: 0.6109035}
+  m_Center: {x: 0, y: 0.5813552, z: 0}

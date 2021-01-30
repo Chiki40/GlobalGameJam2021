@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2343029950391518217}
   - component: {fileID: 1669646641470049196}
   - component: {fileID: 3517084327994195814}
+  - component: {fileID: -2600639843839364619}
   m_Layer: 0
   m_Name: Arbusto_flores
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-2600639843839364619
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3156968362827865779}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3829424, y: 1.1074388, z: 1.887976}
+  m_Center: {x: -0.036864668, y: 0.4826217, z: -0.053192437}

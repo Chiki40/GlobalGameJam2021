@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 356821610151000668}
   - component: {fileID: 3700961397999711737}
   - component: {fileID: 1493087868781084979}
+  - component: {fileID: -626276314168765829}
   m_Layer: 0
   m_Name: Barril_1
   m_TagString: Untagged
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-626276314168765829
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132795982359814374}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0011166, y: 1.3817567, z: 1.0011166}
+  m_Center: {x: 0, y: 0.6586402, z: 0}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8186570099960937330}
   - component: {fileID: 5058476644148081879}
   - component: {fileID: 7050287347717275677}
+  - component: {fileID: 1679739992973140027}
   m_Layer: 0
   m_Name: Tronco_cortado
   m_TagString: Untagged
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1679739992973140027
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8851643154989916616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.7466347, y: 0.95648634, z: 2.052897}
+  m_Center: {x: 0.009742409, y: 0.39730835, z: -0.0030319095}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7413905617035640880}
   - component: {fileID: 5858233642016427925}
   - component: {fileID: 8550179809411545951}
+  - component: {fileID: 4159845074662703217}
   m_Layer: 0
   m_Name: roca_3
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4159845074662703217
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7901753890589022858}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.6737651, y: 0.95628667, z: 1.4022486}
+  m_Center: {x: -0.000000059604645, y: 0.47814333, z: -0.000000029802322}

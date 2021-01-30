@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3746082766196911948}
   - component: {fileID: 311621355993702633}
   - component: {fileID: 2573788156285342755}
+  - component: {fileID: 5817811574956041231}
   m_Layer: 0
   m_Name: Antorcha
   m_TagString: Untagged
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5817811574956041231
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4086755807953253878}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0422229, y: 0.31083494, z: 1.0284567}
+  m_Center: {x: 0.11421639, y: 0.09750178, z: 0.03516519}

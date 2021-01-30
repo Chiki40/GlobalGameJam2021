@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5086813446259485006}
   - component: {fileID: 8158313011366668011}
   - component: {fileID: 6259107639828271649}
+  - component: {fileID: 6927527382114316086}
   m_Layer: 0
   m_Name: Arbusto_frutos
   m_TagString: Untagged
@@ -82,3 +83,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6927527382114316086
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5610409041517507572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8893354, y: 1.0156713, z: 1.7571589}
+  m_Center: {x: 0.005492419, y: 0.422645, z: -0.038459957}
