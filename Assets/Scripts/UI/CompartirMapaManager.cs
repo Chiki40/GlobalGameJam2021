@@ -34,6 +34,7 @@ public class CompartirMapaManager : MonoBehaviour
             msgTwitter = "creado por: " + userTwitter;
         }
         Debug.Log("mensaje twitter => " + msgTwitter);
+        msgTwitter += "\n" + "#GlobalGameJam #GlobalJamUCM21";
 
         TwitterManager tm = TwitterManager.GetInstance();
         Texture2D qr = QrReader.generateQR(_mapaStr);
