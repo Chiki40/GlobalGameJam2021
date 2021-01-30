@@ -19,8 +19,6 @@ public class MapGenerator : MonoBehaviour
     public MapData mapData;
     private float gridSize = 1;
     public RandomObject[] randomObjects;
-    [Range(1, 100)]
-    public int dispersionPopulation;
 
     private bool[,] usedMatrix;
     private int totalPopulation;
@@ -33,14 +31,17 @@ public class MapGenerator : MonoBehaviour
 
     public void Clear()
     {
-        var childs = transform.GetComponentsInChildren<Transform>();
-        foreach (Transform child in childs)
-        {
-            if (child != this.transform)
-                GameObject.DestroyImmediate(child.gameObject);
-        }
+        DestroyAllChildren(gameObject);
         usedMatrix = new bool[mapData.mapSize.x, mapData.mapSize.y];
         totalPopulation = 0;
+    }
+
+    private void DestroyAllChildren(GameObject gameObject)
+    {
+        while (transform.childCount > 0)
+        {
+            DestroyImmediate(transform.GetChild(0).gameObject);
+        }
     }
 
     public void Generate(MapData data)
@@ -110,10 +111,10 @@ public class MapGenerator : MonoBehaviour
                 // Se puede salir de la cuadrícula
                 if (coordinates.x < usedMatrix.GetLength(0) && coordinates.y < usedMatrix.GetLength(1))
                 {
-                    int randomDispersion = Random.Range(0, totalPopulation);
-                    if (randomDispersion < dispersionPopulation)
+                    if (x % obj.gridUnitsSize.x == 0 && y % obj.gridUnitsSize.y == 0)
                     {
-                        if (x % obj.gridUnitsSize.x == 0 && y % obj.gridUnitsSize.y == 0)
+                        int randomDispersion = Random.Range(0, totalPopulation);
+                        if (randomDispersion < mapData.dispersionPopulation)
                         {
                             // Se parte de la posición del MapGenerator
                             Vector3 pos = transform.position;
@@ -126,17 +127,17 @@ public class MapGenerator : MonoBehaviour
                             GameObject objCreated = Instantiate(obj.gObject, pos, Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0, 1, 0)), transform);
                             if (obj.randomScaleRange > 0)
                             {
-                                objCreated.transform.localScale = new Vector3(1, Random.Range(1- obj.randomScaleRange, 1 + obj.randomScaleRange), 1);
+                                objCreated.transform.localScale = new Vector3(1, Random.Range(1 - obj.randomScaleRange, 1 + obj.randomScaleRange), 1);
                             }
-                            // Se marca la casilla como usada
-                            usedMatrix[coordinates.x, coordinates.y] = true;
                         }
-                        else
-                        {
-                            // Como el objeto tiene diferente tamaño, se marcan como usadas el resto de
-                            // casillas que ocupa el objeto
-                            usedMatrix[coordinates.x, coordinates.y] = true;
-                        }
+                        // Se marca la casilla como usada
+                        usedMatrix[coordinates.x, coordinates.y] = true;
+                    }
+                    else
+                    {
+                        // Como el objeto tiene diferente tamaño, se marcan como usadas el resto de
+                        // casillas que ocupa el objeto
+                        usedMatrix[coordinates.x, coordinates.y] = true;
                     }
                 }
             }
