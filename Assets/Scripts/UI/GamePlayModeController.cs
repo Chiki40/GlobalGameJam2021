@@ -16,6 +16,8 @@ public class GamePlayModeController : MonoBehaviour
 	private Sprite _shovelUseOffSprite = null;
 	[SerializeField]
 	private Transform _shovelUsesParent = null;
+	[SerializeField]
+	private ClueViewerManager _cluesViewer = null;
 
 	private List<GameObject> _shovelUsesObjects = new List<GameObject>();
 	private int _shovelUsesRemaining = 0;
@@ -88,6 +90,7 @@ public class GamePlayModeController : MonoBehaviour
 							clueZone.pos = new int[2] { cellPos.x, cellPos.y };
 							// Add new clue
 							_foundClueZones.Add(clueZone);
+							_cluesViewer.Show(clueZone.clueInfo);
 							Debug.Log("Clue found!");
 							return;
 						}
