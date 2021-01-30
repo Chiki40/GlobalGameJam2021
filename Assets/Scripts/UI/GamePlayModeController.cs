@@ -101,6 +101,11 @@ public class GamePlayModeController : MonoBehaviour
 				if (shovelPos.x == cellPos.x && shovelPos.y == cellPos.y)
 				{
 					_shovelFound = true;
+					GameObject shovelObject = _mapGenerator.GetPalaObject();
+					if (shovelObject != null)
+					{
+						shovelObject.SetActive(false);
+					}
 					Debug.Log("Shovel found!");
 				}
 			}
@@ -115,6 +120,11 @@ public class GamePlayModeController : MonoBehaviour
 				if (treasurePos.x == cellPos.x && treasurePos.y == cellPos.y)
 				{
 					_shovelFound = true;
+					GameObject treasureObject = _mapGenerator.GetTreasureObject();
+					if (treasureObject != null)
+					{
+						treasureObject.SetActive(true);
+					}
 					Debug.Log("Treasure found! You won!");
 					StartCoroutine(ExitCoroutine());
 				}

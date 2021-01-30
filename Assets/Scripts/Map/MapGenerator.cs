@@ -22,33 +22,30 @@ public class MapGenerator : MonoBehaviour
     public MapData mapData;
     private float gridSize = 1;
     public RandomObject[] randomObjects;
-    public GameObject palaPrefab;
-    public GameObject tesoroPrefab;
+    public GameObject pala;
+    public float palaYOffset = 1.0f;
+    public GameObject tesoro;
 
     private bool[,] usedMatrix;
     private int totalPopulation;
     private Dictionary<RandomObject, int> maxObjectsInTheSceneDic;
-    private GameObject iPala;
-    private GameObject iTesoro;
-    public GameObject pala 
-    { 
-        get
-        {
-            return iPala;
-        }
-    }
-    public GameObject tesoro
-    {
-        get
-        {
-            return iTesoro;
-        }
-    }
+    private GameObject palaObject = null;
+    private GameObject tesoroObject = null;
     // Start is called before the first frame update
     void Start()
     {
         //Clear();
         //Generate();
+    }
+
+    public GameObject GetPalaObject()
+	{
+        return palaObject;
+	}
+
+    public GameObject GetTreasureObject()
+    {
+        return tesoroObject;
     }
 
     public void Clear()
@@ -69,7 +66,7 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-    public void Generate(MapData data, bool instancePalaAndTesoro)
+    public void Generate(MapData data, bool instantiatePalaYTesoro=false)
     {
         foreach (RandomObject obj in randomObjects)
         {
@@ -86,13 +83,14 @@ public class MapGenerator : MonoBehaviour
 
         var pop = mapData.population;
         GenerateRandoMap(pop);
-        if (instancePalaAndTesoro)
+        if (instantiatePalaYTesoro)
+		{
             InstantitatePalaYTesoro();
+		}
     }
-
     public void Generate()
     {
-        Generate(mapData, false);
+        Generate(mapData);
     }
     private void GenerateRandoMap(float population)
     {
@@ -182,7 +180,7 @@ public class MapGenerator : MonoBehaviour
         return true;
     }
 
-    public void InstantitatePalaYTesoro()
+    void InstantitatePalaYTesoro()
     {
         Vector3 pos = transform.position;
         // Se posiciona en el centro de la cuadrícula desplazando según la posición del
@@ -190,13 +188,14 @@ public class MapGenerator : MonoBehaviour
         // de lo que ocupe
         pos.x += mapData.shovelGridPos.x * gridSize + gridSize * 0.5f;
         pos.z += mapData.shovelGridPos.y * gridSize + gridSize * 0.5f;
-        iPala = Instantiate(pala, pos, Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0, 1, 0)), transform);
+        pos.y += palaYOffset;
+        palaObject = Instantiate(pala, pos, Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0, 1, 0)), transform);
 
         pos = transform.position;
         pos.x += mapData.tresureGridPos.x * gridSize + gridSize * 0.5f;
         pos.z += mapData.tresureGridPos.y * gridSize + gridSize * 0.5f;
-        iTesoro = Instantiate(tesoro, pos, Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0, 1, 0)), transform);
-        iTesoro.SetActive(false);
+        tesoroObject = Instantiate(tesoro, pos, Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0, 1, 0)), transform);
+        tesoroObject.SetActive(false);
 
     }
 }
