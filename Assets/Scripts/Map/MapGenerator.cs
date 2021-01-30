@@ -15,6 +15,9 @@ public class MapGenerator : MonoBehaviour
         public Vector2Int gridUnitsSize = new Vector2Int(1,1);
         [Range(0, 1)]
         public float randomScaleRange = 0;
+        public bool limitNumber = false;
+        [Range(1, 5)]
+        public int maxObjectsInTheScene = 100;
     }
     public MapData mapData;
     private float gridSize = 1;
@@ -22,15 +25,17 @@ public class MapGenerator : MonoBehaviour
 
     private bool[,] usedMatrix;
     private int totalPopulation;
+    private Dictionary<RandomObject, int> maxObjectsInTheSceneDic;
     // Start is called before the first frame update
     void Start()
     {
-        Clear();
-        Generate();
+        //Clear();
+        //Generate();
     }
 
     public void Clear()
     {
+        maxObjectsInTheSceneDic = new Dictionary<RandomObject, int>();
         DestroyAllChildren(gameObject);
         usedMatrix = new bool[mapData.mapSize.x, mapData.mapSize.y];
         totalPopulation = 0;
@@ -48,6 +53,11 @@ public class MapGenerator : MonoBehaviour
 
     public void Generate(MapData data)
     {
+        foreach (RandomObject obj in randomObjects)
+        {
+            maxObjectsInTheSceneDic.Add(obj, obj.maxObjectsInTheScene);
+        }
+
         mapData = data;
         Random.InitState(mapData.rSeed);
         totalPopulation = 0;
@@ -55,22 +65,9 @@ public class MapGenerator : MonoBehaviour
         {
             totalPopulation += randomObjects[i].dispersion * randomObjects[i].dispersion;
         }
-        float reduction = (float)randomObjects.Length / totalPopulation * 100;
-        //var pop = totalPopulation * mapData.population / 100;
-        var pop = mapData.population * reduction;
-        GenerateRandoMap(pop);
 
-        // Log estadísticas
-        int used = 0;
-        for (int i = 0; i< mapData.mapSize.x; ++i)
-        {
-            for (int j = 0; j < mapData.mapSize.y; ++j)
-            {
-                if (usedMatrix[i, j])
-                    ++used;
-            }
-        }
-        Debug.Log("Usados: " + used + "/" + mapData.mapSize.x * mapData.mapSize.y);
+        var pop = mapData.population;
+        GenerateRandoMap(pop);
     }
     public void Generate()
     {
@@ -88,11 +85,15 @@ public class MapGenerator : MonoBehaviour
                 if (usedMatrix[j,i]) 
                     continue;
 
-                int objectToInstantiate = Random.Range(0, randomObjects.Length);
-                int floorOrObject = Random.Range(0, totalPopulation);
+                int floorOrObject = Random.Range(0, 1000 + totalPopulation);
                 if (floorOrObject < population)
                 {
+                    // Se comprueba si hay suficientes instancias permitidas
+                    int objectToInstantiate = Random.Range(0, randomObjects.Length);
                     RandomObject obj = randomObjects[objectToInstantiate];
+                    if (obj.limitNumber && maxObjectsInTheSceneDic[obj] == 0)
+                        continue;
+                    maxObjectsInTheSceneDic[obj] = maxObjectsInTheSceneDic[obj] - 1;
                     GenerateObject(obj, j, i);
                 }
             }
@@ -111,11 +112,12 @@ public class MapGenerator : MonoBehaviour
             {
                 Vector2Int coordinates = new Vector2Int(gridX + x, gridY + y);
                 // Se puede salir de la cuadrícula
-                if (coordinates.x < usedMatrix.GetLength(0) && coordinates.y < usedMatrix.GetLength(1))
+                if (coordinates.x < mapData.mapSize.x && coordinates.y < mapData.mapSize.y)
                 {
-                    if (x % obj.gridUnitsSize.x == 0 && y % obj.gridUnitsSize.y == 0)
+                    if ((x % obj.gridUnitsSize.x == 0) && (y % obj.gridUnitsSize.y == 0))
                     {
-                        int randomDispersion = Random.Range(0, totalPopulation);
+                        // Si es el primer objeto de la dispersión siempre se pone
+                        int randomDispersion = (x == 0 && y == 0) ? 0 : Random.Range(0, 1000 + totalPopulation);
                         if (randomDispersion < mapData.dispersionPopulation)
                         {
                             // Se parte de la posición del MapGenerator
