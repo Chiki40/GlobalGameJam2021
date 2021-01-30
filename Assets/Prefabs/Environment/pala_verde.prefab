@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6932979747506050394}
   - component: {fileID: 6312146499402488575}
   - component: {fileID: 8105855380594929205}
+  - component: {fileID: -3000744556989265482}
   m_Layer: 0
   m_Name: pala_verde
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-3000744556989265482
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7745405163562799072}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08654377, y: 1.3751998, z: 0.23123296}
+  m_Center: {x: -0.0000000018626451, y: -0.66007495, z: 0}

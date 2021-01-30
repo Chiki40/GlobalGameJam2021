@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private Vector2 _maxBounds = new Vector2(0.0f, 0.0f);
 
-    void Update()
+    private void Update()
     {
         Vector3 playerPos = _player.transform.position;
         Vector3 newPos = transform.position;

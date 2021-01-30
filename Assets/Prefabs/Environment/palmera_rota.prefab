@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3150472111281638275}
   - component: {fileID: 2024194465320174630}
   - component: {fileID: 4319960766580551916}
+  - component: {fileID: 4367445464139246626}
   m_Layer: 0
   m_Name: palmera_rota
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4367445464139246626
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2374357005604737337}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.0081544, y: 2.7856712, z: 4.0073338}
+  m_Center: {x: 0.04975432, y: 1.1618142, z: 0}
