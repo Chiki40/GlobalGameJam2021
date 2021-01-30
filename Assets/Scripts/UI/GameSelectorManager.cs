@@ -48,6 +48,7 @@ public class GameSelectorManager : MonoBehaviour
 
             go.transform.name = tweetId.ToString();
             go.transform.SetParent(_scrollBaseGameObject.transform);
+            go.SetActive(true);
 
             if(tweet._imgs.Count > 0)
             {
@@ -80,30 +81,14 @@ public class GameSelectorManager : MonoBehaviour
                         }
                     }
                 }
-
-                if (!someFotoAdded)
-                {
-                    for (int childId = 0; childId < go.transform.childCount; ++childId)
-                    {
-                        if (go.transform.GetChild(childId).name == "QR")
-                        {
-                            go.transform.GetChild(childId).gameObject.SetActive(false);
-                        }
-                        else
-                        {
-                            if (go.transform.GetChild(childId).name == "Foto")
-                            {
-                                Texture2D texture = tweet._imgs[0];
-                                Sprite sp = Sprite.Create(texture, new Rect(0.0f, 0.0f, texture.width, texture.height), new Vector2(0.5f, 0.5f), 100.0f);
-                                go.transform.GetChild(childId).GetComponent<Image>().sprite = sp;
-                            }
-                        }
-                    }
-                }
-
             }
-            
-            go.GetComponentInChildren<TextMeshProUGUI>().text = t[tweetId]._msg;
+            int lenght = t[tweetId]._msg.IndexOf("#GlobalGameJam #GlobalJamUCM21");
+            string msg = t[tweetId]._msg;
+            if(lenght >0)
+            {
+                msg = t[tweetId]._msg.Substring(0, lenght);
+            }
+            go.GetComponentInChildren<TextMeshProUGUI>().text = msg;
         }
         _baseGameObject.SetActive(false);
     }
