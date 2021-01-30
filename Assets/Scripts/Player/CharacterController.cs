@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
@@ -11,11 +14,21 @@ public class CharacterController : MonoBehaviour
     [SerializeField]
     float _moveDistanceThreshold = 1.0f;
 
+    private bool _inputEnabled = true;
+
+    private PointerEventData _cachedPointerData = null;
+
     private AnimationManager _animationManager = null;
 
     private void Awake()
     {
         _animationManager = this.GetComponent<AnimationManager>();
+    }
+
+	private void OnEnable()
+	{
+        _inputEnabled = true;
+        _cachedPointerData = new PointerEventData(EventSystem.current);
     }
 
 	private void Update()
@@ -48,10 +61,19 @@ public class CharacterController : MonoBehaviour
 
 	private bool GetPlayerInput(out Vector3 destDirection)
 	{
-        bool input = false;
         destDirection = Vector3.zero;
-        if (Input.GetMouseButton(0))
+        bool input = false;
+        if (_inputEnabled && Input.GetMouseButton(0))
         {
+            // Ignore if mouse is over UI
+            _cachedPointerData.position = Input.mousePosition;
+            List<RaycastResult> results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(_cachedPointerData, results);
+            if (results.Count > 0)
+            {
+                return false;
+            }
+
             Vector2 mouseNormalizedScreenPos = Input.mousePosition / new Vector2(Screen.width, Screen.height);
             Vector2 playerNormalizedScreenPos = Camera.main.WorldToScreenPoint(transform.position) / new Vector2(Screen.width, Screen.height);
             Vector2 dir = mouseNormalizedScreenPos - playerNormalizedScreenPos;
@@ -124,5 +146,10 @@ public class CharacterController : MonoBehaviour
                 return verticalContribution > 0.0f ? EDirections.BACK : EDirections.FRONT;
             }
 		}
+	}
+
+    public void EnableInput(bool active)
+	{
+        _inputEnabled = active;
 	}
 }
