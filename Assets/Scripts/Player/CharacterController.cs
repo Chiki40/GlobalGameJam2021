@@ -2,12 +2,10 @@
 
 public class CharacterController : MonoBehaviour
 {
-    public enum EDirections { LEFT, RIGHT, UP, DOWN, LEFT_UP, RIGHT_UP, LEFT_DOWN, RIGHT_DOWN };
+    public enum EDirections { LEFT, RIGHT, BACK, FRONT, LEFT_BACK, RIGHT_BACK, LEFT_FRONT, RIGHT_FRONT };
 
     [SerializeField]
     float _speed = 1.0f;
-    [SerializeField]
-    float _basicDirdectionThreshold = 0.1f;
     [SerializeField]
     float _diagonalDirectionThreshold = 0.3f;
     [SerializeField]
@@ -97,38 +95,35 @@ public class CharacterController : MonoBehaviour
 	{
         float horizontalContribution = disp.x;
         float verticalContribution = disp.y;
+        // First, check diagonal cases
         if (horizontalContribution > _diagonalDirectionThreshold && verticalContribution > _diagonalDirectionThreshold)
 		{
-            return EDirections.RIGHT_UP;
+            return EDirections.RIGHT_BACK;
 		}
         else if (horizontalContribution > _diagonalDirectionThreshold && verticalContribution < -_diagonalDirectionThreshold)
 		{
-            return EDirections.RIGHT_DOWN;
+            return EDirections.RIGHT_FRONT;
 		}
         else if (horizontalContribution < -_diagonalDirectionThreshold && verticalContribution > _diagonalDirectionThreshold)
         {
-            return EDirections.LEFT_UP;
+            return EDirections.LEFT_BACK;
         }
         else if (horizontalContribution < -_diagonalDirectionThreshold && verticalContribution < -_diagonalDirectionThreshold)
         {
-            return EDirections.LEFT_DOWN;
+            return EDirections.LEFT_FRONT;
         }
-        else if (horizontalContribution > _basicDirdectionThreshold)
+        else
 		{
-            return EDirections.RIGHT;
+            // Not diagonal, find greater axis
+            bool horizontalBigger = Mathf.Abs(horizontalContribution) > Mathf.Abs(verticalContribution);
+            if (horizontalBigger)
+			{
+                return horizontalContribution > 0.0f ? EDirections.RIGHT : EDirections.LEFT;
+			}
+            else
+			{
+                return verticalContribution > 0.0f ? EDirections.BACK : EDirections.FRONT;
+            }
 		}
-        else if (horizontalContribution < -_basicDirdectionThreshold)
-        {
-            return EDirections.LEFT;
-        }
-        else if (verticalContribution > _basicDirdectionThreshold)
-        {
-            return EDirections.UP;
-        }
-        else if (verticalContribution < -_basicDirdectionThreshold)
-        {
-            return EDirections.DOWN;
-        }
-        return EDirections.LEFT;
 	}
 }
