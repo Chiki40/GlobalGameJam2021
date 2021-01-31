@@ -132,22 +132,22 @@ public class EditorModeController : MonoBehaviour
 		}
     }
 
+    /// <summary>
+    /// Aqui entramos cuando hemos pulsado en cancelar una pista visual
+    /// </summary>
     public void LastClueZoneCancelled()
     {
-        Destroy(_placedPrefabs[_placedPrefabs.Count - 1]);
-        _placedPrefabs.RemoveAt(_placedPrefabs.Count - 1);
-        if (_clueZones.Count == 0)
+       //si era una pista standard, no pasa nada
+       //si era la pista del tesoro => lo elimino y digo que no hay tesoro puesto
+
+        if(_treasurePlaced)
         {
-            _shovelPlaced = false;
+            _treasurePlaced = false;
+            //elimino el cofre
+            Destroy(_placedPrefabs[_placedPrefabs.Count - 1]);
+            _placedPrefabs.RemoveAt(_placedPrefabs.Count - 1);
         }
-        else
-        {
-            _clueZones.RemoveAt(_clueZones.Count - 1);
-            if (_treasurePlaced)
-            {
-               _treasurePlaced = false;
-            }
-        }
+
     }
 
     public void OnAddShovelClicked()
@@ -254,7 +254,20 @@ public class EditorModeController : MonoBehaviour
 
     public void OnUndo()
     {
-        LastClueZoneCancelled();
+        Destroy(_placedPrefabs[_placedPrefabs.Count - 1]);
+        _placedPrefabs.RemoveAt(_placedPrefabs.Count - 1);
+        if (_clueZones.Count == 0)
+        {
+            _shovelPlaced = false;
+        }
+        else
+        {
+            _clueZones.RemoveAt(_clueZones.Count - 1);
+            if (_treasurePlaced)
+            {
+                _treasurePlaced = false;
+            }
+        }
     }
 
     public void PlayAddTreasureSound()
