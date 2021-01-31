@@ -5,7 +5,6 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
 using UnityEngine.Events;
-using UnityEditor.Events;
 using System;
 
 public class PopulateBuilder : MonoBehaviour
@@ -32,6 +31,7 @@ public class PopulateBuilder : MonoBehaviour
 
     private int Populate(SymbolsInfo info, int currentCount)
     {
+#if UNITY_EDITOR
         string spriteSheet = AssetDatabase.GetAssetPath(info._image);
         Sprite[] sprites = AssetDatabase.LoadAllAssetsAtPath(spriteSheet).OfType<Sprite>().ToArray();
 
@@ -44,12 +44,11 @@ public class PopulateBuilder : MonoBehaviour
             Image mg = go.AddComponent<Image>();
             mg.sprite = sp;
             Button b = go.AddComponent<Button>();
-
             UnityAction<GameObject> callback = new UnityAction<GameObject>(_clueManager.AddClue);
-            UnityEventTools.AddObjectPersistentListener<GameObject>(b.onClick, callback, go);
-
+            UnityEditor.Events.UnityEventTools.AddObjectPersistentListener<GameObject>(b.onClick, callback, go);
             go.transform.SetParent(_parent.transform);
         }
+#endif
         return currentCount;
     }
 

@@ -8,8 +8,8 @@ public class ClueViewerManager : MonoBehaviour
 {
     public Image[] _images;
     public Texture2D _spriteSheet;
-
     private GameObject _player = null;
+    public Sprite[] sprites;
 
     public void OnClose()
     {
@@ -36,9 +36,6 @@ public class ClueViewerManager : MonoBehaviour
     public void Show(List<int> ids)
     {
         this.gameObject.SetActive(true);
-
-        string spriteSheet = AssetDatabase.GetAssetPath(_spriteSheet);
-        Sprite[] sprites = AssetDatabase.LoadAllAssetsAtPath(spriteSheet).OfType<Sprite>().ToArray();
 
         //populate
         for (int i = 0; i < ids.Count;++i)
