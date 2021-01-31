@@ -7,7 +7,7 @@ public class CreditsMusic : MonoBehaviour
         UtilSound.instance.PlaySound("MusicPiano", 1.0f, loop: true);
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         UtilSound.instance.StopSound("MusicPiano");
     }
