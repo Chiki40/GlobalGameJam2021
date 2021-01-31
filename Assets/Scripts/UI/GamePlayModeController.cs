@@ -37,6 +37,7 @@ public class GamePlayModeController : MonoBehaviour
 	private bool _shovelFound = false;
 	private bool _treasureFound = false;
 	private bool _showingPicture = false;
+	public bool GameInProgress = true;
 
 	private MapGenerator _mapGenerator = null;
 	//private PhotoCamera _photoCam = null;
@@ -66,6 +67,7 @@ public class GamePlayModeController : MonoBehaviour
 		// Set Photo Sprite
 		_photo.transform.GetComponentInChildren<Image>().sprite = GameManager.SpritePhoto;
 		ShowPicture(false);
+		GameInProgress = true;
 	}
 
 	private void Update()
@@ -200,6 +202,7 @@ public class GamePlayModeController : MonoBehaviour
 						Debug.Log("You lost!");
 						if (_gameOverManager != null)
 						{
+							GameInProgress = false;
 							_gameOverManager.Show();
 						}
 					}
@@ -226,6 +229,7 @@ public class GamePlayModeController : MonoBehaviour
 
 	private IEnumerator TreasureFound()
 	{
+		GameInProgress = false;
 		yield return new WaitForSeconds(2.0f);
 		_verTesoroManager.ShowTesoro(_mapGenerator.mapData.message, GameManager.IdTweet);
 	}
