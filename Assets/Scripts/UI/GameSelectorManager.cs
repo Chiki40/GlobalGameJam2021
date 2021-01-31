@@ -50,10 +50,9 @@ public class GameSelectorManager : MonoBehaviour
             TwitterManager.Tweet tweet = t[tweetId];
             tweets.Add(tweet);
             //creamos el gameObject
-            GameObject go = Instantiate<GameObject>(_baseGameObject);
+            GameObject go = Instantiate(_baseGameObject, _scrollBaseGameObject.transform);
 
             go.transform.name = tweetId.ToString();
-            go.transform.SetParent(_scrollBaseGameObject.transform);
             go.SetActive(true);
 
             if(tweet._imgs.Count > 0)
