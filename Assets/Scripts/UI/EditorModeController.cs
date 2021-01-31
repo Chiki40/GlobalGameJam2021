@@ -30,6 +30,8 @@ public class EditorModeController : MonoBehaviour
     private GameObject _treasurePlacedPrefab = null;
     [SerializeField]
     private GameObject _cluesPlacedPrefab = null;
+    [SerializeField]
+    private GameObject _editorUI = null;
 
     private GameObject _player = null;
     private MapGenerator _mapGenerator = null;
@@ -41,6 +43,7 @@ public class EditorModeController : MonoBehaviour
     private int[] _treasurePos = new int[2] { -1, -1 };
     private bool _shovelPlaced = false;
     private bool _treasurePlaced = false;
+    private bool _generatingMap = true;
     private List<GameObject> _placedPrefabs = new List<GameObject>();
 
     private void OnEnable()
@@ -66,6 +69,13 @@ public class EditorModeController : MonoBehaviour
             Destroy(_placedPrefabs[i]);
         }
         _placedPrefabs.Clear();
+        ToggleGenerateMap(true);
+    }
+
+    public void ToggleGenerateMap(bool generatingMap)
+	{
+        _generatingMap = generatingMap;
+        _editorUI.SetActive(!generatingMap);
     }
 
 	private void Update()
