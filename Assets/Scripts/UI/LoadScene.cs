@@ -9,7 +9,7 @@ public class LoadScene : MonoBehaviour
 
     public void Load_tutorial(string level)
     {
-        SceneManager.LoadScene("GamePlayMode");
+        SceneManager.LoadScene("Tutorial");
     }
     public void Load_randomGame(string level)
     {
@@ -25,7 +25,7 @@ public class LoadScene : MonoBehaviour
     }
     public void Load_editor(string level)
     {
-        SceneManager.LoadScene("GamePlayMode");
+        SceneManager.LoadScene("EditorMode");
     }
     public void Load_mainMenu(string level)
     {
