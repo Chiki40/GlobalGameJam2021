@@ -69,7 +69,6 @@ public class GamePlayModeController : MonoBehaviour
 		{
 			Reset();
 		}
-		_showPictureButton.interactable = !_shovelFound && !_photo.activeSelf;
 	}
 
 	public void OnInteract(Vector3 pos, AnimationManager animationManager)
@@ -98,6 +97,7 @@ public class GamePlayModeController : MonoBehaviour
 					// Add new clue
 					_foundClueZones.Add(clueZone);
 					_cluesViewer.Show(clueZone.clueInfo);
+
 					PlayOpenClueSound();
 					ShowPicture(false);
 				}
@@ -128,6 +128,7 @@ public class GamePlayModeController : MonoBehaviour
 								ClueZone clueZone = new ClueZone();
 								clueZone.clueInfo = new List<int>(hintData[i + 1].symbols);
 								clueZone.pos = new int[2] { cellPos.x, cellPos.y };
+
 								// Add new clue
 								_foundClueZones.Add(clueZone);
 								_cluesViewer.Show(clueZone.clueInfo);
@@ -206,7 +207,15 @@ public class GamePlayModeController : MonoBehaviour
 
 	public void ShowPicture(bool active)
 	{
-		_photo.SetActive(active);
+		if(!_shovelFound)
+        {
+			_photo.SetActive(active);
+        }
+		else
+        {
+			_cluesViewer.Show(_foundClueZones[_foundClueZones.Count -1].clueInfo);
+		}
+
 	}
 
 	public void PlayConfirmShareSound()
