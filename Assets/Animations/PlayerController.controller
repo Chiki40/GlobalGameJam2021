@@ -133,7 +133,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WalkDiagonalBack
-  m_Speed: 0.5
+  m_Speed: 0.75
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 3743998575363419762}
@@ -439,7 +439,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WalkDiagonalFront
-  m_Speed: 0.5
+  m_Speed: 0.75
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6954448815133066064}
@@ -470,7 +470,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WalkFront
-  m_Speed: 0.5
+  m_Speed: 0.75
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3428793705908630203}
@@ -532,37 +532,37 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: WalkFront
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: WalkBack
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: WalkDiagonalFront
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: WalkDiagonalBack
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Dig
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -615,7 +615,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WalkHorizontal
-  m_Speed: 0.5
+  m_Speed: 0.75
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 8787581664815857674}
@@ -762,7 +762,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WalkBack
-  m_Speed: 0.5
+  m_Speed: 0.75
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -2404239792599683803}

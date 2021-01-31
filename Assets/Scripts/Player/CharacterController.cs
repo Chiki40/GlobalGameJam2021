@@ -206,7 +206,7 @@ public class CharacterController : MonoBehaviour
 
     public void PlayFootstepAudio()
 	{
-        UtilSound.instance.PlaySound("FOOTSTEP_Trainers_Snow_Compact_Walk_Slow", 1.0f, false, true);
+        UtilSound.instance.PlaySound("FOOTSTEP_Trainers_Snow_Compact_Walk_Slow", 0.2f, false, true);
 	}
 
     public void PlayDigAudio()
