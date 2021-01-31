@@ -118,11 +118,12 @@ public class EditorModeController : MonoBehaviour
                 ClueZone clueZone = new ClueZone();
                 clueZone.clueInfo = new List<int>(clueInfo);
                 clueZone.pos = new int[2] { gridPos.x, gridPos.y };
-                if (Physics.Raycast(_player.transform.position, Vector3.down, out RaycastHit hitInfo))
+                if (Physics.Raycast(_player.transform.position, Vector3.down, out RaycastHit hitInfo) && !_treasurePlaced)
                 {
                     _placedPrefabs.Add(Instantiate(_cluesPlacedPrefab, hitInfo.point + new Vector3(0.0f, 0.02f, 0.0f), Quaternion.Euler(270.0f, 0.0f, 0.0f)));
                 }
                 _clueZones.Add(clueZone);
+                PlayPlaceClueSound();
             }
         }
         else
@@ -131,27 +132,22 @@ public class EditorModeController : MonoBehaviour
 		}
     }
 
+    /// <summary>
+    /// Aqui entramos cuando hemos pulsado en cancelar una pista visual
+    /// </summary>
     public void LastClueZoneCancelled()
     {
-        Destroy(_placedPrefabs[_placedPrefabs.Count - 1]);
-        _placedPrefabs.RemoveAt(_placedPrefabs.Count - 1);
-        if (_clueZones.Count == 0)
+       //si era una pista standard, no pasa nada
+       //si era la pista del tesoro => lo elimino y digo que no hay tesoro puesto
+
+        if(_treasurePlaced)
         {
-            _shovelPlaced = false;
+            _treasurePlaced = false;
+            //elimino el cofre
+            Destroy(_placedPrefabs[_placedPrefabs.Count - 1]);
+            _placedPrefabs.RemoveAt(_placedPrefabs.Count - 1);
         }
-        else
-        {
-            _clueZones.RemoveAt(_clueZones.Count - 1);
-            if (_treasurePlaced)
-            {
-                if(_placedPrefabs[_placedPrefabs.Count - 1].name.Contains(_treasurePlacedPrefab.name))
-                {
-                    Destroy(_placedPrefabs[_placedPrefabs.Count - 1]);
-                    _placedPrefabs.RemoveAt(_placedPrefabs.Count - 1);
-                }
-                _treasurePlaced = false;
-            }
-        }
+
     }
 
     public void OnAddShovelClicked()
@@ -258,6 +254,90 @@ public class EditorModeController : MonoBehaviour
 
     public void OnUndo()
     {
-        LastClueZoneCancelled();
+        Destroy(_placedPrefabs[_placedPrefabs.Count - 1]);
+        _placedPrefabs.RemoveAt(_placedPrefabs.Count - 1);
+        if (_clueZones.Count == 0)
+        {
+            _shovelPlaced = false;
+        }
+        else
+        {
+            _clueZones.RemoveAt(_clueZones.Count - 1);
+            if (_treasurePlaced)
+            {
+                _treasurePlaced = false;
+            }
+        }
+    }
+
+    public void PlayAddTreasureSound()
+	{
+        UtilSound.instance.PlaySound("BODY_Sniff_Long_mono");
+    }
+
+    public void PlayAddShovelSound()
+    {
+        UtilSound.instance.PlaySound("BUTTON_Medium_Click_mono");
+    }
+
+    public void PlayOpenClueSound()
+    {
+        UtilSound.instance.PlaySound("PAPER_Shake_01_mono");
+    }
+
+    public void PlayCloseClueSound()
+    {
+        UtilSound.instance.PlaySound("BUTTON_Click_Compressor_Small_02_stereo");
+    }
+
+    public void PlayUndoSound()
+    {
+        UtilSound.instance.PlaySound("UI_Click_Tap_Noisy_Long_mono");
+    }
+
+    public void PlayFinishSound()
+    {
+        UtilSound.instance.PlaySound("COINS_Rattle_01_mono");
+    }
+
+    private void PlayPlaceClueSound()
+	{
+        UtilSound.instance.PlaySound("PAPER_Crumble_01_mono");
+    }
+
+
+    public void PlayCancelShareSound()
+    {
+        UtilSound.instance.PlaySound("UI_Click_Tap_Noisy_Subtle_mono");
+    }
+
+    public void PlayConfirmShareSound()
+    {
+        UtilSound.instance.PlaySound("BUTTON_Light_Switch_02_stereo");
+    }
+
+    public void PlayGenerateMapSound()
+    {
+        UtilSound.instance.PlaySound("UI_Click_Aftertap_mono");
+    }
+
+    public void PlayExitMapSound()
+    {
+        UtilSound.instance.PlaySound("BUTTON_Click_Compressor_stereo");
+    }
+
+    public void PlayStartEditingMapSound()
+    {
+        UtilSound.instance.PlaySound("FABRIC_Movement_Fast_01_mono");
+    }
+
+    public void PlayBackToGenerateMapSound()
+    {
+        UtilSound.instance.PlaySound("FABRIC_Movement_Fast_02_mono");
+    }
+
+    public void PlayClueSymbolSound()
+    {
+        UtilSound.instance.PlaySound("BUTTON_Short_mono");
     }
 }

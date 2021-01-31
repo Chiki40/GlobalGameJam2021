@@ -67,8 +67,13 @@ public class GameSelectorManager : MonoBehaviour
 
             go.transform.name = tweetId.ToString();
             go.SetActive(true);
+            Button button = go.GetComponent<Button>();
+            if (button != null)
+			{
+                button.enabled = true;
+			}
 
-            if(tweet._imgs.Count > 0)
+            if (tweet._imgs.Count > 0)
             {
                 //buscamos la primera imagen que no sea qr
                 bool someFotoAdded = false;
@@ -100,11 +105,31 @@ public class GameSelectorManager : MonoBehaviour
                     }
                 }
             }
-            int lenght = t[tweetId]._msg.IndexOf("#GlobalGameJam #GlobalJamUCM21");
-            string msg = t[tweetId]._msg;
-            if(lenght >0)
+
+            int minLenght = -1;
+
+            for(int i = 0; i < TwitterManager.defaultHashtags.Count; ++i)
             {
-                msg = t[tweetId]._msg.Substring(0, lenght);
+                int newLenght = t[tweetId]._msg.IndexOf(TwitterManager.defaultHashtags[i]);
+
+                if(newLenght >= 0)
+                {
+                    if(minLenght == -1)
+                    {
+                        minLenght = newLenght;
+                    }
+                    else
+                    {
+                        minLenght = Mathf.Min(minLenght, newLenght);
+                    }
+                }
+
+            }
+
+            string msg = t[tweetId]._msg;
+            if(minLenght > 0)
+            {
+                msg = t[tweetId]._msg.Substring(0, minLenght);
             }
             go.GetComponentInChildren<TextMeshProUGUI>().text = msg;
         }

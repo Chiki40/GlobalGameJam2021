@@ -1174,6 +1174,186 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1066717444359047665}
     m_Modifications:
+    - target: {fileID: 145960911057610344, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 145960911057610344, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 145960911057610344, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 145960911057610344, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 145960911057610344, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 145960911057610344, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 145960911057610344, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 145960911057610344, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 145960911057610344, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 206728976860341751, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 206728976860341751, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 206728976860341751, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 206728976860341751, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 206728976860341751, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 206728976860341751, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 206728976860341751, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 206728976860341751, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 206728976860341751, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 227028158635068300, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 227028158635068300, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 227028158635068300, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 227028158635068300, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 227028158635068300, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 227028158635068300, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 227028158635068300, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 227028158635068300, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 227028158635068300, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 453394412334996086, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 453394412334996086, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 453394412334996086, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 453394412334996086, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 453394412334996086, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 453394412334996086, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 453394412334996086, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 453394412334996086, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 453394412334996086, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 510787402288607210, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 510787402288607210, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 510787402288607210, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 510787402288607210, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 510787402288607210, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 510787402288607210, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 510787402288607210, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 510787402288607210, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 510787402288607210, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 549273487677503422, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -1198,6 +1378,42 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 721919621351565152, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 721919621351565152, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 721919621351565152, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 721919621351565152, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 721919621351565152, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 721919621351565152, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 721919621351565152, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 721919621351565152, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 721919621351565152, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 737503206747981667, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -1294,6 +1510,150 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1072859929059818020, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072859929059818020, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 1072859929059818020, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072859929059818020, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072859929059818020, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072859929059818020, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072859929059818020, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072859929059818020, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072859929059818020, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 1208645655752736137, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208645655752736137, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 1208645655752736137, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208645655752736137, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208645655752736137, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208645655752736137, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208645655752736137, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208645655752736137, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1208645655752736137, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 1213895991115701661, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213895991115701661, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 1213895991115701661, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213895991115701661, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213895991115701661, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213895991115701661, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213895991115701661, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213895991115701661, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213895991115701661, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 1380350744391802927, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380350744391802927, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 1380350744391802927, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380350744391802927, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380350744391802927, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380350744391802927, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380350744391802927, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380350744391802927, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380350744391802927, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 1413634079278286985, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -1366,6 +1726,42 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1535530281352566990, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535530281352566990, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 1535530281352566990, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535530281352566990, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535530281352566990, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535530281352566990, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535530281352566990, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535530281352566990, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1535530281352566990, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 1574785664760277273, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -1390,6 +1786,222 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1932211407924028859, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932211407924028859, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 1932211407924028859, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932211407924028859, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932211407924028859, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932211407924028859, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932211407924028859, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932211407924028859, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1932211407924028859, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 1957096301257712122, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957096301257712122, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 1957096301257712122, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957096301257712122, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957096301257712122, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957096301257712122, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957096301257712122, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957096301257712122, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1957096301257712122, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 2157354502570632245, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157354502570632245, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 2157354502570632245, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157354502570632245, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157354502570632245, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157354502570632245, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157354502570632245, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157354502570632245, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2157354502570632245, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 2321862967438654843, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321862967438654843, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 2321862967438654843, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321862967438654843, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321862967438654843, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321862967438654843, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321862967438654843, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321862967438654843, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321862967438654843, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 2495617561094281452, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495617561094281452, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 2495617561094281452, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495617561094281452, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495617561094281452, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495617561094281452, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495617561094281452, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495617561094281452, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495617561094281452, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 2516837715221388820, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516837715221388820, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 2516837715221388820, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516837715221388820, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516837715221388820, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516837715221388820, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516837715221388820, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516837715221388820, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2516837715221388820, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 2576235222046131784, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -1414,6 +2026,42 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2587629851104111477, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587629851104111477, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 2587629851104111477, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587629851104111477, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587629851104111477, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587629851104111477, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587629851104111477, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587629851104111477, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587629851104111477, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 2750738047246987459, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -1438,6 +2086,114 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2817686127052498855, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817686127052498855, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 2817686127052498855, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817686127052498855, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817686127052498855, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817686127052498855, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817686127052498855, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817686127052498855, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2817686127052498855, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 2981600547564760469, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981600547564760469, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 2981600547564760469, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981600547564760469, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981600547564760469, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981600547564760469, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981600547564760469, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981600547564760469, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981600547564760469, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 2997941019882192363, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2997941019882192363, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 2997941019882192363, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2997941019882192363, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2997941019882192363, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2997941019882192363, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2997941019882192363, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2997941019882192363, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2997941019882192363, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 3379830846102371117, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -1486,6 +2242,42 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3550189596550311520, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550189596550311520, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 3550189596550311520, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550189596550311520, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550189596550311520, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550189596550311520, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550189596550311520, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550189596550311520, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550189596550311520, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 3902417518131768083, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -1582,6 +2374,78 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4179808371364814720, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179808371364814720, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 4179808371364814720, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179808371364814720, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179808371364814720, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179808371364814720, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179808371364814720, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179808371364814720, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4179808371364814720, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 4186898659797419328, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186898659797419328, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 4186898659797419328, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186898659797419328, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186898659797419328, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186898659797419328, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186898659797419328, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186898659797419328, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4186898659797419328, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 4483862602170025656, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -1630,6 +2494,42 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4615778538004323081, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615778538004323081, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 4615778538004323081, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615778538004323081, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615778538004323081, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615778538004323081, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615778538004323081, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615778538004323081, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615778538004323081, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 4685119841648071768, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -1654,6 +2554,78 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4702164820289358562, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702164820289358562, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 4702164820289358562, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702164820289358562, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702164820289358562, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702164820289358562, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702164820289358562, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702164820289358562, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702164820289358562, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 4717592864556135550, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717592864556135550, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 4717592864556135550, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717592864556135550, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717592864556135550, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717592864556135550, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717592864556135550, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717592864556135550, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4717592864556135550, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 4867697857955301233, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -1678,10 +2650,78 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4919417672136824072, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919417672136824072, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 4919417672136824072, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919417672136824072, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919417672136824072, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919417672136824072, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919417672136824072, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919417672136824072, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919417672136824072, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 4951509817511153042, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5016681183797619227, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016681183797619227, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 5016681183797619227, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016681183797619227, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016681183797619227, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016681183797619227, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016681183797619227, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016681183797619227, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5083293888726178456, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -1730,6 +2770,42 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5428030979134062962, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428030979134062962, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 5428030979134062962, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428030979134062962, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428030979134062962, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428030979134062962, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428030979134062962, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428030979134062962, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428030979134062962, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 5467929190719310161, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -1878,6 +2954,78 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5960548891649910171, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960548891649910171, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 5960548891649910171, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960548891649910171, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960548891649910171, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960548891649910171, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960548891649910171, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960548891649910171, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5960548891649910171, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 6014935481489283958, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014935481489283958, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 6014935481489283958, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014935481489283958, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014935481489283958, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014935481489283958, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014935481489283958, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014935481489283958, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014935481489283958, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 6044950155219917585, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -1926,6 +3074,78 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6130454991548504230, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130454991548504230, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 6130454991548504230, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130454991548504230, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130454991548504230, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130454991548504230, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130454991548504230, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130454991548504230, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130454991548504230, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 6239265367461119279, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239265367461119279, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 6239265367461119279, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239265367461119279, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239265367461119279, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239265367461119279, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239265367461119279, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239265367461119279, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6239265367461119279, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 6443472809385984936, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -1974,6 +3194,42 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6748131829859460903, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748131829859460903, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 6748131829859460903, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748131829859460903, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748131829859460903, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748131829859460903, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748131829859460903, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748131829859460903, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748131829859460903, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 7082883847831984292, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -1998,6 +3254,42 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7120570586313395083, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120570586313395083, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 7120570586313395083, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120570586313395083, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120570586313395083, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120570586313395083, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120570586313395083, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120570586313395083, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120570586313395083, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 7145913558044721884, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -2022,6 +3314,114 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7194873442263281438, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194873442263281438, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 7194873442263281438, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194873442263281438, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194873442263281438, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194873442263281438, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194873442263281438, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194873442263281438, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7194873442263281438, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 7200755557887511350, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200755557887511350, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 7200755557887511350, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200755557887511350, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200755557887511350, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200755557887511350, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200755557887511350, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200755557887511350, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7200755557887511350, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 7222707377172110698, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222707377172110698, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 7222707377172110698, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222707377172110698, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222707377172110698, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222707377172110698, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222707377172110698, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222707377172110698, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7222707377172110698, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 7238144769921336792, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -2094,6 +3494,78 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7825462840880733927, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825462840880733927, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 7825462840880733927, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825462840880733927, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825462840880733927, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825462840880733927, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825462840880733927, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825462840880733927, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7825462840880733927, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 8073255025761623699, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073255025761623699, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 8073255025761623699, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073255025761623699, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073255025761623699, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073255025761623699, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073255025761623699, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073255025761623699, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073255025761623699, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 8086123571287574979, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -2238,6 +3710,42 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8636180748870225600, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636180748870225600, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 8636180748870225600, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636180748870225600, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636180748870225600, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636180748870225600, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636180748870225600, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636180748870225600, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8636180748870225600, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 8745786476523440890, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -2262,6 +3770,42 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8820192429065137754, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820192429065137754, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 8820192429065137754, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820192429065137754, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820192429065137754, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820192429065137754, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820192429065137754, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820192429065137754, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820192429065137754, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     - target: {fileID: 8864568356167159314, guid: f723b939136cbf84794520493628bc14, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
@@ -2286,10 +3830,87 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8996055545490670842, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996055545490670842, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 8996055545490670842, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996055545490670842, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996055545490670842, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996055545490670842, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996055545490670842, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996055545490670842, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8996055545490670842, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
+    - target: {fileID: 9197474289204407109, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197474289204407109, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7050090896531385141}
+    - target: {fileID: 9197474289204407109, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ClueSelectorManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197474289204407109, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197474289204407109, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197474289204407109, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197474289204407109, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197474289204407109, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9197474289204407109, guid: f723b939136cbf84794520493628bc14, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 4833194894794687622}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f723b939136cbf84794520493628bc14, type: 3}
 --- !u!224 &1061998870129939149 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5478991791338659799, guid: f723b939136cbf84794520493628bc14, type: 3}
+  m_PrefabInstance: {fileID: 4806942074256723226}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4833194894794687622 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 119140328615414172, guid: f723b939136cbf84794520493628bc14, type: 3}
   m_PrefabInstance: {fileID: 4806942074256723226}
   m_PrefabAsset: {fileID: 0}
