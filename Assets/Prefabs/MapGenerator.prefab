@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5626304028038277928}
   - component: {fileID: 5626304028038277929}
   - component: {fileID: 8398924376212051979}
+  - component: {fileID: 1088114437}
   m_Layer: 0
   m_Name: MapGenerator
   m_TagString: Untagged
@@ -49,11 +50,10 @@ MonoBehaviour:
     tresureGridPos: {x: 0, y: 0}
     hintsGridPos: []
     message: 
-    rSeed: 1088415724
+    rSeed: 1282374700
     mapSize: {x: 100, y: 100}
-    population: 20
-    dispersionPopulation: 522
-    idTweet: 
+    population: 19
+    dispersionPopulation: 521
   randomObjects:
   - dispersion: 20
     gObject:
@@ -167,13 +167,16 @@ MonoBehaviour:
     randomScaleRange: 0
     limitNumber: 1
     maxObjectsInTheScene: 2
-  - dispersion: 1
+  - dispersion: 4
     gObject:
     - {fileID: 5827448600682470326, guid: d0fb6b628b77bb54ab02a31e73238d27, type: 3}
+    - {fileID: 5170355879221571859, guid: e7de65d7d7b2ba24986478ea8e63fe0a, type: 3}
+    - {fileID: 4065461203868097065, guid: 7b50e8a0723a4164db90dfa64f7b69f3, type: 3}
+    - {fileID: 4526233173546766782, guid: 4bb2dc83ddf28f345879d1607a035a7a, type: 3}
     gridUnitsSize: {x: 2, y: 2}
     randomScaleRange: 0
     limitNumber: 1
-    maxObjectsInTheScene: 2
+    maxObjectsInTheScene: 5
   - dispersion: 1
     gObject:
     - {fileID: 1255611208331962700, guid: 87a278f54c1f88d48bef33988afb3315, type: 3}
@@ -194,6 +197,27 @@ MonoBehaviour:
     gridUnitsSize: {x: 1, y: 1}
     randomScaleRange: 0
     limitNumber: 1
+    maxObjectsInTheScene: 1
+  - dispersion: 1
+    gObject:
+    - {fileID: 3733577872691229739, guid: a286fcac59ca79e40ae47caca56c3830, type: 3}
+    gridUnitsSize: {x: 10, y: 10}
+    randomScaleRange: 0
+    limitNumber: 1
+    maxObjectsInTheScene: 1
+  - dispersion: 2
+    gObject:
+    - {fileID: 7179923423140522927, guid: 3230e4e3b5e69b74eac4d780d116f57e, type: 3}
+    gridUnitsSize: {x: 4, y: 4}
+    randomScaleRange: 0
+    limitNumber: 0
+    maxObjectsInTheScene: 1
+  - dispersion: 20
+    gObject:
+    - {fileID: 2452949701083073257, guid: 98a1a3a033ad9ea409ecd3aa8845bb52, type: 3}
+    gridUnitsSize: {x: 2, y: 2}
+    randomScaleRange: 0.5
+    limitNumber: 0
     maxObjectsInTheScene: 1
   pala: {fileID: 7745405163562799072, guid: 723eef81a09291f4a9d6452c1f4f5ff5, type: 3}
   palaYOffset: 1.19
@@ -219,6 +243,35 @@ MonoBehaviour:
     mapSize: {x: 100, y: 100}
     population: 20
     dispersionPopulation: 522
-    idTweet: 
   randomRangeDispersion: 1
   m_mapGenerator: {fileID: 5626304028038277929}
+--- !u!114 &1088114437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5626304028038277934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 4aa753317e7ed2949b7075684e881302, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8398924376212051979}
+          m_TargetAssemblyTypeName: MapCreator, Assembly-CSharp
+          m_MethodName: CreateRandomMap
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
