@@ -19,6 +19,7 @@ public class GameOverManager : MonoBehaviour
 
     public void Salir()
     {
+        UtilSound.instance.PlaySound("BUTTON_Click_Compressor_stereo");
         this.gameObject.SetActive(false);
         if (_gameplayModeController != null)
         {
