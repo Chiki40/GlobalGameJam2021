@@ -8,6 +8,8 @@ public class ClueSelectorManager : MonoBehaviour
 {
     [SerializeField]
     private EditorModeController _editorModeController = null;
+    [SerializeField]
+    private Button _acceptButton = null;
 
     public Button[] _buttonsClues;
     private int _totalCluesAdded = 0;
@@ -26,6 +28,11 @@ public class ClueSelectorManager : MonoBehaviour
     {
         _clueIds = new List<int>();
         CerrarEditor();
+    }
+
+	private void Update()
+	{
+        _acceptButton.interactable = _totalCluesAdded > 0;
     }
 
 	private void OnEnable()
@@ -136,6 +143,12 @@ public class ClueSelectorManager : MonoBehaviour
 
     public void OnAceptar()
     {
+        // At least 1 clue must be selected
+        if (_totalCluesAdded <= 0)
+		{
+            return;
+		}
+
         Debug.Log("he pulsado en aceptar");
         //en _clueIds tenemos los valores que queremos guardar
         if (_editorModeController != null)
@@ -148,6 +161,12 @@ public class ClueSelectorManager : MonoBehaviour
     public void OnCancel()
     {
         Debug.Log("he pulsado en cancelar");
+
+        if (_editorModeController != null)
+        {
+            _editorModeController.LastClueZoneCancelled();
+        }
+
         CerrarEditor();
     }
 

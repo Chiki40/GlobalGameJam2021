@@ -44,36 +44,36 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _EdgeWaterDist: 3
-    - _FoamDepth: 0.71
-    - _FoamStrength: 0.631
-    - _FoamTexTile: 510
+    - _EdgeWaterDist: 5
+    - _FoamDepth: 0.59
+    - _FoamStrength: 1.089
+    - _FoamTexTile: 512
     - _Metallic: 0.2
-    - _NormalFadeDistance: 1
-    - _NormalFadeStart: 50
+    - _NormalFadeDistance: 50
+    - _NormalFadeStart: 20
     - _NormalLayer0: 0.4
-    - _NormalLayer0Scale: 0.4
+    - _NormalLayer0Scale: 1.462
     - _NormalLayer1: 0.6
-    - _NormalLayer1Scale: 0.6
-    - _NormalLayer2Scale: 0.4
-    - _NormalMoveScale: 0.000167
-    - _NormalTile: 1024
+    - _NormalLayer1Scale: 2.332
+    - _NormalLayer2Scale: 0.281
+    - _NormalMoveScale: 0.000151
+    - _NormalTile: 200
     - _PW_DstBlend: 0
     - _PW_MainLightIntensity: 2.8
     - _PW_SSS: 1
-    - _PW_SSSDistortion: 0.34
-    - _PW_SSSPower: 1
+    - _PW_SSSDistortion: 0.213
+    - _PW_SSSPower: 0.96
     - _PW_SrcBlend: 1
-    - _Smoothness: 0.8
-    - _TransparentDepth: 2.07
-    - _TransparentMin: 0.048
-    - _WaveBackwashToggle: 0
+    - _Smoothness: 0.711
+    - _TransparentDepth: 17
+    - _TransparentMin: 0.73
+    - _WaveBackwashToggle: 2
     - _WaveDirGlobal: 0.66
-    - _WaveLength: 25
+    - _WaveLength: 80
     - _WavePeakToggle: 1
-    - _WaveShoreClamp: 0.135
-    - _WaveSpeed: 20
-    - _WaveSteepness: 0.9
+    - _WaveShoreClamp: 0.558
+    - _WaveSpeed: 12
+    - _WaveSteepness: 0.6
     m_Colors:
     - _AmbientColor: {r: 0.7027151, g: 0.88101596, b: 1.0016313, a: 1}
     - _EdgeWaterColor: {r: 0.09999963, g: 0.09999963, b: 0.19999963, a: 1}

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,8 +7,9 @@ using System.Linq;
 public class ClueViewerManager : MonoBehaviour
 {
     public Image[] _images;
-    private List<int> _ids;
     public Texture2D _spriteSheet;
+
+    private GameObject _player = null;
 
     public void OnClose()
     {
@@ -18,6 +18,9 @@ public class ClueViewerManager : MonoBehaviour
         {
             _images[i].gameObject.SetActive(false);
         }
+
+        // Enable player
+        _player.GetComponent<CharacterController>().EnableInput(true);
     }
 
     public void Start()
@@ -25,10 +28,14 @@ public class ClueViewerManager : MonoBehaviour
         OnClose();
     }
 
+    private void OnEnable()
+    {
+        _player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     public void Show(List<int> ids)
     {
         this.gameObject.SetActive(true);
-        _ids = ids;
 
         string spriteSheet = AssetDatabase.GetAssetPath(_spriteSheet);
         Sprite[] sprites = AssetDatabase.LoadAllAssetsAtPath(spriteSheet).OfType<Sprite>().ToArray();
@@ -36,8 +43,18 @@ public class ClueViewerManager : MonoBehaviour
         //populate
         for (int i = 0; i < ids.Count;++i)
         {
-            _images[i].sprite = sprites[ids[i]];
+            for (int j = 0; j < sprites.Length; ++j)
+            {
+                if (sprites[j].name == "Simbolos_" + ids[i])
+                {
+                    _images[i].sprite = sprites[j];
+                    break;
+                }
+            }
             _images[i].gameObject.SetActive(true);
         }
+
+        // Disable player
+        _player.GetComponent<CharacterController>().EnableInput(false);
     }
 }
