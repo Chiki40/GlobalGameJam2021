@@ -27,6 +27,8 @@ public class GamePlayModeController : MonoBehaviour
 	[SerializeField]
 	private VerTesoroManager _verTesoroManager = null;
 	[SerializeField]
+	private GameOverManager _gameOverManager = null;
+	[SerializeField]
 	private GameObject _cluesPlacedPrefab = null;
 
 	private List<GameObject> _shovelUsesObjects = new List<GameObject>();
@@ -196,7 +198,10 @@ public class GamePlayModeController : MonoBehaviour
 					if (_shovelUsesRemaining <= 0)
 					{
 						Debug.Log("You lost!");
-						StartCoroutine(ResetCoroutine());
+						if (_gameOverManager != null)
+						{
+							_gameOverManager.Show();
+						}
 					}
 				}
 			}
@@ -208,7 +213,7 @@ public class GamePlayModeController : MonoBehaviour
 		return (cell1 - cell2).magnitude <= _rangeOfCellsToInteract;
 	}
 
-	private IEnumerator ResetCoroutine()
+	public IEnumerator ResetCoroutine()
 	{
 		yield return new WaitForSeconds(2.0f);
 		Reset();
