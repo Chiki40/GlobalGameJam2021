@@ -72,11 +72,6 @@ public class GameSelectorManager : MonoBehaviour
 			{
                 button.enabled = true;
 			}
-            AudioSource audio = go.GetComponent<AudioSource>();
-            if (audio != null)
-            {
-                audio.enabled = true;
-            }
 
             if (tweet._imgs.Count > 0)
             {
