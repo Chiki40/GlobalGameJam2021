@@ -144,6 +144,81 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &805502582037522492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8218827185723475338}
+  - component: {fileID: 6761844423685830243}
+  - component: {fileID: 9198024139470129939}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8218827185723475338
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805502582037522492}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3961259621598783104}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 874, y: 214}
+  m_SizeDelta: {x: 400, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &6761844423685830243
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805502582037522492}
+  m_CullTransparentMesh: 0
+--- !u!114 &9198024139470129939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805502582037522492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 1c0d7cf0372b9e546a958fea3ab3ff1c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &1035352660443209623
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,8 +339,8 @@ MonoBehaviour:
   _shovelUses: 3
   _rangeOfCellsToInteract: 2
   _shovelUsePrefab: {fileID: 3672743194919476190, guid: f3b75c544f6b54145a6a47f82b7e980c, type: 3}
-  _shovelUseOnSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  _shovelUseOffSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  _shovelUseOnSprite: {fileID: 21300000, guid: 8cb5d5d166bde144597a82315f6930dc, type: 3}
+  _shovelUseOffSprite: {fileID: 21300000, guid: fb66d7fb835fc3d47906a0474d353d0f, type: 3}
   _shovelUsesParent: {fileID: 300161943878193105}
   _showPictureButton: {fileID: 3896190811790289907}
   _photo: {fileID: 7065468556527242748}
@@ -444,11 +519,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3961259621598783104}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -171}
+  m_AnchoredPosition: {x: -37, y: -171}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &8082905599185504920
@@ -931,6 +1006,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 8218827185723475338}
   - {fileID: 300161943878193105}
   m_Father: {fileID: 1035352660443209627}
   m_RootOrder: 0
@@ -1049,6 +1125,38 @@ PrefabInstance:
     - target: {fileID: 2722641830318981777, guid: e20582c2225a02743805546fb47359a0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722641830318981777, guid: e20582c2225a02743805546fb47359a0, type: 3}
+      propertyPath: m_Transition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2722641830318981777, guid: e20582c2225a02743805546fb47359a0, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: -3025076013293921102, guid: 2d20c4c3069ef754089770b683d8361b, type: 3}
+    - target: {fileID: 2722641830318981777, guid: e20582c2225a02743805546fb47359a0, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: -3025076013293921102, guid: 2d20c4c3069ef754089770b683d8361b, type: 3}
+    - target: {fileID: 2722641830318981777, guid: e20582c2225a02743805546fb47359a0, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: -3025076013293921102, guid: 2d20c4c3069ef754089770b683d8361b, type: 3}
+    - target: {fileID: 2722641830318981777, guid: e20582c2225a02743805546fb47359a0, type: 3}
+      propertyPath: m_SpriteState.m_DisabledSprite
+      value: 
+      objectReference: {fileID: -3025076013293921102, guid: 2d20c4c3069ef754089770b683d8361b, type: 3}
+    - target: {fileID: 4790745630652397878, guid: e20582c2225a02743805546fb47359a0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 737530921035051848, guid: 29d153f44ea9c7c499e102f7da026e6b, type: 3}
+    - target: {fileID: 4790745630652397878, guid: e20582c2225a02743805546fb47359a0, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790745630652397878, guid: e20582c2225a02743805546fb47359a0, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5625230298232607249, guid: e20582c2225a02743805546fb47359a0, type: 3}
       propertyPath: m_LocalPosition.x
