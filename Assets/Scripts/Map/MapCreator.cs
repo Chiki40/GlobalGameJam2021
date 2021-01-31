@@ -4,7 +4,6 @@ using Random = UnityEngine.Random;
 
 public class MapCreator : MonoBehaviour
 {
-    public static string kMapToLoadPlayerPrefId = "MapToLoad";
     private static MapCreator m_instance;
     public MapData mapDataBase;
     [Range(0,10)]
@@ -41,9 +40,9 @@ public class MapCreator : MonoBehaviour
         // PlayMode
         if (_gamePlayMode != null)
 		{
-            if (PlayerPrefs.HasKey(kMapToLoadPlayerPrefId))
+            if (!string.IsNullOrEmpty(GameManager.MapToLoad))
             {
-                CreatePlayableMapFromData(PlayerPrefs.GetString(kMapToLoadPlayerPrefId));
+                CreatePlayableMapFromData(PlayerPrefs.GetString(GameManager.MapToLoad));
             }
         }
         else

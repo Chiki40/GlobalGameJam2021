@@ -54,6 +54,8 @@ public class GamePlayModeController : MonoBehaviour
 		_shovelUsesRemaining = _shovelUses;
 		_foundClueZones.Clear();
 		_shovelFound = false;
+		// Set Photo Sprite
+		_photo.transform.GetComponentInChildren<Image>().sprite = GameManager.SpritePhoto;
 		ShowPicture(false);
 	}
 
