@@ -3,12 +3,22 @@ guid: da32517c384f03e4db90e528848e7d81
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bush_basecolor_1Material
+    second: {fileID: 2100000, guid: c74d7bd75cd3b1c478269f9a64acfd3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: morado_1
+    second: {fileID: 2100000, guid: 2a5d36c817357a64392acbecbd9dacb8, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
