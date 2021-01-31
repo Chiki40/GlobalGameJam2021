@@ -27,11 +27,6 @@ public class GameSelectorManager : MonoBehaviour
         Debug.Log("se ha pulsado el boton => " + go.name);
         string mapDataStr = tweets[int.Parse(go.name)]._seedsImgs[0];
 
-        //ñapaza
-        MapData mapData = Serializator.XmlDeserialize<MapData>(mapDataStr);
-        mapData.idTweet = tweets[int.Parse(go.name)]._id;
-        string mapDataStr2 = Serializator.XmlSerialize<MapData>(mapData);
-
         Sprite sprite = null;
         for (int childId = 0; childId < go.transform.childCount; ++childId)
         {
@@ -46,7 +41,8 @@ public class GameSelectorManager : MonoBehaviour
         }
 
         // Use PlayerPref to propagate map data to next scene
-        GameManager.MapToLoad = mapDataStr2;
+        GameManager.MapToLoad = mapDataStr;
+        GameManager.IdTweet = tweets[int.Parse(go.name)]._id;
         SceneManager.LoadScene("GamePlayMode");
     }
 

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 
     public static string MapToLoad = null;
     public static Sprite SpritePhoto = null;
+    public static string IdTweet = null;
 
     void Awake()
     {
