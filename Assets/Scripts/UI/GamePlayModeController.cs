@@ -9,6 +9,8 @@ public class GamePlayModeController : MonoBehaviour
 	[SerializeField]
 	private int _shovelUses = 3;
 	[SerializeField]
+	private float _rangeOfCellsToInteract = 3;
+	[SerializeField]
 	private GameObject _shovelUsePrefab = null;
 	[SerializeField]
 	private Sprite _shovelUseOnSprite = null;
@@ -71,7 +73,7 @@ public class GamePlayModeController : MonoBehaviour
 				for (int i = 0; i < hintData.Length; ++i)
 				{
 					// Hint found here
-					if (hintData[i].gridPos.x == cellPos.x && hintData[i].gridPos.y == cellPos.y)
+					if (IsCloseEnough(hintData[i].gridPos, cellPos))
 					{
 						bool alreadyFound = false;
 						for (int j = 0; j < _foundClueZones.Count; ++j)
@@ -101,7 +103,7 @@ public class GamePlayModeController : MonoBehaviour
 			{
 				Vector2Int shovelPos = _mapGenerator.mapData.shovelGridPos;
 				// Shovel found here
-				if (shovelPos.x == cellPos.x && shovelPos.y == cellPos.y)
+				if (IsCloseEnough(shovelPos, cellPos))
 				{
 					_shovelFound = true;
 					GameObject shovelObject = _mapGenerator.GetPalaObject();
@@ -120,7 +122,7 @@ public class GamePlayModeController : MonoBehaviour
 				}
 				Vector2Int treasurePos = _mapGenerator.mapData.tresureGridPos;
 				// Treasure found here
-				if (treasurePos.x == cellPos.x && treasurePos.y == cellPos.y)
+				if (IsCloseEnough(treasurePos, cellPos))
 				{
 					_shovelFound = true;
 					GameObject treasureObject = _mapGenerator.GetTreasureObject();
@@ -150,6 +152,11 @@ public class GamePlayModeController : MonoBehaviour
 				}
 			}
 		}
+	}
+
+	private bool IsCloseEnough(Vector2Int cell1, Vector2Int cell2)
+	{
+		return (cell1 - cell2).magnitude <= _rangeOfCellsToInteract;
 	}
 
 	private IEnumerator ResetCoroutine()

@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shovelUses: 3
+  _rangeOfCellsToInteract: 2
   _shovelUsePrefab: {fileID: 3672743194919476190, guid: f3b75c544f6b54145a6a47f82b7e980c, type: 3}
   _shovelUseOnSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   _shovelUseOffSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}

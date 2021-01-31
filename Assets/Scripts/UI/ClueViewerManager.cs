@@ -9,6 +9,8 @@ public class ClueViewerManager : MonoBehaviour
     public Image[] _images;
     public Texture2D _spriteSheet;
 
+    private GameObject _player = null;
+
     public void OnClose()
     {
         this.gameObject.SetActive(false);
@@ -16,11 +18,19 @@ public class ClueViewerManager : MonoBehaviour
         {
             _images[i].gameObject.SetActive(false);
         }
+
+        // Enable player
+        _player.GetComponent<CharacterController>().EnableInput(true);
     }
 
     public void Start()
     {
         OnClose();
+    }
+
+    private void OnEnable()
+    {
+        _player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void Show(List<int> ids)
@@ -36,5 +46,8 @@ public class ClueViewerManager : MonoBehaviour
             _images[i].sprite = sprites[ids[i]];
             _images[i].gameObject.SetActive(true);
         }
+
+        // Disable player
+        _player.GetComponent<CharacterController>().EnableInput(false);
     }
 }

@@ -9,6 +9,9 @@ public class CompartirMapaManager : MonoBehaviour
     private Texture2D _imageTweet;
     private MapData _mapData;
     Action _onFinishCallback = null;
+
+    private GameObject _player = null;
+
     public void ShowCompartirMapa(Texture2D imageTweet, MapData mapData, Action onFinishCallback=null)
     {
         this.gameObject.SetActive(true);
@@ -20,6 +23,12 @@ public class CompartirMapaManager : MonoBehaviour
     private void Start()
     {
         this.gameObject.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        _player = GameObject.FindGameObjectWithTag("Player");
+        _player.GetComponent<CharacterController>().EnableInput(false);
     }
 
     public void OnCompartir()
@@ -62,6 +71,7 @@ public class CompartirMapaManager : MonoBehaviour
     public void OnAtras()
     {
         this.gameObject.SetActive(false);
+        _player.GetComponent<CharacterController>().EnableInput(true);
     }
 
 }
