@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance = null;
 
+    public static string MapToLoad = null;
+    public static Sprite SpritePhoto = null;
+
     void Awake()
     {
         if (instance == null)

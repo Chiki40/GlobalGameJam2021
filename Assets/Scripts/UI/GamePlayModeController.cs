@@ -19,6 +19,10 @@ public class GamePlayModeController : MonoBehaviour
 	[SerializeField]
 	private Transform _shovelUsesParent = null;
 	[SerializeField]
+	private Button _showPictureButton = null;
+	[SerializeField]
+	private GameObject _photo = null;
+	[SerializeField]
 	private ClueViewerManager _cluesViewer = null;
 
 	private List<GameObject> _shovelUsesObjects = new List<GameObject>();
@@ -50,6 +54,9 @@ public class GamePlayModeController : MonoBehaviour
 		_shovelUsesRemaining = _shovelUses;
 		_foundClueZones.Clear();
 		_shovelFound = false;
+		// Set Photo Sprite
+		_photo.transform.GetComponentInChildren<Image>().sprite = GameManager.SpritePhoto;
+		ShowPicture(false);
 	}
 
 	private void Update()
@@ -58,6 +65,7 @@ public class GamePlayModeController : MonoBehaviour
 		{
 			Reset();
 		}
+		_showPictureButton.interactable = !_shovelFound && !_photo.activeSelf;
 	}
 
 	public void OnInteract(Vector3 pos, AnimationManager animationManager)
@@ -86,6 +94,7 @@ public class GamePlayModeController : MonoBehaviour
 					// Add new clue
 					_foundClueZones.Add(clueZone);
 					_cluesViewer.Show(clueZone.clueInfo);
+					ShowPicture(false);
 				}
 			}
 			else
@@ -188,4 +197,10 @@ public class GamePlayModeController : MonoBehaviour
 	{
 		SceneManager.LoadScene("MainMenu");
 	}
+
+	public void ShowPicture(bool active)
+	{
+		_photo.SetActive(active);
+	}
+
 }

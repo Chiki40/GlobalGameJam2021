@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,10 +14,15 @@ public class GameSelectorManager : MonoBehaviour
     {
         tweets = new List<TwitterManager.Tweet>();
         Populate();
-        PlayerPrefs.DeleteKey(MapCreator.kMapToLoadPlayerPrefId);
     }
 
-    public void ClickButton(GameObject go)
+	private void OnEnable()
+	{
+        GameManager.MapToLoad = null;
+        GameManager.SpritePhoto = null;
+    }
+
+	public void ClickButton(GameObject go)
     {
         Debug.Log("se ha pulsado el boton => " + go.name);
         string mapDataStr = tweets[int.Parse(go.name)]._seedsImgs[0];
@@ -28,8 +32,21 @@ public class GameSelectorManager : MonoBehaviour
         mapData.idTweet = tweets[int.Parse(go.name)]._id;
         string mapDataStr2 = Serializator.XmlSerialize<MapData>(mapData);
 
+        Sprite sprite = null;
+        for (int childId = 0; childId < go.transform.childCount; ++childId)
+        {
+            if (go.transform.GetChild(childId).name == "Foto")
+            {
+                sprite = go.transform.GetChild(childId).GetComponent<Image>().sprite;
+            }
+        }
+        if (sprite != null)
+		{
+            GameManager.SpritePhoto = sprite;
+        }
+
         // Use PlayerPref to propagate map data to next scene
-        PlayerPrefs.SetString(MapCreator.kMapToLoadPlayerPrefId, mapDataStr2);
+        GameManager.MapToLoad = mapDataStr2;
         SceneManager.LoadScene("GamePlayMode");
     }
 
