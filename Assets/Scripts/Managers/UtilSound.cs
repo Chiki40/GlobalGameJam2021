@@ -89,7 +89,6 @@ public class UtilSound : MonoBehaviour
         GameObject newObject = new GameObject(); // New scene object
         AudioSource newSource = newObject.AddComponent<AudioSource>(); // Create a new AudioSouce and set it to the new object
         newObject.name = name; // Assign the given clip name
-        Debug.LogError(clip.name);
         newSource.clip = clip; // Assign clip to new AudioSource
         newSource.volume = volume;
         newSource.loop = loop; // Assign given loop property
