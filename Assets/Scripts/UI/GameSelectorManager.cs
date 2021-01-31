@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameSelectorManager : MonoBehaviour
 {
     public GameObject _baseGameObject;
+    public GameObject _unusableGameObject;
     public GameObject _scrollBaseGameObject;
     private List<TwitterManager.Tweet> tweets;
 
@@ -133,6 +134,6 @@ public class GameSelectorManager : MonoBehaviour
             }
             go.GetComponentInChildren<TextMeshProUGUI>().text = msg;
         }
-        _baseGameObject.SetActive(false);
+        _unusableGameObject.SetActive(false);
     }
 }
