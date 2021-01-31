@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shovelUses: 3
-  _rangeOfCellsToInteract: 2
+  _rangeOfCellsToInteract: 5
   _shovelUsePrefab: {fileID: 3672743194919476190, guid: f3b75c544f6b54145a6a47f82b7e980c, type: 3}
   _shovelUseOnSprite: {fileID: 21300000, guid: 8cb5d5d166bde144597a82315f6930dc, type: 3}
   _shovelUseOffSprite: {fileID: 21300000, guid: fb66d7fb835fc3d47906a0474d353d0f, type: 3}
@@ -346,6 +346,7 @@ MonoBehaviour:
   _photo: {fileID: 7065468556527242748}
   _cluesViewer: {fileID: 7387582951996665631}
   _verTesoroManager: {fileID: 257291911305533764}
+  _cluesPlacedPrefab: {fileID: 0}
 --- !u!1 &1037925515714912483
 GameObject:
   m_ObjectHideFlags: 0
