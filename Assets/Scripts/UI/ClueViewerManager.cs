@@ -43,7 +43,14 @@ public class ClueViewerManager : MonoBehaviour
         //populate
         for (int i = 0; i < ids.Count;++i)
         {
-            _images[i].sprite = sprites[ids[i]];
+            for (int j = 0; j < sprites.Length; ++j)
+            {
+                if (sprites[j].name == "Simbolos_" + ids[i])
+                {
+                    _images[i].sprite = sprites[j];
+                    break;
+                }
+            }
             _images[i].gameObject.SetActive(true);
         }
 
