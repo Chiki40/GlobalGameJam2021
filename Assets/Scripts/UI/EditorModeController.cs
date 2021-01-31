@@ -118,7 +118,7 @@ public class EditorModeController : MonoBehaviour
                 ClueZone clueZone = new ClueZone();
                 clueZone.clueInfo = new List<int>(clueInfo);
                 clueZone.pos = new int[2] { gridPos.x, gridPos.y };
-                if (Physics.Raycast(_player.transform.position, Vector3.down, out RaycastHit hitInfo))
+                if (Physics.Raycast(_player.transform.position, Vector3.down, out RaycastHit hitInfo) && !_treasurePlaced)
                 {
                     _placedPrefabs.Add(Instantiate(_cluesPlacedPrefab, hitInfo.point + new Vector3(0.0f, 0.02f, 0.0f), Quaternion.Euler(270.0f, 0.0f, 0.0f)));
                 }
@@ -144,12 +144,7 @@ public class EditorModeController : MonoBehaviour
             _clueZones.RemoveAt(_clueZones.Count - 1);
             if (_treasurePlaced)
             {
-                if(_placedPrefabs[_placedPrefabs.Count - 1].name.Contains(_treasurePlacedPrefab.name))
-                {
-                    Destroy(_placedPrefabs[_placedPrefabs.Count - 1]);
-                    _placedPrefabs.RemoveAt(_placedPrefabs.Count - 1);
-                }
-                _treasurePlaced = false;
+               _treasurePlaced = false;
             }
         }
     }
