@@ -67,8 +67,18 @@ public class GameSelectorManager : MonoBehaviour
 
             go.transform.name = tweetId.ToString();
             go.SetActive(true);
+            Button button = go.GetComponent<Button>();
+            if (button != null)
+			{
+                button.enabled = true;
+			}
+            AudioSource audio = go.GetComponent<AudioSource>();
+            if (audio != null)
+            {
+                audio.enabled = true;
+            }
 
-            if(tweet._imgs.Count > 0)
+            if (tweet._imgs.Count > 0)
             {
                 //buscamos la primera imagen que no sea qr
                 bool someFotoAdded = false;
