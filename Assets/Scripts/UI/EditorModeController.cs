@@ -62,9 +62,9 @@ public class EditorModeController : MonoBehaviour
 
     private void DetermineUIState()
 	{
-        _cluesSelector.ChangeOpenEditorInteraction(_clueZones.Count < GameManager.kMaxCluesZones);
+        _cluesSelector.ChangeOpenEditorInteraction(_shovelPlaced && !_treasurePlaced && _clueZones.Count < GameManager.kMaxCluesZones);
         _buttonShovel.interactable = !_shovelPlaced;
-        _buttonTreasure.interactable = !_treasurePlaced;
+        _buttonTreasure.interactable = _shovelPlaced && !_treasurePlaced;
         _buttonFinish.interactable = _clueZones.Count > 0 && _shovelPlaced && _treasurePlaced;
     }
 
@@ -150,6 +150,7 @@ public class EditorModeController : MonoBehaviour
     {
         if (!_treasurePlaced)
         {
+            _cluesSelector.AbrirEditor();
             Vector2Int gridPos = new Vector2Int();
             if (_mapGenerator.GetGridPos(_player.transform.position, ref gridPos))
             {
