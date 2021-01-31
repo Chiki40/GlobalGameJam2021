@@ -45,7 +45,7 @@ public class CompartirMapaManager : MonoBehaviour
             msgTwitter = "creado por: " + userTwitter;
         }
         Debug.Log("mensaje twitter => " + msgTwitter);
-        msgTwitter += "\n" + "#GlobalGameJam #GlobalJamUCM21";
+        msgTwitter += "\n" + TwitterManager.defaultHashtags;
 
         TwitterManager tm = TwitterManager.GetInstance();
         _mapData.message = _mensaje.text;

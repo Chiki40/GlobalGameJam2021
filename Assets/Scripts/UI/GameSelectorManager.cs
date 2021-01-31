@@ -105,7 +105,7 @@ public class GameSelectorManager : MonoBehaviour
                     }
                 }
             }
-            int lenght = t[tweetId]._msg.IndexOf("#GlobalGameJam #GlobalJamUCM21");
+            int lenght = t[tweetId]._msg.IndexOf(TwitterManager.defaultHashtags);
             string msg = t[tweetId]._msg;
             if(lenght >0)
             {
