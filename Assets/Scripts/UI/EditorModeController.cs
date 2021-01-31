@@ -123,6 +123,7 @@ public class EditorModeController : MonoBehaviour
                     _placedPrefabs.Add(Instantiate(_cluesPlacedPrefab, hitInfo.point + new Vector3(0.0f, 0.02f, 0.0f), Quaternion.Euler(270.0f, 0.0f, 0.0f)));
                 }
                 _clueZones.Add(clueZone);
+                PlayPlaceClueSound();
             }
         }
         else
@@ -259,5 +260,40 @@ public class EditorModeController : MonoBehaviour
     public void OnUndo()
     {
         LastClueZoneCancelled();
+    }
+
+    public void PlayAddTreasureSound()
+	{
+        UtilSound.instance.PlaySound("BODY_Sniff_Long_mono");
+    }
+
+    public void PlayAddShovelSound()
+    {
+        UtilSound.instance.PlaySound("BUTTON_Medium_Click_mono");
+    }
+
+    public void PlayOpenClueSound()
+    {
+        UtilSound.instance.PlaySound("PAPER_Shake_01_mono");
+    }
+
+    public void PlayCloseClueSound()
+    {
+        UtilSound.instance.PlaySound("BUTTON_Click_Compressor_stereo");
+    }
+
+    public void PlayUndoSound()
+    {
+        UtilSound.instance.PlaySound("BUTTON_Light_Switch_02_stereo");
+    }
+
+    public void PlayFinishSound()
+    {
+        UtilSound.instance.PlaySound("COINS_Rattle_01_mono");
+    }
+
+    private void PlayPlaceClueSound()
+	{
+        UtilSound.instance.PlaySound("PAPER_Crumble_01_mono");
     }
 }
