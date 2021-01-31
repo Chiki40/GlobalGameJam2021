@@ -13,7 +13,7 @@ public class LoadScene : MonoBehaviour
     }
     public void Load_randomGame(string level)
     {
-        SceneManager.LoadScene("GamePlayMode");
+        SceneManager.LoadScene("RandomMapSelector");
     }
     public void Load_mapsLoader(string level)
     {

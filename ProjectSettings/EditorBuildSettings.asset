@@ -15,9 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Credits.unity
     guid: ddfa18db2a037bf44b87575c7c664d91
   - enabled: 1
-    path: Assets/Scenes/TwitterMapSelector.unity
+    path: Assets/Scenes/RandomMapSelector.unity
     guid: d3bc8a9087da9214c912538dbe7e06cc
   - enabled: 1
     path: Assets/Scenes/EditorMode.unity
     guid: e7957534c0d72e84ebb8f419c636f84f
+  - enabled: 1
+    path: Assets/Scenes/TwitterMapSelector.unity
+    guid: 0ad77a8234d367e408b53e9d007dba6f
   m_configObjects: {}

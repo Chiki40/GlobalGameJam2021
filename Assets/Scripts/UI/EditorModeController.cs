@@ -21,6 +21,8 @@ public class EditorModeController : MonoBehaviour
     [SerializeField]
     private Button _buttonTreasure = null;
     [SerializeField]
+    private Button _buttonUndo = null;
+    [SerializeField]
     private Button _buttonFinish = null;
     [SerializeField]
     private GameObject _shovelPlacedPrefab = null;
@@ -77,6 +79,7 @@ public class EditorModeController : MonoBehaviour
         _buttonShovel.interactable = !_shovelPlaced;
         _buttonTreasure.interactable = _shovelPlaced && !_treasurePlaced;
         _buttonFinish.interactable = _clueZones.Count > 0 && _shovelPlaced && _treasurePlaced;
+        _buttonUndo.interactable = _shovelPlaced;
     }
 
     private bool CanPlaceObject(Vector2Int pos)
@@ -130,16 +133,24 @@ public class EditorModeController : MonoBehaviour
 
     public void LastClueZoneCancelled()
     {
-        if(_clueZones.Count == 0)
+        Destroy(_placedPrefabs[_placedPrefabs.Count - 1]);
+        _placedPrefabs.RemoveAt(_placedPrefabs.Count - 1);
+        if (_clueZones.Count == 0)
         {
-            Destroy(_placedPrefabs[_placedPrefabs.Count - 1]);
             _shovelPlaced = false;
         }
-
-        if(_treasurePlaced)
+        else
         {
-            Destroy(_placedPrefabs[_placedPrefabs.Count - 1]);
-            _treasurePlaced = false;
+            _clueZones.RemoveAt(_clueZones.Count - 1);
+            if (_treasurePlaced)
+            {
+                if(_placedPrefabs[_placedPrefabs.Count - 1].name.Contains(_treasurePlacedPrefab.name))
+                {
+                    Destroy(_placedPrefabs[_placedPrefabs.Count - 1]);
+                    _placedPrefabs.RemoveAt(_placedPrefabs.Count - 1);
+                }
+                _treasurePlaced = false;
+            }
         }
     }
 
@@ -243,5 +254,10 @@ public class EditorModeController : MonoBehaviour
         tex.ReadPixels(new Rect(0, 0, rTex.width, rTex.height), 0, 0);
         tex.Apply();
         return tex;
+    }
+
+    public void OnUndo()
+    {
+        LastClueZoneCancelled();
     }
 }
