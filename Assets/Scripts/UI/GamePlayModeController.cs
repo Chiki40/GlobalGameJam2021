@@ -34,6 +34,7 @@ public class GamePlayModeController : MonoBehaviour
 	private List<ClueZone> _foundClueZones = new List<ClueZone>();
 	private bool _shovelFound = false;
 	private bool _treasureFound = false;
+	private bool _showingPicture = false;
 
 	private MapGenerator _mapGenerator = null;
 	//private PhotoCamera _photoCam = null;
@@ -85,7 +86,7 @@ public class GamePlayModeController : MonoBehaviour
 				// Shovel found here
 				if (IsCloseEnough(shovelPos, cellPos))
 				{
-					ShowPicture(false);
+					
 					_shovelFound = true;
 					GameObject shovelObject = _mapGenerator.GetPalaObject();
 					if (shovelObject != null)
@@ -101,7 +102,8 @@ public class GamePlayModeController : MonoBehaviour
 					_foundClueZones.Add(clueZone);
 					ShowClueHint(clueZone.clueInfo);
 					PlayOpenClueSound();
-
+					ShowPicture(false);
+					_photo.SetActive(false);
 					if (_cluesPlacedPrefab != null)
 					{
 						if (Physics.Raycast(pos, Vector3.down, out RaycastHit hitInfo))
@@ -233,7 +235,12 @@ public class GamePlayModeController : MonoBehaviour
 		SceneManager.LoadScene("MainMenu");
 	}
 
-	public void ShowPicture(bool active)
+	public void TogglePicture()
+	{
+		ShowPicture(_showingPicture ? false : true);
+	}
+
+	private void ShowPicture(bool active)
 	{
 		if(!_shovelFound)
         {
@@ -243,7 +250,7 @@ public class GamePlayModeController : MonoBehaviour
         {
 			_cluesViewer.Show(_foundClueZones[_foundClueZones.Count -1].clueInfo);
 		}
-
+		_showingPicture = active;
 	}
 
 	public void PlayConfirmShareSound()
