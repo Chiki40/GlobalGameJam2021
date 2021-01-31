@@ -42,7 +42,7 @@ public class MapCreator : MonoBehaviour
 		{
             if (!string.IsNullOrEmpty(GameManager.MapToLoad))
             {
-                CreatePlayableMapFromData(PlayerPrefs.GetString(GameManager.MapToLoad));
+                CreatePlayableMapFromData(GameManager.MapToLoad);
             }
         }
         else
