@@ -180,7 +180,7 @@ public class MapGenerator : MonoBehaviour
         return true;
     }
 
-    void InstantitatePalaYTesoro()
+    public void InstantitatePalaYTesoro()
     {
         Vector3 pos = transform.position;
         // Se posiciona en el centro de la cuadrícula desplazando según la posición del
