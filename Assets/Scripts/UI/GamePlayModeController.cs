@@ -98,6 +98,7 @@ public class GamePlayModeController : MonoBehaviour
 					// Add new clue
 					_foundClueZones.Add(clueZone);
 					_cluesViewer.Show(clueZone.clueInfo);
+					PlayOpenClueSound();
 					ShowPicture(false);
 				}
 			}
@@ -208,4 +209,38 @@ public class GamePlayModeController : MonoBehaviour
 		_photo.SetActive(active);
 	}
 
+	public void PlayConfirmShareSound()
+	{
+		UtilSound.instance.PlaySound("BUTTON_Light_Switch_02_stereo");
+	}
+
+	public void PlayCancelShareSound()
+	{
+		UtilSound.instance.PlaySound("UI_Click_Tap_Noisy_Subtle_mono");
+	}
+
+	public void PlayExitMapSound()
+	{
+		UtilSound.instance.PlaySound("BUTTON_Click_Compressor_stereo");
+	}
+
+	public void PlayShowPhotoSound()
+	{
+		UtilSound.instance.PlaySound("PAPER_Shake_01_mono");
+	}
+
+	public void PlayClosePhotoSound()
+	{
+		UtilSound.instance.PlaySound("BUTTON_Click_Compressor_Small_02_stereo");
+	}
+
+	private void PlayOpenClueSound()
+	{
+		UtilSound.instance.PlaySound("PAPER_Shake_01_mono");
+	}
+
+	public void PlayCloseClueSound()
+	{
+		UtilSound.instance.PlaySound("BUTTON_Click_Compressor_Small_02_stereo");
+	}
 }

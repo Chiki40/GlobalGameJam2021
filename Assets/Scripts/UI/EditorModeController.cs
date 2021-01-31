@@ -287,12 +287,12 @@ public class EditorModeController : MonoBehaviour
 
     public void PlayCloseClueSound()
     {
-        UtilSound.instance.PlaySound("BUTTON_Click_Compressor_stereo");
+        UtilSound.instance.PlaySound("BUTTON_Click_Compressor_Small_02_stereo");
     }
 
     public void PlayUndoSound()
     {
-        UtilSound.instance.PlaySound("BUTTON_Light_Switch_02_stereo");
+        UtilSound.instance.PlaySound("UI_Click_Tap_Noisy_Long_mono");
     }
 
     public void PlayFinishSound()
@@ -303,5 +303,41 @@ public class EditorModeController : MonoBehaviour
     private void PlayPlaceClueSound()
 	{
         UtilSound.instance.PlaySound("PAPER_Crumble_01_mono");
+    }
+
+
+    public void PlayCancelShareSound()
+    {
+        UtilSound.instance.PlaySound("UI_Click_Tap_Noisy_Subtle_mono");
+    }
+
+    public void PlayConfirmShareSound()
+    {
+        UtilSound.instance.PlaySound("BUTTON_Light_Switch_02_stereo");
+    }
+
+    public void PlayGenerateMapSound()
+    {
+        UtilSound.instance.PlaySound("UI_Click_Aftertap_mono");
+    }
+
+    public void PlayExitMapSound()
+    {
+        UtilSound.instance.PlaySound("BUTTON_Click_Compressor_stereo");
+    }
+
+    public void PlayStartEditingMapSound()
+    {
+        UtilSound.instance.PlaySound("FABRIC_Movement_Fast_01_mono");
+    }
+
+    public void PlayBackToGenerateMapSound()
+    {
+        UtilSound.instance.PlaySound("FABRIC_Movement_Fast_02_mono");
+    }
+
+    public void PlayClueSymbolSound()
+    {
+        UtilSound.instance.PlaySound("BUTTON_Short_mono");
     }
 }
