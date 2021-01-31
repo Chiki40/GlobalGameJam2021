@@ -203,4 +203,14 @@ public class CharacterController : MonoBehaviour
 	{
         _inputEnabled = active;
 	}
+
+    public void PlayFootstepAudio()
+	{
+        UtilSound.instance.PlaySound("FOOTSTEP_Trainers_Snow_Compact_Walk_Slow", 1.0f, false, true);
+	}
+
+    public void PlayDigAudio()
+	{
+        UtilSound.instance.PlaySound("FABRIC_Movement_Short_RR2_mono");
+    }
 }
