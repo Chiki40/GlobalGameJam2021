@@ -34,7 +34,7 @@ public class CompartirMapaManager : MonoBehaviour
     public void OnCompartir()
     {
         string userTwitter = _creador.text;
-        string msgTwitter = "Creado por anonimo: ";
+        string msgTwitter = "Creado por: anonimo";
         //si no tiene @, se la añado
         if(userTwitter.Length > 0)
         {
@@ -42,10 +42,19 @@ public class CompartirMapaManager : MonoBehaviour
             {
                 userTwitter = "@" + userTwitter;
             }
-            msgTwitter = "creado por: " + userTwitter;
+            msgTwitter = "Creado por: " + userTwitter;
         }
         Debug.Log("mensaje twitter => " + msgTwitter);
-        msgTwitter += "\n" + TwitterManager.defaultHashtags;
+        msgTwitter += "\n";
+        for(int i = 0; i < TwitterManager.defaultHashtags.Count; ++i)
+        {
+            msgTwitter += TwitterManager.defaultHashtags[i];
+            if(i != TwitterManager.defaultHashtags.Count -1)
+            {
+                msgTwitter += " ";
+            }
+        }
+        
 
         TwitterManager tm = TwitterManager.GetInstance();
         _mapData.message = _mensaje.text;
