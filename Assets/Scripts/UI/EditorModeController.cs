@@ -146,7 +146,7 @@ public class EditorModeController : MonoBehaviour
                 _shovelPosV3 = _player.transform.position;
                 if (Physics.Raycast(_shovelPosV3, Vector3.down, out RaycastHit hitInfo))
                 {
-                    _placedPrefabs.Add(Instantiate(_shovelPlacedPrefab, hitInfo.point + new Vector3(0.0f, 0.02f, 0.0f), Quaternion.Euler(270.0f, 0.0f, 0.0f)));
+                    _placedPrefabs.Add(Instantiate(_shovelPlacedPrefab, hitInfo.point + new Vector3(0.0f, 1.19f, 0.0f), Quaternion.identity));
                 }
                 _shovelPlaced = true;
             }
@@ -173,7 +173,7 @@ public class EditorModeController : MonoBehaviour
                 _treasurePos[1] = gridPos.y;
                 if (Physics.Raycast(_player.transform.position, Vector3.down, out RaycastHit hitInfo))
                 {
-                    _placedPrefabs.Add(Instantiate(_treasurePlacedPrefab, hitInfo.point + new Vector3(0.0f, 0.02f, 0.0f), Quaternion.Euler(270.0f, 0.0f, 0.0f)));
+                    _placedPrefabs.Add(Instantiate(_treasurePlacedPrefab, hitInfo.point + new Vector3(0.0f, 0.02f, 0.0f), Quaternion.identity));
                 }
                 _treasurePlaced = true;
             }
