@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4499930113666241424}
   - component: {fileID: 9079685340139193546}
   - component: {fileID: 2140047943187613966}
+  - component: {fileID: 8555352108938598040}
   m_Layer: 0
   m_Name: CreditsManager
   m_TagString: Untagged
@@ -94,3 +95,15 @@ VideoPlayer:
   m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!114 &8555352108938598040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4449568090104949620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc1a637e21f5ef48a6def1e41df859a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
