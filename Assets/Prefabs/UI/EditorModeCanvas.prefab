@@ -123,6 +123,7 @@ MonoBehaviour:
   _shovelPlacedPrefab: {fileID: 7745405163562799072, guid: 723eef81a09291f4a9d6452c1f4f5ff5, type: 3}
   _treasurePlacedPrefab: {fileID: 4679517152063617173, guid: 41886c399ae85eb4d80b38733c5cfc0c, type: 3}
   _cluesPlacedPrefab: {fileID: 6903597951617780529, guid: aedb2eb191d06a245bdfa65c55b6cfd8, type: 3}
+  _editorUI: {fileID: 808665468682643263}
 --- !u!1001 &7705096720392375306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3526,7 +3527,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5667151858565919914, guid: 07f0d7dbc24ff6748b2fec7b27783bc8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: EditorModeController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5667151858565919914, guid: 07f0d7dbc24ff6748b2fec7b27783bc8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Mode
@@ -3534,7 +3535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5667151858565919914, guid: 07f0d7dbc24ff6748b2fec7b27783bc8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Arguments.m_BoolArgument
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5667151858565919914, guid: 07f0d7dbc24ff6748b2fec7b27783bc8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_CallState
@@ -3543,10 +3544,10 @@ PrefabInstance:
     - target: {fileID: 5667151858565919914, guid: 07f0d7dbc24ff6748b2fec7b27783bc8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Target
       value: 
-      objectReference: {fileID: 808665468682643263}
+      objectReference: {fileID: 4418171412690541861}
     - target: {fileID: 5667151858565919914, guid: 07f0d7dbc24ff6748b2fec7b27783bc8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_MethodName
-      value: SetActive
+      value: ToggleGenerateMap
       objectReference: {fileID: 0}
     - target: {fileID: 5667151858565919914, guid: 07f0d7dbc24ff6748b2fec7b27783bc8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -3718,7 +3719,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5667151858668921976, guid: 07f0d7dbc24ff6748b2fec7b27783bc8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: EditorModeController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5667151858668921976, guid: 07f0d7dbc24ff6748b2fec7b27783bc8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Mode
@@ -3731,10 +3732,10 @@ PrefabInstance:
     - target: {fileID: 5667151858668921976, guid: 07f0d7dbc24ff6748b2fec7b27783bc8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Target
       value: 
-      objectReference: {fileID: 808665468682643263}
+      objectReference: {fileID: 4418171412690541861}
     - target: {fileID: 5667151858668921976, guid: 07f0d7dbc24ff6748b2fec7b27783bc8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_MethodName
-      value: SetActive
+      value: ToggleGenerateMap
       objectReference: {fileID: 0}
     - target: {fileID: 5667151858668921976, guid: 07f0d7dbc24ff6748b2fec7b27783bc8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -3742,7 +3743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5667151858668921976, guid: 07f0d7dbc24ff6748b2fec7b27783bc8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[7].m_Arguments.m_BoolArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5667151858668921976, guid: 07f0d7dbc24ff6748b2fec7b27783bc8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[8].m_TargetAssemblyTypeName
