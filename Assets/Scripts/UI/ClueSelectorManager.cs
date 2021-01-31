@@ -161,6 +161,12 @@ public class ClueSelectorManager : MonoBehaviour
     public void OnCancel()
     {
         Debug.Log("he pulsado en cancelar");
+
+        if (_editorModeController != null)
+        {
+            _editorModeController.LastClueZoneCancelled();
+        }
+
         CerrarEditor();
     }
 

@@ -81,7 +81,7 @@ public class EditorModeController : MonoBehaviour
 
     private bool CanPlaceObject(Vector2Int pos)
 	{
-        if (_shovelPlaced && _shovelPos[0] == pos.x && _shovelPos[1] == pos.y)
+        if (_shovelPlaced && _shovelPos[0] == pos.x && _shovelPos[1] == pos.y && _clueZones.Count > 0)
 		{
             return false;
 		}
@@ -128,6 +128,15 @@ public class EditorModeController : MonoBehaviour
 		}
     }
 
+    public void LastClueZoneCancelled()
+    {
+        if(_clueZones.Count == 0)
+        {
+            Destroy(_placedPrefabs[_placedPrefabs.Count - 1]);
+            _shovelPlaced = false;
+        }
+    }
+
     public void OnAddShovelClicked()
     {
         if (!_shovelPlaced)
@@ -141,6 +150,7 @@ public class EditorModeController : MonoBehaviour
                     return;
                 }
 
+                _cluesSelector.AbrirEditor();
                 _shovelPos[0] = gridPos.x;
                 _shovelPos[1] = gridPos.y;
                 _shovelPosV3 = _player.transform.position;
@@ -161,7 +171,6 @@ public class EditorModeController : MonoBehaviour
     {
         if (!_treasurePlaced)
         {
-            _cluesSelector.AbrirEditor();
             Vector2Int gridPos = new Vector2Int();
             if (_mapGenerator.GetGridPos(_player.transform.position, ref gridPos))
             {
