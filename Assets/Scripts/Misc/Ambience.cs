@@ -9,6 +9,9 @@ public class Ambience : MonoBehaviour
 
 	private void OnDisable()
 	{
-        UtilSound.instance.StopSound("WATER_Sea_Waves_Small_15sec_loop_stereo");
+        if (UtilSound.instance != null)
+        {
+            UtilSound.instance.StopSound("WATER_Sea_Waves_Small_15sec_loop_stereo");
+        }
     }
 }

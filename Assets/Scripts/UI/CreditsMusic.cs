@@ -9,6 +9,9 @@ public class CreditsMusic : MonoBehaviour
 
     private void OnDisable()
     {
-        UtilSound.instance.StopSound("MusicPiano");
+        if (UtilSound.instance != null)
+        {
+            UtilSound.instance.StopSound("MusicPiano");
+        }
     }
 }
