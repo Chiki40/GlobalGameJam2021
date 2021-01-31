@@ -53,10 +53,11 @@ MonoBehaviour:
     mapSize: {x: 100, y: 100}
     population: 20
     dispersionPopulation: 522
+    idTweet: 
   randomObjects:
   - dispersion: 20
     gObject:
-    - {fileID: 6529006423187329195, guid: 01616e3d4e2974c4a9ac1cf96f006b86, type: 3}
+    - {fileID: 5040882660256407649, guid: 01616e3d4e2974c4a9ac1cf96f006b86, type: 3}
     - {fileID: 8730403757190919789, guid: e5afcc300cd083847bd89008686176e4, type: 3}
     - {fileID: 6489133671424397662, guid: 8245b65362c698042a9d73fc8cce9715, type: 3}
     - {fileID: 7260709502940503750, guid: 8a68775a24ce482409a899e452b8e9d3, type: 3}
@@ -218,5 +219,6 @@ MonoBehaviour:
     mapSize: {x: 100, y: 100}
     population: 20
     dispersionPopulation: 522
+    idTweet: 
   randomRangeDispersion: 1
   m_mapGenerator: {fileID: 5626304028038277929}

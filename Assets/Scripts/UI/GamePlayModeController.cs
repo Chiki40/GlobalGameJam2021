@@ -66,39 +66,6 @@ public class GamePlayModeController : MonoBehaviour
 		if (_mapGenerator.GetGridPos(pos, ref cellPos))
 		{
 			MapData.HintData[] hintData = _mapGenerator.mapData.hintsGridPos;
-			// Did we already find every hint?
-			if (_foundClueZones.Count < hintData.Length)
-			{
-				// Check every hint in MapData
-				for (int i = 0; i < hintData.Length; ++i)
-				{
-					// Hint found here
-					if (IsCloseEnough(hintData[i].gridPos, cellPos))
-					{
-						bool alreadyFound = false;
-						for (int j = 0; j < _foundClueZones.Count; ++j)
-						{
-							// This hint was already found, skip
-							if (hintData[i].gridPos.x == _foundClueZones[j].pos[0] && hintData[i].gridPos.y == _foundClueZones[j].pos[1])
-							{
-								alreadyFound = true;
-								break;
-							}
-						}
-						if (!alreadyFound)
-						{
-							ClueZone clueZone = new ClueZone();
-							clueZone.clueInfo = new List<int>(hintData[i].symbols);
-							clueZone.pos = new int[2] { cellPos.x, cellPos.y };
-							// Add new clue
-							_foundClueZones.Add(clueZone);
-							_cluesViewer.Show(clueZone.clueInfo);
-							Debug.Log("Clue found!");
-							return;
-						}
-					}
-				}
-			}
 			if (!_shovelFound)
 			{
 				Vector2Int shovelPos = _mapGenerator.mapData.shovelGridPos;
@@ -112,10 +79,51 @@ public class GamePlayModeController : MonoBehaviour
 						shovelObject.SetActive(false);
 					}
 					Debug.Log("Shovel found!");
+					// Show first hint
+					ClueZone clueZone = new ClueZone();
+					clueZone.clueInfo = new List<int>(hintData[0].symbols);
+					clueZone.pos = new int[2] { cellPos.x, cellPos.y };
+					// Add new clue
+					_foundClueZones.Add(clueZone);
+					_cluesViewer.Show(clueZone.clueInfo);
 				}
 			}
 			else
 			{
+				// Did we already find every hint?
+				if (_foundClueZones.Count < hintData.Length)
+				{
+					// Check every hint in MapData (except the first one, which is shown when the shovel is found)
+					for (int i = 1; i < hintData.Length; ++i)
+					{
+						// Hint found here
+						if (IsCloseEnough(hintData[i].gridPos, cellPos))
+						{
+							bool alreadyFound = false;
+							for (int j = 0; j < _foundClueZones.Count; ++j)
+							{
+								// This hint was already found, skip
+								if (hintData[i].gridPos.x == _foundClueZones[j].pos[0] && hintData[i].gridPos.y == _foundClueZones[j].pos[1])
+								{
+									alreadyFound = true;
+									break;
+								}
+							}
+							if (!alreadyFound)
+							{
+								ClueZone clueZone = new ClueZone();
+								clueZone.clueInfo = new List<int>(hintData[i].symbols);
+								clueZone.pos = new int[2] { cellPos.x, cellPos.y };
+								// Add new clue
+								_foundClueZones.Add(clueZone);
+								_cluesViewer.Show(clueZone.clueInfo);
+								Debug.Log("Clue found!");
+								return;
+							}
+						}
+					}
+				}
+
 				if (animationManager != null)
 				{
 					animationManager.PerformDig();
