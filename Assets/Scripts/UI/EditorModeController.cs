@@ -287,7 +287,7 @@ public class EditorModeController : MonoBehaviour
 
     public void PlayCloseClueSound()
     {
-        UtilSound.instance.PlaySound("BUTTON_Click_Compressor_stereo");
+        UtilSound.instance.PlaySound("BUTTON_Click_Compressor_Small_02_stereo");
     }
 
     public void PlayUndoSound()
