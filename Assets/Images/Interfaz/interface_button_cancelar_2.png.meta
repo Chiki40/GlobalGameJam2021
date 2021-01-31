@@ -1,7 +1,16 @@
 fileFormatVersion: 2
 guid: 5f84a3f523df5254686311f0bb9de9a4
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1320193730768929344
+    second: interface_button_cancelar_2_0
+  - first:
+      213: -1467291218560959835
+    second: interface_button_cancelar_2_1
+  - first:
+      213: -6521047661385973331
+    second: interface_button_cancelar_2_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -87,7 +96,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: interface_button_cancelar_2_2
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 19
+        width: 615
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da182b3b3b59085a0800000000000000
+      internalID: -6521047661385973331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

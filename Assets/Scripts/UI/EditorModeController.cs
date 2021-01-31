@@ -133,7 +133,7 @@ public class EditorModeController : MonoBehaviour
 
     public void NewClueZoneAdded(List<int> clueInfo)
     {
-        if (_clueZones.Count < GameManager.kMaxCluesZones)
+        if (_clueZones.Count <= GameManager.kMaxCluesZones)
         {
             Vector2Int gridPos = new Vector2Int();
             if (_mapGenerator.GetGridPos(_player.transform.position, ref gridPos))
