@@ -7,7 +7,7 @@ public class Ambience : MonoBehaviour
         UtilSound.instance.PlaySound("WATER_Sea_Waves_Small_15sec_loop_stereo", 0.2f, loop: true);
     }
 
-	private void OnDestroy()
+	private void OnDisable()
 	{
         UtilSound.instance.StopSound("WATER_Sea_Waves_Small_15sec_loop_stereo");
     }

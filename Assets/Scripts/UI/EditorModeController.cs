@@ -197,9 +197,10 @@ public class EditorModeController : MonoBehaviour
                 _shovelPos[0] = gridPos.x;
                 _shovelPos[1] = gridPos.y;
                 _shovelPosV3 = _player.transform.position;
+                Quaternion qt = Quaternion.Euler(0,90,0);
                 if (Physics.Raycast(_shovelPosV3, Vector3.down, out RaycastHit hitInfo))
                 {
-                    _placedPrefabs.Add(Instantiate(_shovelPlacedPrefab, hitInfo.point + new Vector3(0.0f, 1.19f, 0.0f), Quaternion.identity));
+                    _placedPrefabs.Add(Instantiate(_shovelPlacedPrefab, hitInfo.point + new Vector3(0.0f, 1.19f, 0.0f), qt));
                 }
                 _shovelPlaced = true;
             }
