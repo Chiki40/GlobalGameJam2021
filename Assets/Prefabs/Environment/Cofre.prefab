@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8941042977403710858}
   - component: {fileID: 6624795596110092608}
   - component: {fileID: 4361524416204177983}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cofre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 501102546388909836}
   - component: {fileID: 7634398442895237443}
   - component: {fileID: 2539091793619801874}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cofre_tapa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
