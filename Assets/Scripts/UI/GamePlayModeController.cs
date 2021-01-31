@@ -85,6 +85,7 @@ public class GamePlayModeController : MonoBehaviour
 				// Shovel found here
 				if (IsCloseEnough(shovelPos, cellPos))
 				{
+					ShowPicture(false);
 					_shovelFound = true;
 					GameObject shovelObject = _mapGenerator.GetPalaObject();
 					if (shovelObject != null)
@@ -99,9 +100,7 @@ public class GamePlayModeController : MonoBehaviour
 					// Add new clue
 					_foundClueZones.Add(clueZone);
 					ShowClueHint(clueZone.clueInfo);
-
 					PlayOpenClueSound();
-					ShowPicture(false);
 
 					if (_cluesPlacedPrefab != null)
 					{
