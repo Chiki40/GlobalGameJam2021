@@ -22,7 +22,8 @@ public class TwitterManager : MonoBehaviour
     private string _msgSendImage;
     private List<string> _imagesToUpload;
     private List<string> _responsesIDsImages;
-    public static string defaultHashtags = "#GlobalGameJam #GlobalJamUCM21 #GGJ21";
+
+    public static List<string> defaultHashtags = new List<string>() { "#GlobalGameJam", "#GlobalJamUCM21", "#GGJ21" };
     public struct Tweet
     {
         public string _id;
