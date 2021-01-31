@@ -116,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cluesSelector: {fileID: 7229116315057118916}
   _compartirMapa: {fileID: 3837984842507665632}
+  _backToGenerateButton: {fileID: 3888386933542126034}
   _buttonShovel: {fileID: 7129101750549399711}
   _buttonTreasure: {fileID: 7317979487740047703}
   _buttonUndo: {fileID: 3505249354027893063}
@@ -3811,6 +3812,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07f0d7dbc24ff6748b2fec7b27783bc8, type: 3}
+--- !u!114 &3888386933542126034 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5667151858565919914, guid: 07f0d7dbc24ff6748b2fec7b27783bc8, type: 3}
+  m_PrefabInstance: {fileID: 8886613368153617784}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3888386933572153782 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5667151858630526158, guid: 07f0d7dbc24ff6748b2fec7b27783bc8, type: 3}
