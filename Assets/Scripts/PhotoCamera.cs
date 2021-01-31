@@ -39,9 +39,8 @@ public class PhotoCamera : MonoBehaviour
         Vector3 originPos = pos;
         originPos.y += _height;
         // Choose a random angle
-        float randomAngleToTakePicture = Random.Range(0, 360);
         // Move the camera in that direction, depending on distance
-        originPos += Quaternion.Euler(0, randomAngleToTakePicture, 0) * Vector3.forward * _distance;
+        originPos += -Vector3.forward * _distance;
         transform.position = originPos;
         // Look at the position we want to take the picture of
         transform.LookAt(pos);
