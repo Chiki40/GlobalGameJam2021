@@ -12,11 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 51888b6509cd23249b0cc7e5d34c9ac4
   - enabled: 1
-    path: Assets/Scenes/GamePlayMode.unity
-    guid: f6a6ebf27a3dac047bf5e8573c9f9e8b
-  - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: ddfa18db2a037bf44b87575c7c664d91
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 1e2e907119327254bacd53730de6bff6
+  - enabled: 1
+    path: Assets/Scenes/TwitterMapSelector.unity
+    guid: 0ad77a8234d367e408b53e9d007dba6f
   - enabled: 1
     path: Assets/Scenes/RandomMapSelector.unity
     guid: d3bc8a9087da9214c912538dbe7e06cc
@@ -24,6 +27,6 @@ EditorBuildSettings:
     path: Assets/Scenes/EditorMode.unity
     guid: e7957534c0d72e84ebb8f419c636f84f
   - enabled: 1
-    path: Assets/Scenes/TwitterMapSelector.unity
-    guid: 0ad77a8234d367e408b53e9d007dba6f
+    path: Assets/Scenes/GamePlayMode.unity
+    guid: f6a6ebf27a3dac047bf5e8573c9f9e8b
   m_configObjects: {}
