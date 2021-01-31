@@ -282,7 +282,7 @@ MonoBehaviour:
   _cluesViewer: {fileID: 7387582951996665631}
   _verTesoroManager: {fileID: 257291911305533764}
   _gameOverManager: {fileID: 2470096508050373983}
-  _cluesPlacedPrefab: {fileID: 0}
+  _cluesPlacedPrefab: {fileID: 6903597951617780529, guid: aedb2eb191d06a245bdfa65c55b6cfd8, type: 3}
 --- !u!1 &1037925515714912483
 GameObject:
   m_ObjectHideFlags: 0
