@@ -17,7 +17,7 @@ public class Timer : MonoBehaviour
 		_currentTime += Time.deltaTime;
 		if (_text)
 		{
-			_text.text = string.Format("{0:0.##}", _currentTime);
+			_text.text = string.Format("{0:0.0}", _currentTime);
 		}
 	}
 }
