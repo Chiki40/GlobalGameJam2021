@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Playables;
 
 public class DirectorEvents : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class DirectorEvents : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        director = GetComponent<PlayableDirector>();
     }
 
     // Update is called once per frame
