@@ -280,7 +280,7 @@ MonoBehaviour:
   _photo: {fileID: 7065468556527242748}
   _cluesViewer: {fileID: 7387582951996665631}
   _verTesoroManager: {fileID: 257291911305533764}
-  _cluesPlacedPrefab: {fileID: 0}
+  _cluesPlacedPrefab: {fileID: 6903597951617780529, guid: aedb2eb191d06a245bdfa65c55b6cfd8, type: 3}
 --- !u!1 &1037925515714912483
 GameObject:
   m_ObjectHideFlags: 0
