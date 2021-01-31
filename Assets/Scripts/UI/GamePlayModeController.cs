@@ -26,6 +26,8 @@ public class GamePlayModeController : MonoBehaviour
 	private ClueViewerManager _cluesViewer = null;
 	[SerializeField]
 	private VerTesoroManager _verTesoroManager = null;
+	[SerializeField]
+	private GameObject _cluesPlacedPrefab = null;
 
 	private List<GameObject> _shovelUsesObjects = new List<GameObject>();
 	private int _shovelUsesRemaining = 0;
@@ -100,6 +102,14 @@ public class GamePlayModeController : MonoBehaviour
 
 					PlayOpenClueSound();
 					ShowPicture(false);
+
+					if (_cluesPlacedPrefab != null)
+					{
+						if (Physics.Raycast(pos, Vector3.down, out RaycastHit hitInfo))
+						{
+							Instantiate(_cluesPlacedPrefab, hitInfo.point + new Vector3(0.0f, 0.02f, 0.0f), Quaternion.Euler(270.0f, 0.0f, 0.0f));
+						}
+					}
 				}
 			}
 			else
@@ -133,6 +143,15 @@ public class GamePlayModeController : MonoBehaviour
 								_foundClueZones.Add(clueZone);
 								_cluesViewer.Show(clueZone.clueInfo);
 								Debug.Log("Clue found!");
+
+								if (_cluesPlacedPrefab != null)
+								{
+									if (Physics.Raycast(pos, Vector3.down, out RaycastHit hitInfo))
+									{
+										Instantiate(_cluesPlacedPrefab, hitInfo.point + new Vector3(0.0f, 0.02f, 0.0f), Quaternion.Euler(270.0f, 0.0f, 0.0f));
+									}
+								}
+
 								return;
 							}
 						}
@@ -154,8 +173,8 @@ public class GamePlayModeController : MonoBehaviour
 						treasureObject.SetActive(true);
 					}
 					Debug.Log("Treasure found! You won!");
-					//StartCoroutine(ExitCoroutine());
-					_verTesoroManager.ShowTesoro(_mapGenerator.mapData.message, GameManager.IdTweet);
+					StartCoroutine(TreasureFound());
+					
 				}
 				else
 				{
@@ -194,10 +213,10 @@ public class GamePlayModeController : MonoBehaviour
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
 
-	private IEnumerator ExitCoroutine()
+	private IEnumerator TreasureFound()
 	{
 		yield return new WaitForSeconds(2.0f);
-		Exit();
+		_verTesoroManager.ShowTesoro(_mapGenerator.mapData.message, GameManager.IdTweet);
 	}
 
 	public void Exit()
