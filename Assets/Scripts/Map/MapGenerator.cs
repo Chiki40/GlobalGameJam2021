@@ -189,7 +189,7 @@ public class MapGenerator : MonoBehaviour
         pos.x += mapData.shovelGridPos.x * gridSize + gridSize * 0.5f;
         pos.z += mapData.shovelGridPos.y * gridSize + gridSize * 0.5f;
         pos.y += palaYOffset;
-        palaObject = Instantiate(pala, pos, Quaternion.AngleAxis(Random.Range(0, 360), new Vector3(0, 1, 0)), transform);
+        palaObject = Instantiate(pala, pos, Quaternion.Euler(0,90,0), transform);
 
         pos = transform.position;
         pos.x += mapData.tresureGridPos.x * gridSize + gridSize * 0.5f;
