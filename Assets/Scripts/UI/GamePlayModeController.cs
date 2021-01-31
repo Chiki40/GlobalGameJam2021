@@ -76,6 +76,11 @@ public class GamePlayModeController : MonoBehaviour
 		{
 			Reset();
 		}
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			PlayExitMapSound();
+			Exit();
+		}
 	}
 
 	public void OnInteract(Vector3 pos, AnimationManager animationManager)
