@@ -2,13 +2,12 @@
 using UnityEngine.Events;
 using UnityEngine.Video;
 
-public class CreditsManager : MonoBehaviour
+public class VideoManager : MonoBehaviour
 {
     [SerializeField]
     private UnityEvent _onFinishEvent = null;
 
     VideoPlayer _videoPlayer = null;
-
     void Awake()
     {
         _videoPlayer = GetComponent<VideoPlayer>();
@@ -17,9 +16,12 @@ public class CreditsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_videoPlayer != null && !_videoPlayer.isPlaying)
+        if (_videoPlayer != null)
 		{
-            _onFinishEvent?.Invoke();
+            if (!_videoPlayer.isPlaying || Input.GetKeyDown(KeyCode.Escape))
+            {
+                _onFinishEvent?.Invoke();
+            }
 		}
     }
 }
