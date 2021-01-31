@@ -85,7 +85,7 @@ public class GamePlayModeController : MonoBehaviour
 				// Shovel found here
 				if (IsCloseEnough(shovelPos, cellPos))
 				{
-					ShowPicture(false);
+					
 					_shovelFound = true;
 					GameObject shovelObject = _mapGenerator.GetPalaObject();
 					if (shovelObject != null)
@@ -101,7 +101,8 @@ public class GamePlayModeController : MonoBehaviour
 					_foundClueZones.Add(clueZone);
 					ShowClueHint(clueZone.clueInfo);
 					PlayOpenClueSound();
-
+					ShowPicture(false);
+					_photo.SetActive(false);
 					if (_cluesPlacedPrefab != null)
 					{
 						if (Physics.Raycast(pos, Vector3.down, out RaycastHit hitInfo))
