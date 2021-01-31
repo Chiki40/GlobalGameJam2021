@@ -24,11 +24,14 @@ public class GamePlayModeController : MonoBehaviour
 	private GameObject _photo = null;
 	[SerializeField]
 	private ClueViewerManager _cluesViewer = null;
+	[SerializeField]
+	private VerTesoroManager _verTesoroManager = null;
 
 	private List<GameObject> _shovelUsesObjects = new List<GameObject>();
 	private int _shovelUsesRemaining = 0;
 	private List<ClueZone> _foundClueZones = new List<ClueZone>();
 	private bool _shovelFound = false;
+	private bool _treasureFound = false;
 
 	private MapGenerator _mapGenerator = null;
 	//private PhotoCamera _photoCam = null;
@@ -54,6 +57,7 @@ public class GamePlayModeController : MonoBehaviour
 		_shovelUsesRemaining = _shovelUses;
 		_foundClueZones.Clear();
 		_shovelFound = false;
+		_treasureFound = false;
 		// Set Photo Sprite
 		_photo.transform.GetComponentInChildren<Image>().sprite = GameManager.SpritePhoto;
 		ShowPicture(false);
@@ -61,7 +65,7 @@ public class GamePlayModeController : MonoBehaviour
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.R))
+		if (!_treasureFound && Input.GetKeyDown(KeyCode.R))
 		{
 			Reset();
 		}
@@ -141,14 +145,15 @@ public class GamePlayModeController : MonoBehaviour
 				// Treasure found here
 				if (IsCloseEnough(treasurePos, cellPos))
 				{
-					_shovelFound = true;
+					_treasureFound = true;
 					GameObject treasureObject = _mapGenerator.GetTreasureObject();
 					if (treasureObject != null)
 					{
 						treasureObject.SetActive(true);
 					}
 					Debug.Log("Treasure found! You won!");
-					StartCoroutine(ExitCoroutine());
+					//StartCoroutine(ExitCoroutine());
+					_verTesoroManager.ShowTesoro(_mapGenerator.mapData.message, GameManager.IdTweet);
 				}
 				else
 				{

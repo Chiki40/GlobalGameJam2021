@@ -27,7 +27,13 @@ public class VerTesoroManager : MonoBehaviour
         string user = _userTwitter.text;
         if(user.Length > 0)
         {
-            TwitterManager.GetInstance().ResponseToTweet(user, _idTweet, callbackSendTweet);
+            if(user[0] != '@')
+            {
+                user = "@" + user;
+            }
+            string msg =  user + " ha encontrado este tesoro";
+
+            TwitterManager.GetInstance().ResponseToTweet(msg, _idTweet, callbackSendTweet);
         }
         Salir();
     }
