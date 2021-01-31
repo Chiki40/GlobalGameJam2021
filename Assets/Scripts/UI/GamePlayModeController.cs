@@ -9,7 +9,7 @@ public class GamePlayModeController : MonoBehaviour
 	[SerializeField]
 	private int _shovelUses = 3;
 	[SerializeField]
-	private float _rangeOfCellsToInteract = 3;
+	private float _rangeOfCellsToInteract = 6;
 	[SerializeField]
 	private GameObject _shovelUsePrefab = null;
 	[SerializeField]
@@ -98,7 +98,7 @@ public class GamePlayModeController : MonoBehaviour
 					clueZone.pos = new int[2] { cellPos.x, cellPos.y };
 					// Add new clue
 					_foundClueZones.Add(clueZone);
-					_cluesViewer.Show(clueZone.clueInfo);
+					ShowClueHint(clueZone.clueInfo);
 
 					PlayOpenClueSound();
 					ShowPicture(false);
@@ -141,7 +141,7 @@ public class GamePlayModeController : MonoBehaviour
 
 								// Add new clue
 								_foundClueZones.Add(clueZone);
-								_cluesViewer.Show(clueZone.clueInfo);
+								StartCoroutine(ShowClueHint(clueZone.clueInfo));
 								Debug.Log("Clue found!");
 
 								if (_cluesPlacedPrefab != null)
@@ -150,6 +150,11 @@ public class GamePlayModeController : MonoBehaviour
 									{
 										Instantiate(_cluesPlacedPrefab, hitInfo.point + new Vector3(0.0f, 0.02f, 0.0f), Quaternion.Euler(270.0f, 0.0f, 0.0f));
 									}
+								}
+
+								if (animationManager != null)
+								{
+									animationManager.PerformDig();
 								}
 
 								return;
@@ -217,6 +222,11 @@ public class GamePlayModeController : MonoBehaviour
 	{
 		yield return new WaitForSeconds(2.0f);
 		_verTesoroManager.ShowTesoro(_mapGenerator.mapData.message, GameManager.IdTweet);
+	}
+	private IEnumerator ShowClueHint(List<int> cluesIDs)
+	{
+		yield return new WaitForSeconds(2.0f);
+		_cluesViewer.Show(cluesIDs);
 	}
 
 	public void Exit()
