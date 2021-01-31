@@ -39,9 +39,17 @@ public class MapCreator : MonoBehaviour
             m_mapGenerator = gameObject.AddComponent<MapGenerator>();
         _gamePlayMode = FindObjectOfType<GamePlayModeController>();
         // PlayMode
-        if (_gamePlayMode != null && PlayerPrefs.HasKey(kMapToLoadPlayerPrefId))
+        if (_gamePlayMode != null)
 		{
-            CreatePlayableMapFromData(PlayerPrefs.GetString(kMapToLoadPlayerPrefId));
+            if (PlayerPrefs.HasKey(kMapToLoadPlayerPrefId))
+            {
+                CreatePlayableMapFromData(PlayerPrefs.GetString(kMapToLoadPlayerPrefId));
+            }
+        }
+        else
+		{
+            // EditorMode
+            CreateRandomMap();
         }
     }
     public void CreateRandomMap()
