@@ -17,6 +17,8 @@ public class EditorModeController : MonoBehaviour
     [SerializeField]
     private CompartirMapaManager _compartirMapa = null;
     [SerializeField]
+    private Button _backToGenerateButton = null;
+    [SerializeField]
     private Button _buttonShovel = null;
     [SerializeField]
     private Button _buttonTreasure = null;
@@ -81,6 +83,23 @@ public class EditorModeController : MonoBehaviour
 	private void Update()
 	{
         DetermineUIState();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+		{
+            if (_generatingMap)
+            {
+                PlayExitMapSound();
+                Exit();
+            }
+            else
+            {
+                if (_backToGenerateButton != null)
+                {
+                    PlayBackToGenerateMapSound();
+                    _backToGenerateButton.onClick?.Invoke();
+                }
+            }
+		}
 	}
 
     private void DetermineUIState()
