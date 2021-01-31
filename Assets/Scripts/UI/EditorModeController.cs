@@ -85,10 +85,10 @@ public class EditorModeController : MonoBehaviour
 		{
             return false;
 		}
-        if (_treasurePlaced && _treasurePos[0] == pos.x && _treasurePos[1] == pos.y)
-        {
-            return false;
-        }
+       //if (_treasurePlaced && _treasurePos[0] == pos.x && _treasurePos[1] == pos.y)
+       //{
+       //    return false;
+       //}
         for (int i = 0; i < _clueZones.Count; ++i)
         {
             if (_clueZones[i].pos[0] == pos.x && _clueZones[i].pos[1] == pos.y)
@@ -135,6 +135,12 @@ public class EditorModeController : MonoBehaviour
             Destroy(_placedPrefabs[_placedPrefabs.Count - 1]);
             _shovelPlaced = false;
         }
+
+        if(_treasurePlaced)
+        {
+            Destroy(_placedPrefabs[_placedPrefabs.Count - 1]);
+            _treasurePlaced = false;
+        }
     }
 
     public void OnAddShovelClicked()
@@ -150,7 +156,8 @@ public class EditorModeController : MonoBehaviour
                     return;
                 }
 
-                _cluesSelector.AbrirEditor();
+                //_cluesSelector.AbrirEditor();
+
                 _shovelPos[0] = gridPos.x;
                 _shovelPos[1] = gridPos.y;
                 _shovelPosV3 = _player.transform.position;
@@ -186,6 +193,8 @@ public class EditorModeController : MonoBehaviour
                     _placedPrefabs.Add(Instantiate(_treasurePlacedPrefab, hitInfo.point + new Vector3(0.0f, 0.02f, 0.0f), Quaternion.identity));
                 }
                 _treasurePlaced = true;
+                _cluesSelector.AbrirEditor();
+
             }
         }
         else

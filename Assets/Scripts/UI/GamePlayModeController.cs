@@ -94,7 +94,7 @@ public class GamePlayModeController : MonoBehaviour
 				if (_foundClueZones.Count < hintData.Length)
 				{
 					// Check every hint in MapData (except the first one, which is shown when the shovel is found)
-					for (int i = 1; i < hintData.Length; ++i)
+					for (int i = 0; i < hintData.Length; ++i)
 					{
 						// Hint found here
 						if (IsCloseEnough(hintData[i].gridPos, cellPos))
@@ -112,7 +112,7 @@ public class GamePlayModeController : MonoBehaviour
 							if (!alreadyFound)
 							{
 								ClueZone clueZone = new ClueZone();
-								clueZone.clueInfo = new List<int>(hintData[i].symbols);
+								clueZone.clueInfo = new List<int>(hintData[i + 1].symbols);
 								clueZone.pos = new int[2] { cellPos.x, cellPos.y };
 								// Add new clue
 								_foundClueZones.Add(clueZone);
