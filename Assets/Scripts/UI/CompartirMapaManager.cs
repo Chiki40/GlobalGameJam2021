@@ -34,7 +34,7 @@ public class CompartirMapaManager : MonoBehaviour
     public void OnCompartir()
     {
         string userTwitter = _creador.text;
-        string msgTwitter = "Creado anonimamente";
+        string msgTwitter = "Creado por anonimo: ";
         //si no tiene @, se la añado
         if(userTwitter.Length > 0)
         {
