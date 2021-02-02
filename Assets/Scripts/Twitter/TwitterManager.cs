@@ -9,12 +9,12 @@ using System.Text;
 public class TwitterManager : MonoBehaviour
 {
     #region SECRET
-    private string beared_token = "AAAAAAAAAAAAAAAAAAAAAH%2FzMAEAAAAARUX5R7l6w0rmR7rAy%2Bj8MSvNZiw%3D9Er7pNltWzk2VmdL8BL5ewJGX1iELAsyyJ0oDIipnseP70rUuR";
-    private string access_token = "1354883396510560256-ym71xxqcnzg522LaB9npw8ZjIfhPXd";
-    private string access_token_secret = "Eo9nBqryfAqdueRQEWRnFq5AiRenroziiIGI9DmJtpP4f";
-    private string user_id = "1354883396510560256";
-    private string consumer_key = "tPQ0qItYMBerVZYHoyWth7GNy";
-    private string consumer_key_secret = "tVh4G5btcms85bFfSgEUQblrol7zxlwybuXUA6hHTHC6lm3iRQ";
+    private string beared_token = "";
+    private string access_token = "";
+    private string access_token_secret = "";
+    private string user_id = "";
+    private string consumer_key = "";
+    private string consumer_key_secret = "";
     #endregion
 
     public delegate void SendTweetCallback(bool success, string idTweet);
