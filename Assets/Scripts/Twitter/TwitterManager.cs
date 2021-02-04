@@ -8,14 +8,7 @@ using System.Text;
 
 public class TwitterManager : MonoBehaviour
 {
-    #region SECRET
-    private string beared_token = "";
-    private string access_token = "";
-    private string access_token_secret = "";
     private string user_id = "";
-    private string consumer_key = "";
-    private string consumer_key_secret = "";
-    #endregion
 
     public delegate void SendTweetCallback(bool success, string idTweet);
     public event SendTweetCallback _callbackSendTweet;
@@ -43,6 +36,17 @@ public class TwitterManager : MonoBehaviour
         return _instance;
     }
 
+    private class TwityKeys
+    {
+        public string beared_token;
+        public string access_token;
+        public string access_token_secret;
+        public string consumer_key = "";
+        public string consumer_key_secret = "";
+        public string user_id = "";
+    }
+
+
     public void Start()
     {
         if (_instance != null)
@@ -51,11 +55,18 @@ public class TwitterManager : MonoBehaviour
         }
         _instance = this;
 
-        Twity.Oauth.accessToken = access_token;
-        Twity.Oauth.accessTokenSecret = access_token_secret;
-        Twity.Oauth.bearerToken = beared_token;
-        Twity.Oauth.consumerKey = consumer_key;
-        Twity.Oauth.consumerSecret = consumer_key_secret;
+        Texture2D texture = Resources.Load<Texture2D>("qrcode");
+        string txt = QrReader.readQR(texture);
+        string jsonTxt = System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(txt));
+
+        TwityKeys json = JsonUtility.FromJson<TwityKeys>(jsonTxt);
+
+        Twity.Oauth.accessToken = json.access_token;
+        Twity.Oauth.accessTokenSecret = json.access_token_secret;
+        Twity.Oauth.bearerToken = json.beared_token;
+        Twity.Oauth.consumerKey = json.consumer_key;
+        Twity.Oauth.consumerSecret = json.consumer_key_secret;
+        user_id = json.user_id;
 
         _imagesToUpload = new List<string>();
         _responsesIDsImages = new List<string>();
